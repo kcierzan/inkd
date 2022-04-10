@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'inkd'
+
+InkdCLI.start ARGV
