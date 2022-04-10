@@ -167,6 +167,7 @@ class Neovim < App
       keyword_init: true
     ) do
       def to_h
+        # turn the ruby hashmaps into strings that look like lua table key/pairs
         theme = super
         theme_arr = theme.map do |hi, props|
           props = props.reduce([]) do |memo, (k, v)|
