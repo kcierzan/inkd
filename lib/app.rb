@@ -4,7 +4,6 @@ require 'erubi'
 require 'tilt'
 
 class App
-  # attr_reader :theme_directory
   INKD_OUTPUT_DIR = "#{Dir.home}/.inkd"
 
   def theme=(theme)
@@ -20,8 +19,6 @@ class App
   def bars=() end
 
   private
-
-  def reload() end
 
   def for_current_os?
     @supported_oses.any? { |os| RUBY_PLATFORM.include? os.to_s }

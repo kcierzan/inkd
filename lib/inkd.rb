@@ -12,6 +12,7 @@ class InkdCLI < Thor
   end
 
   desc 'color COLORSCHEME', 'Generate colorscheme files and reload apps'
+  # TODO: implement me!
   # option :list, type: :boolean
   def color(colorscheme, shade = 'dark')
     theme = init_colorscheme colorscheme, shade
@@ -19,10 +20,12 @@ class InkdCLI < Thor
     @apps.map { |app| app.theme = theme }
   end
 
+  # TODO: implement me!
   desc 'bar SHAPE', 'Generate bar files and reload apps'
   option :list, type: :boolean
   def bar(shape) end
 
+  # TODO: implement me!
   desc 'font FONT', 'Generate font files and reload apps'
   option :list, type: :boolean
   def font(font) end
@@ -36,7 +39,7 @@ class InkdCLI < Thor
   end
 
   def init_apps
-    Dir.glob(APPS_FILES).sort.map do |file|
+    Dir.glob(APPS_FILES).map do |file|
       require_relative file.split('/').drop(1).join('/')
       eval("#{File.basename(file, '.rb').capitalize}.new", binding, __FILE__, __LINE__)
     end

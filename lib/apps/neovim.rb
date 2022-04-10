@@ -4,6 +4,7 @@ require_relative '../app'
 
 class Neovim < App
   def initialize
+    super
     @supported_oses = %i[linux darwin].freeze
     @theme_output_file = 'neovim.ink.lua'
     @theme_template_file = "lib/apps/templates/#{File.basename(__FILE__, '.rb')}.erb"
