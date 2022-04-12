@@ -8,7 +8,7 @@ class InkdCLI < Thor
 
   def initialize(*args)
     super(*args)
-    @apps = init_apps
+    @apps = apps
   end
 
   desc 'color COLORSCHEME', 'Generate colorscheme files and reload apps'
@@ -38,7 +38,7 @@ class InkdCLI < Thor
     Dir.mkdir(App::INKD_OUTPUT_DIR)
   end
 
-  def init_apps
+  def apps
     Dir.glob(APPS_FILES).map do |file|
       require_relative file.split('/').drop(1).join('/')
       eval("#{File.basename(file, '.rb').capitalize}.new", binding, __FILE__, __LINE__)
@@ -47,7 +47,7 @@ class InkdCLI < Thor
 
   def init_colorscheme(theme, shade)
     theme_class = "#{theme.capitalize}#{shade.capitalize}"
-    require "themes/#{theme}"
+    require_relative "themes/#{theme}"
     eval "#{theme_class}.new", binding, __FILE__, __LINE__
   end
 end

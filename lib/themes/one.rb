@@ -2,6 +2,7 @@
 
 require_relative '../apps/xcolors'
 require_relative '../apps/neovim'
+require_relative '../apps/kitty'
 require_relative '../theme'
 
 # TODO: make a base class
@@ -35,22 +36,22 @@ class One < Theme
     @xcolors = Xcolors.theme_vars.new(
       foreground: FOREGROUND,
       background: BACKGROUND,
-      xcolors_00: BLACK,
-      xcolors_01: RED,
-      xcolors_02: GREEN,
-      xcolors_03: YELLOW,
-      xcolors_04: BLUE,
-      xcolors_05: PURPLE,
-      xcolors_06: CYAN,
-      xcolors_07: WHITE,
-      xcolors_08: BLACK_BRIGHT,
-      xcolors_09: RED_BRIGHT,
-      xcolors_10: GREEN_BRIGHT,
-      xcolors_11: YELLOW_BRIGHT,
-      xcolors_12: BLUE_BRIGHT,
-      xcolors_13: PURPLE_BRIGHT,
-      xcolors_14: CYAN_BRIGHT,
-      xcolors_15: WHITE_BRIGHT
+      xcolors00: BLACK,
+      xcolors01: RED,
+      xcolors02: GREEN,
+      xcolors03: YELLOW,
+      xcolors04: BLUE,
+      xcolors05: PURPLE,
+      xcolors06: CYAN,
+      xcolors07: WHITE,
+      xcolors08: BLACK_BRIGHT,
+      xcolors09: RED_BRIGHT,
+      xcolors10: GREEN_BRIGHT,
+      xcolors11: YELLOW_BRIGHT,
+      xcolors12: BLUE_BRIGHT,
+      xcolors13: PURPLE_BRIGHT,
+      xcolors14: CYAN_BRIGHT,
+      xcolors15: WHITE_BRIGHT
     )
 
     @neovim = Neovim.theme_vars.new(
@@ -92,7 +93,7 @@ class One < Theme
       function: { fg: BLUE },
       identifier: { fg: CYAN },
       ignore: {},
-      inc_search: {fg: BG_BRIGHT, bg: YELLOW, style: NONE },
+      inc_search: { fg: BG_BRIGHT, bg: YELLOW, style: NONE },
       include: { fg: PURPLE },
       keyword: { fg: PURPLE },
       label: { fg: YELLOW },
@@ -107,7 +108,7 @@ class One < Theme
       operator: { fg: PURPLE },
       pmenu: { fg: FOREGROUND, bg: BG_BRIGHTER },
       pmenu_sbar: { fg: PURPLE, bg: BG_BRIGHTER },
-      pmenu_sel: { fg: BG_BRIGHTER, bg: BLUE},
+      pmenu_sel: { fg: BG_BRIGHTER, bg: BLUE },
       pmenu_sel_bold: { fg: BG_BRIGHTER, bg: BLUE, style: :bold },
       pmenu_thumb: { fg: PURPLE, bg: GREEN },
       pre_condit: { fg: PURPLE },
@@ -207,7 +208,29 @@ class One < Theme
       buffer_line_separator_selected: { fg: BACKGROUND, bg: BG_BRIGHTER },
       buffer_line_separator_visible: {}
     )
-    @app_vars = [@xcolors, @neovim]
+
+    @kitty = Kitty.theme_vars.new(
+      cursor: BLUE,
+      foreground: FOREGROUND,
+      background: BACKGROUND,
+      color0: BLACK,
+      color1: RED,
+      color2: GREEN,
+      color3: YELLOW,
+      color4: BLUE,
+      color5: PURPLE,
+      color6: CYAN,
+      color7: WHITE,
+      color8: BLACK_BRIGHT,
+      color9: RED_BRIGHT,
+      color10: GREEN_BRIGHT,
+      color11: YELLOW_BRIGHT,
+      color12: BLUE_BRIGHT,
+      color13: PURPLE_BRIGHT,
+      color14: CYAN_BRIGHT,
+      color15: WHITE_BRIGHT
+    )
+    @app_vars = [@xcolors, @neovim, @kitty]
   end
 end
 
