@@ -4,7 +4,7 @@ require_relative '../app'
 
 class Kitty < App
   @theme_vars = %i[
-    cursor
+    kitty_cursor
     foreground
     background
     color0

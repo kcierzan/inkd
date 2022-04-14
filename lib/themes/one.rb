@@ -210,7 +210,7 @@ class One < Theme
     )
 
     @kitty = Kitty.theme_vars.new(
-      cursor: BLUE,
+      kitty_cursor: BLUE,
       foreground: FOREGROUND,
       background: BACKGROUND,
       color0: BLACK,
