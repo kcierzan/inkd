@@ -82,7 +82,7 @@ class One < Theme
       diff_change: { fg: YELLOW, bg: BACKGROUND },
       diff_delete: { fg: RED, bg: BACKGROUND },
       diff_text: { fg: BACKGROUND, bg: FOREGROUND },
-      directory: { fg: BG_BRIGHT, bg: NONE },
+      directory: { fg: FOREGROUND, bg: NONE },
       end_of_buffer: { fg: BACKGROUND, bg: NONE },
       error: { fg: RED },
       error_msg: { fg: RED, bg: NONE, style: :bold },
