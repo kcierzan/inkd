@@ -197,7 +197,7 @@ class One < Theme
       visual: { fg: NONE, bg: BG_BRIGHTER },
       visual_nos: { fg: BACKGROUND, bg: BACKGROUND, style: :underline },
       warning_msg: { fg: YELLOW, bg: NONE, style: :bold },
-      whitespace: { fg: BG_BRIGHT },
+      whitespace: { fg: BG_BRIGHTER },
       wild_menu: { fg: FOREGROUND, bg: GREEN },
       debug_breakpoint: { fg: BACKGROUND, bg: RED },
       i_cursor: { fg: BG_BRIGHT, bg: NONE, style: :reverse },

@@ -167,9 +167,8 @@ class Neovim < App
   def self.theme_vars
     Struct.new(*@theme_vars, keyword_init: true) do
       def to_h
-        # turn the ruby hashmaps into strings that look like lua table key/pairs
-        theme = super
-        theme_arr = theme.map do |hi, props|
+        # turn the ruby hashmaps into strings that look like lua tables
+        theme_arr = super.map do |hi, props|
           props = props.reduce([]) do |memo, (k, v)|
             memo << "#{k} = '#{v}'"
           end
@@ -185,7 +184,7 @@ class Neovim < App
   def reload
     nvim_socket = ENV['NVIM_SOCKET']
     unless nvim_socket
-      puts 'NVIM_SOCKET envvar not set! Neovim will not reload.'
+      puts 'NVIM_SOCKET environment variable is not set! Neovim will not reload.'
       return
     end
 

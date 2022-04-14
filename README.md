@@ -1,3 +1,5 @@
+> :warning: Inkd is **very** early in its life and should generally not be used by anyone for any reason.
+
 # Inkd 🐙
 
 Inkd is a command-line utility that attempts to coordinate themes
@@ -20,15 +22,12 @@ Inkd requires Ruby >= 2.5.
 For font-switching funcationality, optionally install [nerd-fonts](https://github.com/ryanoasis/nerd-fonts).
 e.g. `brew install font-iosveka-nerd-font`
 
-Then, install inkd via rubygems:
-`$ gem install inkd`
+Then, build and install inkd:
+`$ gem build inkd.gemspc && gem install inkd-0.0.0`
 
 ## Usage
 
-`$ ink colors one dark`
+`$ ink color one dark`
 
-`$ ink colors one light`
+`$ ink color --list`
 
-`$ ink bars rounded`
-
-`$ ink font iosevka`
