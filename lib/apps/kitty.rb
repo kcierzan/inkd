@@ -32,7 +32,7 @@ class Kitty < App
     @theme_template_file = get_template_for __FILE__
   end
 
-  def self.theme_vars
+  def self.highlights
     Struct.new(*@theme_vars, keyword_init: true)
   end
 

@@ -33,7 +33,7 @@ class One < Theme
   CURSOR_TEXT = BACKGROUND
 
   def initialize
-    @xcolors = Xcolors.theme_vars.new(
+    @xcolors = Xcolors.highlights.new(
       foreground: FOREGROUND,
       background: BACKGROUND,
       xcolors00: BLACK,
@@ -54,7 +54,7 @@ class One < Theme
       xcolors15: WHITE_BRIGHT
     )
 
-    @neovim = Neovim.theme_vars.new(
+    @neovim = Neovim.highlights.new(
       boolean: { fg: GREEN },
       buffer_current: { fg: YELLOW, bg: BACKGROUND, style: :bold },
       buffer_current_mod: { fg: BLUE, bg: BACKGROUND },
@@ -209,7 +209,7 @@ class One < Theme
       buffer_line_separator_visible: {}
     )
 
-    @kitty = Kitty.theme_vars.new(
+    @kitty = Kitty.highlights.new(
       kitty_cursor: BLUE,
       foreground: FOREGROUND,
       background: BACKGROUND,

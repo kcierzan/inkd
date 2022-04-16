@@ -164,7 +164,7 @@ class Neovim < App
     @theme_template_file = get_template_for __FILE__
   end
 
-  def self.theme_vars
+  def self.highlights
     Struct.new(*@theme_vars, keyword_init: true) do
       def to_h
         # turn the ruby hashmaps into strings that look like lua tables
