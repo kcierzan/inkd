@@ -4,8 +4,8 @@ require_relative 'app'
 require 'thor'
 
 class InkdCLI < Thor
-  APPS_FILES = 'lib/apps/*.rb'
-  THEMES_FILES = 'lib/themes/*.rb'
+  APPS_FILES = 'apps/*.rb'
+  THEMES_FILES = 'themes/*.rb'
 
   def initialize(*args)
     super(*args)
@@ -45,8 +45,8 @@ class InkdCLI < Thor
   end
 
   def apps
-    Dir.glob(APPS_FILES).map do |file|
-      require_relative file.split('/').drop(1).join('/')
+    Dir.glob(File.join(__dir__, APPS_FILES)).map do |file|
+      require file
       eval("#{File.basename(file, '.rb').capitalize}.new", binding, __FILE__, __LINE__)
     end
   end
@@ -59,6 +59,6 @@ class InkdCLI < Thor
 
   def list_themes
     puts 'Enter one of the following colors:'
-    Dir.glob(THEMES_FILES).map { |file| puts(File.basename(file, '.rb')) }
+    Dir.glob(File.join(__dir__, THEMES_FILES)).map { |file| puts(File.basename(file, '.rb')) }
   end
 end
