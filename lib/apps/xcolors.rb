@@ -47,6 +47,7 @@ class Xcolors < App
       file.write "Sxiv.foreground: #{theme.xcolors.foreground}\n"
       file.write "Sxiv.background: #{theme.xcolors.background}\n"
     end
+    reload
   end
 
   private

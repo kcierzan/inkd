@@ -81,57 +81,57 @@ class Neovim < App
     storage_class
     string
     structure
-    ts_annotation
-    ts_attribute
-    ts_boolean
-    ts_character
-    ts_conditional
-    ts_const_builtin
-    ts_constant
-    ts_constructor
-    ts_const_macro
-    ts_emphasis
-    ts_error
-    ts_exception
-    ts_field
-    ts_float
-    ts_none
-    ts_func_macro
-    ts_function
-    ts_function_builtin
-    ts_include
-    ts_keyword
-    ts_keyword_function
-    ts_keyword_operator
-    ts_label
-    ts_literal
-    ts_math
-    ts_method
-    ts_namespace
-    ts_number
-    ts_operator
-    ts_parameter
-    ts_parameter_reference
-    ts_property
-    ts_punct_bracket
-    ts_punct_delimitter
-    ts_punct_special
-    ts_strike
-    ts_string
-    ts_string_regex
-    ts_strong
-    ts_structure
-    ts_symbol
-    ts_tag
-    ts_tag_delimitter
-    ts_text
-    ts_title
-    ts_type
-    ts_type_builtin
-    ts_uri
-    ts_underline
-    ts_variable
-    ts_variable_builtin
+    t_s_annotation
+    t_s_attribute
+    t_s_boolean
+    t_s_character
+    t_s_conditional
+    t_s_const_builtin
+    t_s_constant
+    t_s_constructor
+    t_s_const_macro
+    t_s_emphasis
+    t_s_error
+    t_s_exception
+    t_s_field
+    t_s_float
+    t_s_none
+    t_s_func_macro
+    t_s_function
+    t_s_function_builtin
+    t_s_include
+    t_s_keyword
+    t_s_keyword_function
+    t_s_keyword_operator
+    t_s_label
+    t_s_literal
+    t_s_math
+    t_s_method
+    t_s_namespace
+    t_s_number
+    t_s_operator
+    t_s_parameter
+    t_s_parameter_reference
+    t_s_property
+    t_s_punct_bracket
+    t_s_punct_delimitter
+    t_s_punct_special
+    t_s_strike
+    t_s_string
+    t_s_string_regex
+    t_s_strong
+    t_s_structure
+    t_s_symbol
+    t_s_tag
+    t_s_tag_delimitter
+    t_s_text
+    t_s_title
+    t_s_type
+    t_s_type_builtin
+    t_s_uri
+    t_s_underline
+    t_s_variable
+    t_s_variable_builtin
     tabline_fill
     tabline_sel
     tag
@@ -161,7 +161,7 @@ class Neovim < App
   def initialize
     super
     @supported_oses = %i[linux darwin].freeze
-    @theme_output_file = 'neovim.ink.test.lua'
+    @theme_output_file = 'neovim.ink.lua'
   end
 
   def self.highlights
@@ -190,7 +190,8 @@ class Neovim < App
     path = File.join(INKD_OUTPUT_DIR, @theme_output_file)
     File.open(path, 'w') do |file|
       file.write first_line
-      theme.neovim.each do |highlight, values|
+      filtered = theme.neovim.to_h.filter { |_, v| !v.empty? }
+      filtered.each do |highlight, values|
         line = "  #{to_pascal highlight} = { #{values} };\n"
         file.write line
       end

@@ -44,6 +44,7 @@ class Kitty < App
         file.write "#{k} #{v}\n"
       end
     end
+    reload
   end
 
   private
