@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rake'
 
 Gem::Specification.new do |s|
@@ -13,4 +15,5 @@ Gem::Specification.new do |s|
   s.executables << 'ink'
   s.add_runtime_dependency 'rake', '~> 13'
   s.add_runtime_dependency 'thor', '~> 1'
+  s.required_ruby_version = '>= 2.7.5'
 end
