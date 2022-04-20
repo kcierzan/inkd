@@ -5,231 +5,201 @@ require_relative '../apps/neovim'
 require_relative '../apps/kitty'
 require_relative '../theme'
 
-# TODO: make a base class
 class One < Theme
-  NONE = 'NONE'
-  FOREGROUND = '#B2BED1'
-  BACKGROUND = '#2c2e34'
-  BG_BRIGHT = '#303339'
-  BG_BRIGHTER = '#42444e'
-  BG_BRIGHTEST = '#4d4f5b'
-  BLACK = '#393f4a'
-  RED = '#ec7279'
-  GREEN = '#a0c980'
-  YELLOW = '#deb974'
-  BLUE = '#6cb6eb'
-  PURPLE = '#d38aea'
-  CYAN = '#5dbbc1'
-  CYAN_BRIGHT = '#4db5bd'
-  WHITE = '#b9bfc9'
-  BLACK_BRIGHT = '#6f7683'
-  RED_BRIGHT = '#c9665b'
-  GREEN_BRIGHT = '#62ac65'
-  YELLOW_BRIGHT = '#d9a97c'
-  BLUE_BRIGHT = '#71bdf2'
-  PURPLE_BRIGHT = '#a9a1e1'
-  WHITE_BRIGHT = '#afb0b5'
-  CURSOR = '#528bff'
-  CURSOR_TEXT = BACKGROUND
-
   def initialize
+    super
+    @foreground = '#B2BED1'
+    @background = '#2c2e34'
+    @bg_dark = '#212226'
+    @bg_bright = '#303339'
+    @bg_brighter = '#42444e'
+    @bg_brightest = '#4d4f5b'
+    @black = '#393f4a'
+    @red = '#ec7279'
+    @green = '#a0c980'
+    @yellow = '#deb974'
+    @blue = '#6cb6eb'
+    @purple = '#d38aea'
+    @cyan = '#5dbbc1'
+    @cyan_bright = '#4db5bd'
+    @white = '#b9bfc9'
+    @black_bright = '#6f7683'
+    @red_bright = '#c9665b'
+    @green_bright = '#62ac65'
+    @yellow_bright = '#d9a97c'
+    @blue_bright = '#71bdf2'
+    @purple_bright = '#a9a1e1'
+    @white_bright = '#afb0b5'
+    @cursor = '#528bff'
+    @cursor_text = @background
+
     @xcolors = Xcolors.highlights.new(
-      foreground: FOREGROUND,
-      background: BACKGROUND,
-      xcolors00: BLACK,
-      xcolors01: RED,
-      xcolors02: GREEN,
-      xcolors03: YELLOW,
-      xcolors04: BLUE,
-      xcolors05: PURPLE,
-      xcolors06: CYAN,
-      xcolors07: WHITE,
-      xcolors08: BLACK_BRIGHT,
-      xcolors09: RED_BRIGHT,
-      xcolors10: GREEN_BRIGHT,
-      xcolors11: YELLOW_BRIGHT,
-      xcolors12: BLUE_BRIGHT,
-      xcolors13: PURPLE_BRIGHT,
-      xcolors14: CYAN_BRIGHT,
-      xcolors15: WHITE_BRIGHT
+      foreground: @foreground,
+      background: @background,
+      color0: @black,
+      color1: @red,
+      color2: @green,
+      color3: @yellow,
+      color4: @blue,
+      color5: @purple,
+      color6: @cyan,
+      color7: @white,
+      color8: @black_bright,
+      color9: @red_bright,
+      color10: @green_bright,
+      color11: @yellow_bright,
+      color12: @blue_bright,
+      color13: @purple_bright,
+      color14: @cyan_bright,
+      color15: @white_bright
     )
 
     @neovim = Neovim.highlights.new(
-      boolean: { fg: GREEN },
-      buffer_current: { fg: YELLOW, bg: BACKGROUND, style: :bold },
-      buffer_current_mod: { fg: BLUE, bg: BACKGROUND },
-      buffer_current_sign: { fg: BLUE, bg: BACKGROUND },
-      buffer_inactive: { fg: FOREGROUND, bg: BG_BRIGHT },
-      buffer_inactive_mod: { fg: BLUE, bg: BG_BRIGHT },
-      buffer_inactive_sign: { fg: BLUE, bg: BG_BRIGHT },
-      buffer_inactive_targe: { fg: FOREGROUND, bg: BG_BRIGHT },
-      buffer_tab_page_fill: { fg: BLUE, bg: BACKGROUND },
-      character: { fg: GREEN },
-      color_column: { fg: NONE, bg: BG_BRIGHT },
-      comment: { fg: BLACK_BRIGHT, style: :italic },
-      conceal: { fg: BG_BRIGHT, bg: NONE },
-      conditional: { fg: PURPLE },
-      constant: { fg: YELLOW, style: :italic },
-      cursor: { fg: NONE, bg: NONE, style: :reverse },
-      cursor_column: { fg: NONE, bg: BLACK_BRIGHT },
-      cursor_im: { fg: NONE, bg: NONE, style: :reverse },
-      cursor_line: { fg: NONE, bg: BG_BRIGHT },
-      cursor_line_nr: { fg: BLUE, bg: BG_BRIGHT, style: :bold },
-      debug: {},
-      define: { fg: PURPLE },
-      delimiter: {},
-      diff_add: { fg: GREEN, bg: BACKGROUND },
-      diff_change: { fg: YELLOW, bg: BACKGROUND },
-      diff_delete: { fg: RED, bg: BACKGROUND },
-      diff_text: { fg: BACKGROUND, bg: FOREGROUND },
-      directory: { fg: FOREGROUND, bg: NONE },
-      end_of_buffer: { fg: BACKGROUND, bg: NONE },
-      error: { fg: RED },
-      error_msg: { fg: RED, bg: NONE, style: :bold },
-      exception: { fg: PURPLE },
-      float: { fg: GREEN },
-      fold_column: { fg: FOREGROUND, bg: BACKGROUND },
-      folded: { fg: BG_BRIGHT, bg: BG_BRIGHT },
-      function: { fg: BLUE },
-      identifier: { fg: CYAN },
-      ignore: {},
-      inc_search: { fg: BG_BRIGHT, bg: YELLOW, style: NONE },
-      include: { fg: PURPLE },
-      keyword: { fg: PURPLE },
-      label: { fg: YELLOW },
-      line_nr: { fg: BLACK_BRIGHT },
-      macro: { fg: YELLOW },
-      match_paren: { fg: RED, bg: NONE },
-      mode_msg: { fg: FOREGROUND, bg: NONE, style: :bold },
-      non_text: { fg: BG_BRIGHT },
-      normal: { bg: BACKGROUND },
-      normal_float: { fg: FOREGROUND, bg: BG_BRIGHT },
-      number: { fg: GREEN },
-      operator: { fg: PURPLE },
-      pmenu: { fg: FOREGROUND, bg: BG_BRIGHTER },
-      pmenu_sbar: { fg: PURPLE, bg: BG_BRIGHTER },
-      pmenu_sel: { fg: BG_BRIGHTER, bg: BLUE },
-      pmenu_sel_bold: { fg: BG_BRIGHTER, bg: BLUE, style: :bold },
-      pmenu_thumb: { fg: PURPLE, bg: GREEN },
-      pre_condit: { fg: PURPLE },
-      pre_proc: { fg: PURPLE },
-      question: { fg: YELLOW },
-      quick_fix_line: { fg: PURPLE, style: :bold },
-      repeat: { fg: PURPLE },
-      search: { fg: BACKGROUND, bg: YELLOW },
-      sign_column: {},
-      special: { fg: BLUE },
-      special_char: { fg: YELLOW },
-      special_comment: { fg: BG_BRIGHT },
-      special_key: { fg: BG_BRIGHT },
-      spell_bad: { fg: RED, bg: NONE, style: :undercurl },
-      spell_cap: { fg: BLUE, bg: NONE, style: :undercurl },
-      spell_local: { fg: CYAN, bg: NONE, style: :undercurl },
-      spell_rare: { fg: PURPLE, bg: NONE, style: :undercurl },
-      statement: { fg: PURPLE },
-      status_line: { fg: BG_BRIGHT, bg: BG_BRIGHTER, style: NONE },
-      status_line_nc: { fg: BG_BRIGHT, bg: BG_BRIGHTER, style: NONE },
-      storage_class: { fg: RED, style: :italic },
-      string: { fg: GREEN },
-      structure: { fg: RED, style: :italic },
-      ts_annotation: { fg: PURPLE },
-      ts_attribute: { fg: YELLOW },
-      ts_boolean: { fg: GREEN },
-      ts_character: { fg: GREEN },
-      ts_conditional: {},
-      ts_const_builtin: { fg: CYAN, style: :italic },
-      ts_constant: { fg: RED, style: :italic },
-      ts_constructor: { fg: FOREGROUND },
-      ts_const_macro: {},
-      ts_emphasis: {},
-      ts_error: {},
-      ts_exception: {},
-      ts_field: {},
-      ts_float: {},
-      ts_none: {},
-      ts_func_macro: {},
-      ts_function: { fg: BLUE },
-      ts_function_builtin: { fg: BLUE },
-      ts_include: { fg: PURPLE },
-      ts_keyword: {},
-      ts_keyword_function: { fg: PURPLE },
-      ts_keyword_operator: { fg: PURPLE },
-      ts_label: { fg: PURPLE },
-      ts_literal: {},
-      ts_math: { fg: GREEN },
-      ts_method: { fg: BLUE },
-      ts_namespace: { fg: YELLOW },
-      ts_number: { fg: YELLOW },
-      ts_operator: {},
-      ts_parameter: { fg: RED, style: :italic },
-      ts_parameter_reference: {},
-      ts_property: {},
-      ts_punct_bracket: {},
-      ts_punct_delimitter: { fg: BG_BRIGHTER },
-      ts_punct_special: { fg: YELLOW },
-      ts_repeat: {},
-      ts_strike: {},
-      ts_string: {},
-      ts_string_regex: {},
-      ts_strong: {},
-      ts_structure: {},
-      ts_symbol: { fg: YELLOW },
-      ts_tag: {},
-      ts_tag_delimitter: {},
-      ts_text: { fg: GREEN },
-      ts_title: {},
-      ts_type: { fg: YELLOW },
-      ts_type_builtin: { fg: CYAN },
-      ts_uri: {},
-      ts_underline: {},
-      ts_variable: { fg: RED },
-      ts_variable_builtin: { fg: CYAN },
-      tabline_fill: { style: NONE },
-      tabline_sel: { bg: BACKGROUND },
-      tag: { fg: YELLOW },
-      terminal: { fg: FOREGROUND, bg: BACKGROUND },
-      title: { fg: PURPLE, style: :bold },
-      todo: { fg: YELLOW, style: :italic },
-      type: { fg: RED, style: :italic },
-      typedef: { fg: PURPLE },
+      boolean: { fg: @green },
+      buffer_current: { fg: @yellow, bg: @background, style: :bold },
+      buffer_current_mod: { fg: @blue, bg: @background },
+      buffer_current_sign: { fg: @blue, bg: @background },
+      buffer_inactive: { fg: @foreground, bg: @bg_bright },
+      buffer_inactive_mod: { fg: @blue, bg: @bg_bright },
+      buffer_inactive_sign: { fg: @blue, bg: @bg_bright },
+      buffer_inactive_targe: { fg: @foreground, bg: @bg_bright },
+      buffer_tab_page_fill: { fg: @blue, bg: @background },
+      character: { fg: @green },
+      color_column: { fg: @none, bg: @bg_bright },
+      comment: { fg: @black_bright, style: :italic },
+      conceal: { fg: @bg_bright, bg: @none },
+      conditional: { fg: @purple },
+      constant: { fg: @yellow, style: :italic },
+      cursor: { fg: @none, bg: @none, style: :reverse },
+      cursor_column: { fg: @none, bg: @black_bright },
+      cursor_im: { fg: @none, bg: @none, style: :reverse },
+      cursor_line: { fg: @none, bg: @bg_bright },
+      cursor_line_nr: { fg: @blue, bg: @bg_bright, style: :bold },
+      define: { fg: @purple },
+      diff_add: { fg: @green, bg: @background },
+      diff_change: { fg: @yellow, bg: @background },
+      diff_delete: { fg: @red, bg: @background },
+      diff_text: { fg: @background, bg: @foreground },
+      directory: { fg: @foreground, bg: @none },
+      end_of_buffer: { fg: @background, bg: @none },
+      error: { fg: @red },
+      error_msg: { fg: @red, bg: @none, style: :bold },
+      exception: { fg: @purple },
+      float: { fg: @green },
+      fold_column: { fg: @foreground, bg: @background },
+      folded: { fg: @bg_bright, bg: @bg_bright },
+      function: { fg: @blue },
+      identifier: { fg: @cyan },
+      inc_search: { fg: @bg_bright, bg: @yellow, style: @none },
+      include: { fg: @purple },
+      keyword: { fg: @purple },
+      label: { fg: @yellow },
+      line_nr: { fg: @black_bright },
+      macro: { fg: @yellow },
+      match_paren: { fg: @red, bg: @none },
+      mode_msg: { fg: @foreground, bg: @none, style: :bold },
+      non_text: { fg: @bg_bright },
+      normal: { bg: @background },
+      normal_float: { fg: @foreground, bg: @bg_bright },
+      number: { fg: @green },
+      operator: { fg: @purple },
+      pmenu: { fg: @foreground, bg: @bg_brighter },
+      pmenu_sbar: { fg: @purple, bg: @bg_brighter },
+      pmenu_sel: { fg: @bg_brighter, bg: @blue },
+      pmenu_sel_bold: { fg: @bg_brighter, bg: @blue, style: :bold },
+      pmenu_thumb: { fg: @purple, bg: @green },
+      pre_condit: { fg: @purple },
+      pre_proc: { fg: @purple },
+      question: { fg: @yellow },
+      quick_fix_line: { fg: @purple, style: :bold },
+      repeat: { fg: @purple },
+      search: { fg: @background, bg: @yellow },
+      special: { fg: @blue },
+      special_char: { fg: @yellow },
+      special_comment: { fg: @bg_bright },
+      special_key: { fg: @bg_bright },
+      spell_bad: { fg: @red, bg: @none, style: :undercurl },
+      spell_cap: { fg: @blue, bg: @none, style: :undercurl },
+      spell_local: { fg: @cyan, bg: @none, style: :undercurl },
+      spell_rare: { fg: @purple, bg: @none, style: :undercurl },
+      statement: { fg: @purple },
+      status_line: { fg: @bg_bright, bg: @bg_brighter, style: @none },
+      status_line_nc: { fg: @bg_bright, bg: @bg_brighter, style: @none },
+      storage_class: { fg: @red, style: :italic },
+      string: { fg: @green },
+      structure: { fg: @red, style: :italic },
+      ts_annotation: { fg: @purple },
+      ts_attribute: { fg: @yellow },
+      ts_boolean: { fg: @green },
+      ts_character: { fg: @green },
+      ts_const_builtin: { fg: @cyan, style: :italic },
+      ts_constant: { fg: @red, style: :italic },
+      ts_constructor: { fg: @foreground },
+      ts_function: { fg: @blue },
+      ts_function_builtin: { fg: @blue },
+      ts_include: { fg: @purple },
+      ts_keyword_function: { fg: @purple },
+      ts_keyword_operator: { fg: @purple },
+      ts_label: { fg: @purple },
+      ts_math: { fg: @green },
+      ts_method: { fg: @blue },
+      ts_namespace: { fg: @yellow },
+      ts_number: { fg: @yellow },
+      ts_parameter: { fg: @red, style: :italic },
+      ts_punct_delimitter: { fg: @bg_brighter },
+      ts_punct_special: { fg: @yellow },
+      ts_symbol: { fg: @yellow },
+      ts_text: { fg: @green },
+      ts_type: { fg: @yellow },
+      ts_type_builtin: { fg: @cyan },
+      ts_variable: { fg: @red },
+      ts_variable_builtin: { fg: @cyan },
+      tabline_fill: { style: @none },
+      tabline_sel: { bg: @background },
+      tag: { fg: @yellow },
+      terminal: { fg: @foreground, bg: @background },
+      title: { fg: @purple, style: :bold },
+      todo: { fg: @yellow, style: :italic },
+      type: { fg: @red, style: :italic },
+      typedef: { fg: @purple },
       underlined: { style: :underline },
-      vert_split: { fg: BACKGROUND },
-      visual: { fg: NONE, bg: BG_BRIGHTER },
-      visual_nos: { fg: BACKGROUND, bg: BACKGROUND, style: :underline },
-      warning_msg: { fg: YELLOW, bg: NONE, style: :bold },
-      whitespace: { fg: BG_BRIGHTER },
-      wild_menu: { fg: FOREGROUND, bg: GREEN },
-      debug_breakpoint: { fg: BACKGROUND, bg: RED },
-      i_cursor: { fg: BG_BRIGHT, bg: NONE, style: :reverse },
-      l_cursor: { fg: NONE, bg: NONE, style: :reverse },
-      v_cursor: { fg: NONE, bg: NONE, style: :reverse },
-      qf_filename: {},
-      buffer_line_separator: { fg: BACKGROUND, bg: BG_BRIGHTER },
-      buffer_line_separator_selected: { fg: BACKGROUND, bg: BG_BRIGHTER },
-      buffer_line_separator_visible: {}
+      vert_split: { fg: @background },
+      visual: { fg: @none, bg: @bg_brighter },
+      visual_nos: { fg: @background, bg: @background, style: :underline },
+      warning_msg: { fg: @yellow, bg: @none, style: :bold },
+      whitespace: { fg: @bg_brighter },
+      wild_menu: { fg: @foreground, bg: @green },
+      debug_breakpoint: { fg: @background, bg: @red },
+      i_cursor: { fg: @bg_bright, bg: @none, style: :reverse },
+      l_cursor: { fg: @none, bg: @none, style: :reverse },
+      v_cursor: { fg: @none, bg: @none, style: :reverse },
+      buffer_line_separator: { fg: @background, bg: @bg_brighter },
+      buffer_line_separator_selected: { fg: @background, bg: @bg_brighter },
+      which_key_float: { fg: @foreground, bg: @bg_dark }
     )
 
     @kitty = Kitty.highlights.new(
-      kitty_cursor: BLUE,
-      foreground: FOREGROUND,
-      background: BACKGROUND,
-      color0: BLACK,
-      color1: RED,
-      color2: GREEN,
-      color3: YELLOW,
-      color4: BLUE,
-      color5: PURPLE,
-      color6: CYAN,
-      color7: WHITE,
-      color8: BLACK_BRIGHT,
-      color9: RED_BRIGHT,
-      color10: GREEN_BRIGHT,
-      color11: YELLOW_BRIGHT,
-      color12: BLUE_BRIGHT,
-      color13: PURPLE_BRIGHT,
-      color14: CYAN_BRIGHT,
-      color15: WHITE_BRIGHT
+      cursor: @blue,
+      foreground: @foreground,
+      background: @background,
+      color0: @black,
+      color1: @red,
+      color2: @green,
+      color3: @yellow,
+      color4: @blue,
+      color5: @purple,
+      color6: @cyan,
+      color7: @white,
+      color8: @black_bright,
+      color9: @red_bright,
+      color10: @green_bright,
+      color11: @yellow_bright,
+      color12: @blue_bright,
+      color13: @purple_bright,
+      color14: @cyan_bright,
+      color15: @white_bright
     )
+
     @app_vars = [@xcolors, @neovim, @kitty]
   end
 end
@@ -237,6 +207,6 @@ end
 class OneDark < One
 end
 
-# TODO: make a light version of this...
+# TODO: make a light version
 class OneLight < One
 end

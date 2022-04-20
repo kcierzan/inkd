@@ -116,7 +116,6 @@ class Neovim < App
     ts_punct_bracket
     ts_punct_delimitter
     ts_punct_special
-    ts_repeat
     ts_strike
     ts_string
     ts_string_regex
@@ -156,12 +155,13 @@ class Neovim < App
     buffer_line_separator
     buffer_line_separator_selected
     buffer_line_separator_visible
-  ]
+    which_key_float
+  ].freeze
+
   def initialize
     super
     @supported_oses = %i[linux darwin].freeze
-    @theme_output_file = 'neovim.ink.lua'
-    @theme_template_file = get_template_for __FILE__
+    @theme_output_file = 'neovim.ink.test.lua'
   end
 
   def self.highlights
@@ -169,25 +169,44 @@ class Neovim < App
       def to_h
         # turn the ruby hashmaps into strings that look like lua tables
         theme_arr = super.map do |hi, props|
-          props = props.reduce([]) do |memo, (k, v)|
-            memo << "#{k} = '#{v}'"
+          if props
+            props = props.reduce([]) do |memo, (k, v)|
+              memo << "#{k} = '#{v}'"
+            end
+            [hi, props.join(', ')]
+          else
+            [hi, '']
           end
-          [hi, props.join(', ')]
         end
         theme_arr.to_h
       end
     end
   end
 
+  def theme=(theme)
+    return unless for_current_os?
+
+    first_line = "local highlights = {\n"
+    path = File.join(INKD_OUTPUT_DIR, @theme_output_file)
+    File.open(path, 'w') do |file|
+      file.write first_line
+      theme.neovim.each do |highlight, values|
+        line = "  #{to_pascal highlight} = { #{values} };\n"
+        file.write line
+      end
+      file.write "}\n"
+      file.write "return highlights\n"
+    end
+  end
+
   private
+
+  def to_pascal(input)
+    input.to_s.split('_').map(&:capitalize).join
+  end
 
   def reload
     nvim_socket = ENV['NVIM_SOCKET']
-    unless nvim_socket
-      puts 'NVIM_SOCKET environment variable is not set! Neovim will not reload.'
-      return
-    end
-
     `nvr --nostart --remote-send ':Restart<CR>'` if File.exist? nvim_socket
   end
 end

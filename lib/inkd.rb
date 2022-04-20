@@ -32,7 +32,7 @@ class InkdCLI < Thor
   # TODO: implement me!
   desc 'font FONT', 'Generate font files and reload apps'
   option :list, type: :boolean
-  def font(font) 
+  def font(font)
     puts 'Not implemented!'
   end
 

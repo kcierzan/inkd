@@ -4,7 +4,7 @@ require_relative '../app'
 
 class Kitty < App
   @theme_vars = %i[
-    kitty_cursor
+    cursor
     foreground
     background
     color0
@@ -23,17 +23,27 @@ class Kitty < App
     color13
     color14
     color15
-  ]
+  ].freeze
 
   def initialize
     super
     @supported_oses = %i[linux darwin].freeze
     @theme_output_file = 'kitty.ink.conf'
-    @theme_template_file = get_template_for __FILE__
   end
 
   def self.highlights
     Struct.new(*@theme_vars, keyword_init: true)
+  end
+
+  def theme=(theme)
+    return unless for_current_os?
+
+    path = File.join(INKD_OUTPUT_DIR, @theme_output_file)
+    File.open(path, 'w') do |file|
+      theme.kitty.to_h.each do |k, v|
+        file.write "#{k} #{v}\n"
+      end
+    end
   end
 
   private

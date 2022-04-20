@@ -6,33 +6,47 @@ class Xcolors < App
   @theme_vars = %i[
     foreground
     background
-    xcolors00
-    xcolors01
-    xcolors02
-    xcolors03
-    xcolors04
-    xcolors05
-    xcolors06
-    xcolors07
-    xcolors08
-    xcolors09
-    xcolors10
-    xcolors11
-    xcolors12
-    xcolors13
-    xcolors14
-    xcolors15
+    color0
+    color1
+    color2
+    color3
+    color4
+    color5
+    color6
+    color7
+    color8
+    color9
+    color10
+    color11
+    color12
+    color13
+    color14
+    color15
   ].freeze
 
   def initialize
     super
     @supported_oses = %i[linux].freeze
     @theme_output_file = 'xcolors.ink'
-    @theme_template_file = get_template_for __FILE__
   end
 
   def self.highlights
     Struct.new(*@theme_vars, keyword_init: true)
+  end
+
+  def theme=(theme)
+    return unless for_current_os?
+
+    path = File.join(INKD_OUTPUT_DIR, @theme_output_file)
+    File.open(path, 'w') do |file|
+      theme.xcolors.to_h.each do |k, v|
+        file.write "*.#{k}: #{v}\n"
+      end
+      file.write "*.color257: #{theme.xcolors.foreground}\n"
+      file.write "*.color256: #{theme.xcolors.background}\n"
+      file.write "Sxiv.foreground: #{theme.xcolors.foreground}\n"
+      file.write "Sxiv.background: #{theme.xcolors.background}\n"
+    end
   end
 
   private
