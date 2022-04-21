@@ -180,7 +180,7 @@ class One < Theme
     )
 
     @kitty = Kitty.highlights.new(
-      cursor: @blue,
+      cursor: @cursor,
       foreground: @foreground,
       background: @background,
       color0: @black,
@@ -200,8 +200,6 @@ class One < Theme
       color14: @cyan_bright,
       color15: @white_bright
     )
-
-    @app_vars = [@xcolors, @neovim, @kitty]
   end
 end
 

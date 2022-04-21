@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require_relative '../app'
+require_relative '../utils'
 
-class Kitty < App
-  @theme_vars = %i[
+module Kitty
+  @highlights = %i[
     cursor
     foreground
     background
@@ -23,33 +23,21 @@ class Kitty < App
     color13
     color14
     color15
-  ].freeze
-
-  def initialize
-    super
-    @supported_oses = %i[linux darwin].freeze
-    @theme_output_file = 'kitty.ink.conf'
-  end
+  ]
+  @supported_oses = %i[linux darwin].freeze
+  @output_file = 'kitty.ink.conf'
 
   def self.highlights
-    Struct.new(*@theme_vars, keyword_init: true)
+    Struct.new(*@highlights, keyword_init: true)
   end
 
-  def theme=(theme)
-    return unless for_current_os?
-
-    path = File.join(INKD_OUTPUT_DIR, @theme_output_file)
-    File.open(path, 'w') do |file|
-      theme.kitty.to_h.each do |k, v|
-        file.write "#{k} #{v}\n"
-      end
-    end
+  def self.theme=(kitty_theme)
+    lines = kitty_theme.to_h.map { |k, v| "#{k} #{v}" }
+    Utils.write_to_output(lines, @output_file, @supported_oses)
     reload
   end
 
-  private
-
-  def reload
+  def self.reload
     `ps aux | grep 'kitty' | grep -v 'grep' | awk '{print $2}' | xargs kill -SIGUSR1`
   end
 end

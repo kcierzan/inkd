@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
-require_relative '../app'
+require_relative '../constants'
+require_relative '../utils'
 
-class Neovim < App
-  @theme_vars = %i[
+module Neovim
+  @highlights = %i[
     boolean
     buffer_current
     buffer_current_mod
@@ -157,15 +158,12 @@ class Neovim < App
     buffer_line_separator_visible
     which_key_float
   ].freeze
+  @supported_oses = %i[linux darwin].freeze
+  @output_file = 'neovim.ink.lua'
 
-  def initialize
-    super
-    @supported_oses = %i[linux darwin].freeze
-    @theme_output_file = 'neovim.ink.lua'
-  end
-
+  # TODO: move the stringification into the theme= method
   def self.highlights
-    Struct.new(*@theme_vars, keyword_init: true) do
+    Struct.new(*@highlights, keyword_init: true) do
       def to_h
         # turn the ruby hashmaps into strings that look like lua tables
         theme_arr = super.map do |hi, props|
@@ -183,31 +181,20 @@ class Neovim < App
     end
   end
 
-  def theme=(theme)
-    return unless for_current_os?
-
-    first_line = "local highlights = {\n"
-    path = File.join(INKD_OUTPUT_DIR, @theme_output_file)
-    File.open(path, 'w') do |file|
-      file.write first_line
-      filtered = theme.neovim.to_h.filter { |_, v| !v.empty? }
-      filtered.each do |highlight, values|
-        line = "  #{to_pascal highlight} = { #{values} };\n"
-        file.write line
-      end
-      file.write "}\n"
-      file.write "return highlights\n"
-    end
+  def self.theme=(nvim_theme)
+    lines = nvim_theme.to_h.filter { |_, v| !v.empty? }
+    lines = lines.map { |k, v| "  #{Utils.to_pascal k} = { #{v} };" }
+    lines.unshift 'local highlights = {'
+    lines << '}'
+    lines << 'return highlights'
+    Utils.write_to_output(lines, @output_file, @supported_oses)
+    reload
   end
 
-  private
-
-  def to_pascal(input)
-    input.to_s.split('_').map(&:capitalize).join
-  end
-
-  def reload
+  def self.reload
     nvim_socket = ENV['NVIM_SOCKET']
+    return unless nvim_socket
+
     `nvr --nostart --remote-send ':Restart<CR>'` if File.exist? nvim_socket
   end
 end

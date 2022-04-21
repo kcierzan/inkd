@@ -1,54 +1,48 @@
 # frozen_string_literal: true
 
-require_relative 'app'
+require_relative 'apps/kitty'
+require_relative 'apps/neovim'
+require_relative 'apps/xcolors'
+require_relative './constants'
+
 require 'thor'
 
 class InkdCLI < Thor
-  APPS_FILES = 'apps/*.rb'
   THEMES_FILES = 'themes/*.rb'
-
-  def initialize(*args)
-    super(*args)
-    @apps = apps
-  end
 
   desc 'color COLORSCHEME', 'Generate colorscheme files and reload apps'
   option :list, type: :boolean
   def color(colorscheme = nil, shade = 'dark')
     return list_themes if options[:list] || !colorscheme
 
-    theme = init_colorscheme colorscheme, shade
     create_output_directory
-    @apps.map { |app| app.theme = theme }
+
+    theme = init_colorscheme colorscheme, shade
+    Kitty.theme = theme.kitty
+    Neovim.theme = theme.neovim
+    Xcolors.theme = theme.xcolors
   end
 
   # TODO: implement me!
   desc 'bar SHAPE', 'Generate bar files and reload apps'
   option :list, type: :boolean
-  def bar(shape)
+  def bar(_shape)
     puts 'Not implemented!'
   end
 
   # TODO: implement me!
   desc 'font FONT', 'Generate font files and reload apps'
   option :list, type: :boolean
-  def font(font)
+  def font(_font)
     puts 'Not implemented!'
   end
 
   private
 
   def create_output_directory
-    return if Dir.exist? App::INKD_OUTPUT_DIR
+    return if Dir.exist? Constants.output_dir
 
-    Dir.mkdir(App::INKD_OUTPUT_DIR)
-  end
-
-  def apps
-    Dir.glob(File.join(__dir__, APPS_FILES)).map do |file|
-      require file
-      eval("#{File.basename(file, '.rb').capitalize}.new", binding, __FILE__, __LINE__)
-    end
+    Dir.mkdir Constants.output_dir
   end
 
   def init_colorscheme(theme, shade)
@@ -57,6 +51,7 @@ class InkdCLI < Thor
     eval "#{theme_class}.new", binding, __FILE__, __LINE__
   end
 
+  # TODO: list the shades also
   def list_themes
     puts 'Enter one of the following colors:'
     Dir.glob(File.join(__dir__, THEMES_FILES)).map { |file| puts(File.basename(file, '.rb')) }

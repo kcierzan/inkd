@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
-require_relative '../app'
+require_relative '../constants'
+require_relative '../utils'
 
-class Xcolors < App
-  @theme_vars = %i[
+module Xcolors
+  @highlights = %i[
     foreground
     background
     color0
@@ -23,36 +24,24 @@ class Xcolors < App
     color14
     color15
   ].freeze
-
-  def initialize
-    super
-    @supported_oses = %i[linux].freeze
-    @theme_output_file = 'xcolors.ink'
-  end
+  @supported_oses = %i[linux].freeze
+  @output_file = 'xcolors.ink'
 
   def self.highlights
-    Struct.new(*@theme_vars, keyword_init: true)
+    Struct.new(*@highlights, keyword_init: true)
   end
 
-  def theme=(theme)
-    return unless for_current_os?
-
-    path = File.join(INKD_OUTPUT_DIR, @theme_output_file)
-    File.open(path, 'w') do |file|
-      theme.xcolors.to_h.each do |k, v|
-        file.write "*.#{k}: #{v}\n"
-      end
-      file.write "*.color257: #{theme.xcolors.foreground}\n"
-      file.write "*.color256: #{theme.xcolors.background}\n"
-      file.write "Sxiv.foreground: #{theme.xcolors.foreground}\n"
-      file.write "Sxiv.background: #{theme.xcolors.background}\n"
-    end
+  def self.theme=(xcolors_theme)
+    lines = xcolors_theme.to_h.map { |k, v| "*.#{k}: #{v}" }
+    lines << "*.color257: #{xcolors_theme.foreground}"
+    lines << "*.color256: #{xcolors_theme.background}"
+    lines << "Sxiv.foreground: #{xcolors_theme.foreground}"
+    lines << "Sxiv.background: #{xcolors_theme.background}"
+    Utils.write_to_output(lines, @output_file, @supported_oses)
     reload
   end
 
-  private
-
-  def reload
+  def self.reload
     `xrdb merge #{File.join Dir.home, '.Xresources'} 2>/dev/null`
   end
 end
