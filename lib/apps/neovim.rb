@@ -163,27 +163,17 @@ module Neovim
 
   # TODO: move the stringification into the theme= method
   def self.highlights
-    Struct.new(*@highlights, keyword_init: true) do
-      def to_h
-        # turn the ruby hashmaps into strings that look like lua tables
-        theme_arr = super.map do |hi, props|
-          if props
-            props = props.reduce([]) do |memo, (k, v)|
-              memo << "#{k} = '#{v}'"
-            end
-            [hi, props.join(', ')]
-          else
-            [hi, '']
-          end
-        end
-        theme_arr.to_h
-      end
-    end
+    Struct.new(*@highlights, keyword_init: true)
   end
 
   def self.theme=(nvim_theme)
-    lines = nvim_theme.to_h.filter { |_, v| !v.empty? }
-    lines = lines.map { |k, v| "  #{Utils.to_pascal k} = { #{v} };" }
+    lines = nvim_theme.to_h.filter { |_, v| v && !v.empty? }
+    lines = lines.map do |hi, props|
+      props = props.reduce([]) do |memo, (k, v)|
+        memo << "#{k} = '#{v}'"
+      end
+      "  #{Utils.to_pascal hi} = { #{props.join(', ')} };"
+    end
     lines.unshift 'local highlights = {'
     lines << '}'
     lines << 'return highlights'
