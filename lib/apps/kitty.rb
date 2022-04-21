@@ -33,7 +33,7 @@ module Kitty
 
   def self.theme=(kitty_theme)
     lines = kitty_theme.to_h.map { |k, v| "#{k} #{v}" }
-    Utils.write_to_output(lines, @output_file, @supported_oses)
+    Utils.write_to_output lines, @output_file, @supported_oses
     reload
   end
 

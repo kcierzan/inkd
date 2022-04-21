@@ -161,7 +161,6 @@ module Neovim
   @supported_oses = %i[linux darwin].freeze
   @output_file = 'neovim.ink.lua'
 
-  # TODO: move the stringification into the theme= method
   def self.highlights
     Struct.new(*@highlights, keyword_init: true)
   end
@@ -177,7 +176,7 @@ module Neovim
     lines.unshift 'local highlights = {'
     lines << '}'
     lines << 'return highlights'
-    Utils.write_to_output(lines, @output_file, @supported_oses)
+    Utils.write_to_output lines, @output_file, @supported_oses
     reload
   end
 

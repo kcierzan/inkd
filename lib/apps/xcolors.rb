@@ -37,7 +37,7 @@ module Xcolors
     lines << "*.color256: #{xcolors_theme.background}"
     lines << "Sxiv.foreground: #{xcolors_theme.foreground}"
     lines << "Sxiv.background: #{xcolors_theme.background}"
-    Utils.write_to_output(lines, @output_file, @supported_oses)
+    Utils.write_to_output lines, @output_file, @supported_oses
     reload
   end
 
