@@ -3,6 +3,7 @@
 require_relative '../apps/xcolors'
 require_relative '../apps/neovim'
 require_relative '../apps/kitty'
+require_relative '../apps/lualine'
 require_relative '../theme'
 
 class Tokyo < Theme
@@ -97,7 +98,7 @@ class Tokyo < Theme
       float: { fg: @green },
       fold_column: { fg: @foreground, bg: @background },
       folded: { fg: @blue, bg: @fg_gutter },
-      function: { fg: @blue2 },
+      function: { fg: @blue },
       identifier: { fg: @magenta },
       inc_search: { fg: @black, bg: @orange },
       line_nr: { fg: @fg_gutter },
@@ -139,32 +140,35 @@ class Tokyo < Theme
       t_s_const_builtin: { fg: @cyan, style: :italic },
       t_s_constant: { fg: @red, style: :italic },
       t_s_constructor: { fg: @foreground },
+      t_s_field: { fg: @green1 },
       t_s_function: { fg: @blue },
       t_s_function_builtin: { fg: @blue },
       t_s_include: { fg: @purple },
-      t_s_keyword_function: { fg: @purple },
+      t_s_keyword: { fg: @purple },
+      t_s_keyword_function: { fg: @magenta },
       t_s_keyword_operator: { fg: @purple },
-      t_s_label: { fg: @purple },
+      t_s_label: { fg: @blue },
       t_s_math: { fg: @green },
       t_s_method: { fg: @blue },
       t_s_namespace: { fg: @yellow },
       t_s_number: { fg: @yellow },
-      t_s_parameter: { fg: @red, style: :italic },
-      t_s_punct_delimitter: { fg: @bg_highlight },
+      t_s_parameter: { fg: @yellow, style: :italic },
+      t_s_punct_delimitter: { fg: @blue5 },
+      t_s_punct_bracket: { fg: @fg_dark },
       t_s_punct_special: { fg: @yellow },
       t_s_symbol: { fg: @yellow },
+      t_s_text_reference: { fg: @teal },
       t_s_text: { fg: @green },
       t_s_type: { fg: @yellow },
       t_s_type_builtin: { fg: @magenta },
-      t_s_variable: { fg: @red },
-      t_s_variable_builtin: { fg: @cyan },
+      t_s_variable_builtin: { fg: @red },
       tabline_fill: { style: @none },
       tabline_sel: { bg: @background, fg: @blue },
       tag: { fg: @yellow },
       terminal: { fg: @foreground, bg: @background },
       title: { fg: @purple, style: :bold },
       todo: { fg: @yellow, style: :italic },
-      type: { fg: @red, style: :italic },
+      type: { fg: @blue1, style: :italic },
       typedef: { fg: @purple },
       underlined: { style: :underline },
       vert_split: { fg: @background },
@@ -176,7 +180,8 @@ class Tokyo < Theme
       debug_breakpoint: { fg: @background, bg: @red },
       buffer_line_separator: { fg: @background, bg: @bg_highlight },
       buffer_line_separator_selected: { fg: @background, bg: @bg_highlight },
-      which_key_float: { fg: @foreground, bg: @bg_dark }
+      which_key_float: { fg: @foreground, bg: @bg_dark },
+      nvim_tree_normal: { fg: @foreground, bg: @bg_dark }
     )
 
     @kitty = Kitty.highlights.new(
@@ -201,7 +206,19 @@ class Tokyo < Theme
       color15: @dark5
     )
 
-    @app_vars = [@xcolors, @neovim, @kitty]
+    @lualine = Lualine.highlights.new(
+      bg: @bg_dark,
+      fg: @foreground,
+      red: @red,
+      green: @green1,
+      yellow: @yellow,
+      blue: @blue,
+      cyan: @cyan,
+      magenta: @magenta2,
+      violet: @magenta,
+      orange: @orange,
+      darkblue: @bg_dark
+    )
   end
 end
 

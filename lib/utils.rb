@@ -2,18 +2,20 @@
 
 require 'constants'
 
-module Utils
+module Inkd
   def self.to_pascal(input)
     input.to_s.split('_').map(&:capitalize).join
   end
 
-  def self.for_current_os?(supported_oses)
-    supported_oses.any? { |os| RUBY_PLATFORM.include? os.to_s }
+  def self.os_is_linux?
+    RUBY_PLATFORM.include? 'linux'
   end
 
-  def self.write_to_output(lines, output_file, supported_oses)
-    return unless for_current_os? supported_oses
+  def self.os_is_darwin?
+    RUBY_PLATFORM.include? 'darwin'
+  end
 
+  def self.write_to_output(lines, output_file)
     path = File.join Constants.output_dir, output_file
     File.open(path, 'w') do |file|
       lines.map { |line| file.write "#{line}\n" }
@@ -40,5 +42,13 @@ module Utils
     theme_files.each do |file|
       puts File.basename(file, '.rb')
     end
+  end
+
+  def self.list_fonts
+    Constants.fonts.keys.map { |font| puts font }
+  end
+
+  def self.font_families_fot(font)
+    Constants.fonts[font]
   end
 end

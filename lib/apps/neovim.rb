@@ -126,6 +126,7 @@ module Neovim
     t_s_tag
     t_s_tag_delimitter
     t_s_text
+    t_s_text_reference
     t_s_title
     t_s_type
     t_s_type_builtin
@@ -157,8 +158,8 @@ module Neovim
     buffer_line_separator_selected
     buffer_line_separator_visible
     which_key_float
+    nvim_tree_normal
   ].freeze
-  @supported_oses = %i[linux darwin].freeze
   @output_file = 'neovim.ink.lua'
 
   def self.highlights
@@ -171,12 +172,11 @@ module Neovim
       props = props.reduce([]) do |memo, (k, v)|
         memo << "#{k} = '#{v}'"
       end
-      "  #{Utils.to_pascal hi} = { #{props.join(', ')} };"
+      "  #{Inkd.to_pascal hi} = { #{props.join(', ')} };"
     end
-    lines.unshift 'local highlights = {'
+    lines.unshift 'return {'
     lines << '}'
-    lines << 'return highlights'
-    Utils.write_to_output lines, @output_file, @supported_oses
+    Inkd.write_to_output lines, @output_file
     reload
   end
 

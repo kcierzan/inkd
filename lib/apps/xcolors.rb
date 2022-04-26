@@ -24,7 +24,6 @@ module Xcolors
     color14
     color15
   ].freeze
-  @supported_oses = %i[linux].freeze
   @output_file = 'xcolors.ink'
 
   def self.highlights
@@ -37,7 +36,7 @@ module Xcolors
     lines << "*.color256: #{xcolors_theme.background}"
     lines << "Sxiv.foreground: #{xcolors_theme.foreground}"
     lines << "Sxiv.background: #{xcolors_theme.background}"
-    Utils.write_to_output lines, @output_file, @supported_oses
+    Inkd.write_to_output lines, @output_file
     reload
   end
 

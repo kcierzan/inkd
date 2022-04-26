@@ -24,8 +24,8 @@ module Kitty
     color14
     color15
   ]
-  @supported_oses = %i[linux darwin].freeze
   @output_file = 'kitty.ink.conf'
+  @font_output_file = 'kitty-font.ink.conf'
 
   def self.highlights
     Struct.new(*@highlights, keyword_init: true)
@@ -33,8 +33,13 @@ module Kitty
 
   def self.theme=(kitty_theme)
     lines = kitty_theme.to_h.map { |k, v| "#{k} #{v}" }
-    Utils.write_to_output lines, @output_file, @supported_oses
+    Inkd.write_to_output lines, @output_file
     reload
+  end
+
+  def self.font=(font)
+    lines = @fonts[font].reduce([]) { |memo, (k, v)| memo << "#{k} #{v}" }
+    Inkd.write_to_output lines, @font_output_file
   end
 
   def self.reload
