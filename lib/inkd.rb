@@ -20,7 +20,7 @@ class InkdCLI < Thor
     theme = Inkd.init_colorscheme colorscheme, shade
     Kitty.theme = theme.kitty
     Neovim.theme = theme.neovim
-    Xcolors.theme = theme.xcolors if Inkd.os_is_linux?
+    Xcolors.theme = theme.xcolors if Inkd.linux?
     Lualine.theme = theme.lualine
   end
 

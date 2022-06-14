@@ -27,22 +27,24 @@ module Kitty
   @output_file = 'kitty.ink.conf'
   @font_output_file = 'kitty-font.ink.conf'
 
-  def self.highlights
+  module_function
+
+  def highlights
     Struct.new(*@highlights, keyword_init: true)
   end
 
-  def self.theme=(kitty_theme)
+  def theme=(kitty_theme)
     lines = kitty_theme.to_h.map { |k, v| "#{k} #{v}" }
     Inkd.write_to_output lines, @output_file
     reload
   end
 
-  def self.font=(font)
+  def font=(font)
     lines = @fonts[font].reduce([]) { |memo, (k, v)| memo << "#{k} #{v}" }
     Inkd.write_to_output lines, @font_output_file
   end
 
-  def self.reload
+  def reload
     `ps aux | grep 'kitty' | grep -v 'grep' | awk '{print $2}' | xargs kill -SIGUSR1`
   end
 end

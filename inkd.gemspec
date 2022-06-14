@@ -4,7 +4,7 @@ require 'rake'
 
 Gem::Specification.new do |s|
   s.name = 'inkd'
-  s.version = '0.0.0'
+  s.version = '0.0.1'
   s.summary = 'Inkd 🐙'
   s.description = 'Theme all your apps'
   s.authors = ['Kyle Cierzan']

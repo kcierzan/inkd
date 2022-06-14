@@ -16,11 +16,13 @@ module Lualine
   ].freeze
   @output_file = 'lualine.ink.lua'
 
-  def self.highlights
+  module_function
+
+  def highlights
     Struct.new(*@highlights, keyword_init: true)
   end
 
-  def self.theme=(lualine_theme)
+  def theme=(lualine_theme)
     lines = lualine_theme.to_h.map { |k, v| "  #{k} = '#{v}'," }
     lines.unshift('return {')
     lines << '}'

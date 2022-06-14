@@ -26,11 +26,13 @@ module Xcolors
   ].freeze
   @output_file = 'xcolors.ink'
 
-  def self.highlights
+  module_function
+
+  def highlights
     Struct.new(*@highlights, keyword_init: true)
   end
 
-  def self.theme=(xcolors_theme)
+  def theme=(xcolors_theme)
     lines = xcolors_theme.to_h.map { |k, v| "*.#{k}: #{v}" }
     lines << "*.color257: #{xcolors_theme.foreground}"
     lines << "*.color256: #{xcolors_theme.background}"
@@ -40,7 +42,7 @@ module Xcolors
     reload
   end
 
-  def self.reload
+  def reload
     `xrdb merge #{File.join Dir.home, '.Xresources'} 2>/dev/null`
   end
 end
