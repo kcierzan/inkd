@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative '../utils'
+
 module Lualine
   @highlights = %i[
     bg
@@ -26,6 +28,6 @@ module Lualine
     lines = lualine_theme.to_h.map { |k, v| "  #{k} = '#{v}'," }
     lines.unshift('return {')
     lines << '}'
-    Inkd.write_to_output lines, @output_file
+    Utils::Filesystem.write_file lines, @output_file
   end
 end

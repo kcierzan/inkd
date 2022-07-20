@@ -13,29 +13,22 @@ class InkdCLI < Thor
   desc 'color COLORSCHEME', 'Generate colorscheme files and reload apps'
   option :list, type: :boolean
   def color(colorscheme = nil, shade = 'dark')
-    return Inkd.list_themes if options[:list] || !colorscheme
+    return Utils::Filesystem.print_theme_names if options[:list] || !colorscheme
 
-    Inkd.create_output_directory
+    Utils::Filesystem.create_output_directory
 
-    theme = Inkd.init_colorscheme colorscheme, shade
+    theme = ColorschemeBuilder.load(theme: colorscheme, shade: shade)
     Kitty.theme = theme.kitty
     Neovim.theme = theme.neovim
-    Xcolors.theme = theme.xcolors if Inkd.linux?
+    Xcolors.theme = theme.xcolors if Utils::OS.linux?
     Lualine.theme = theme.lualine
-  end
-
-  # TODO: implement me!
-  desc 'bar SHAPE', 'Generate bar files and reload apps'
-  option :list, type: :boolean
-  def bar(_shape)
-    puts 'Not implemented!'
   end
 
   # TODO: implement me!
   desc 'font FONT', 'Generate font files and reload apps'
   option :list, type: :boolean
   def font(font = nil)
-    return Inkd.list_fonts if options[:list] || !font
+    return Utils::Filesystem.print_font_names if options[:list] || !font
 
     Kitty.font = font
   end

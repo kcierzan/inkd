@@ -1,6 +1,4 @@
 # frozen_string_literal: true
-
-require_relative '../constants'
 require_relative '../utils'
 
 module Xcolors
@@ -38,7 +36,7 @@ module Xcolors
     lines << "*.color256: #{xcolors_theme.background}"
     lines << "Sxiv.foreground: #{xcolors_theme.foreground}"
     lines << "Sxiv.background: #{xcolors_theme.background}"
-    Inkd.write_to_output lines, @output_file
+    Utils::Filesystem.write_file lines, @output_file
     reload
   end
 

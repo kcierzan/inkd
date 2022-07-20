@@ -162,14 +162,13 @@ module Neovim
   ].freeze
   @output_file = 'neovim.ink.lua'
 
-  module_function
 
   def highlights
     Struct.new(*@highlights, keyword_init: true)
   end
 
   def filter_empty_properties(nvim_theme)
-    nvim_theme.to_h.filter { |_, v| v && !v.empty? }
+    nvim_theme.to_h.filter { |_, v| v.respond_to?(:empty?) && !v.empty? }
   end
 
   def to_lua_table(properties)
@@ -177,18 +176,16 @@ module Neovim
       props = props.reduce([]) do |memo, (k, v)|
         memo << "#{k} = '#{v}'"
       end
-      "  #{Inkd.to_pascal hi} = { #{props.join(', ')} };"
+      "  #{Utils.to_pascal hi} = { #{props.join(', ')} };"
     end
     table.unshift 'return {'
     table << '}'
   end
 
-  private_class_method :filter_empty_properties, :to_lua_table
-
   def theme=(nvim_theme)
     properties = filter_empty_properties nvim_theme
     table = to_lua_table properties
-    Inkd.write_to_output table, @output_file
+    Utils::Filesystem.write_file table, @output_file
     reload
   end
 
@@ -198,4 +195,7 @@ module Neovim
 
     `nvr --nostart --remote-send ':Restart<CR>'` if File.exist? nvim_socket
   end
+
+  module_function :theme=, :highlights, :reload
+  private_class_method :to_lua_table, :filter_empty_properties
 end

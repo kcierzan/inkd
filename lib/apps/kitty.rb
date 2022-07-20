@@ -35,13 +35,13 @@ module Kitty
 
   def theme=(kitty_theme)
     lines = kitty_theme.to_h.map { |k, v| "#{k} #{v}" }
-    Inkd.write_to_output lines, @output_file
+    Utils::Filesystem.write_file lines, @output_file
     reload
   end
 
   def font=(font)
     lines = @fonts[font].reduce([]) { |memo, (k, v)| memo << "#{k} #{v}" }
-    Inkd.write_to_output lines, @font_output_file
+    Utils::Filesystem.write_file lines, @font_output_file
   end
 
   def reload
