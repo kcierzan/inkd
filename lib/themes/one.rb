@@ -3,11 +3,10 @@
 require_relative '../apps/xcolors'
 require_relative '../apps/neovim'
 require_relative '../apps/kitty'
-require_relative '../theme'
 
-class One < Theme
+class One
   def initialize
-    super
+    @none = 'none'
     @foreground = '#B2BED1'
     @background = '#2c2e34'
     @bg_dark = '#212226'
@@ -32,29 +31,10 @@ class One < Theme
     @white_bright = '#afb0b5'
     @cursor = '#528bff'
     @cursor_text = @background
+  end
 
-    @xcolors = Xcolors.highlights.new(
-      foreground: @foreground,
-      background: @background,
-      color0: @black,
-      color1: @red,
-      color2: @green,
-      color3: @yellow,
-      color4: @blue,
-      color5: @purple,
-      color6: @cyan,
-      color7: @white,
-      color8: @black_bright,
-      color9: @red_bright,
-      color10: @green_bright,
-      color11: @yellow_bright,
-      color12: @blue_bright,
-      color13: @purple_bright,
-      color14: @cyan_bright,
-      color15: @white_bright
-    )
-
-    @neovim = Neovim.highlights.new(
+  def neovim
+    @neovim ||= Neovim.highlights.new(
       boolean: { fg: @green },
       buffer_current: { fg: @yellow, bg: @background, style: :bold },
       buffer_current_mod: { fg: @blue, bg: @background },
@@ -179,7 +159,10 @@ class One < Theme
       which_key_float: { fg: @foreground, bg: @bg_dark }
     )
 
-    @kitty = Kitty.highlights.new(
+  end
+
+  def kitty
+    @kitty ||= Kitty.highlights.new(
       cursor: @cursor,
       foreground: @foreground,
       background: @background,
@@ -199,6 +182,45 @@ class One < Theme
       color13: @purple_bright,
       color14: @cyan_bright,
       color15: @white_bright
+    )
+  end
+
+  def xcolors
+    @xcolors ||= Xcolors.highlights.new(
+      foreground: @foreground,
+      background: @background,
+      color0: @black,
+      color1: @red,
+      color2: @green,
+      color3: @yellow,
+      color4: @blue,
+      color5: @purple,
+      color6: @cyan,
+      color7: @white,
+      color8: @black_bright,
+      color9: @red_bright,
+      color10: @green_bright,
+      color11: @yellow_bright,
+      color12: @blue_bright,
+      color13: @purple_bright,
+      color14: @cyan_bright,
+      color15: @white_bright
+    )
+  end
+
+  def lualine
+    @lualine ||= Lualine.highlights.new(
+      bg: @bg_dark,
+      fg: @foreground,
+      red: @red,
+      green: @green,
+      yellow: @yellow,
+      blue: @blue,
+      cyan: @cyan,
+      magenta: @magenta,
+      violet: @purple,
+      orange: @yellow_bright,
+      darkblue: @blue_bright
     )
   end
 end

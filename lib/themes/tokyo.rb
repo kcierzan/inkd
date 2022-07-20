@@ -4,11 +4,10 @@ require_relative '../apps/xcolors'
 require_relative '../apps/neovim'
 require_relative '../apps/kitty'
 require_relative '../apps/lualine'
-require_relative '../theme'
 
-class Tokyo < Theme
+class Tokyo
   def initialize
-    super
+    @none = 'none'
     @bg_dark = '#1f2335'
     @background = '#24283b'
     @bg_highlight = '#292e42'
@@ -42,8 +41,10 @@ class Tokyo < Theme
     @git_change = '#394b70'
     @git_delete = '#823c41'
     @git_conflict = '#bb7a61'
+  end
 
-    @xcolors = Xcolors.highlights.new(
+  def xcolors
+    @xcolors ||= Xcolors.highlights.new(
       foreground: @foreground,
       background: @background,
       color0: @black,
@@ -63,8 +64,50 @@ class Tokyo < Theme
       color14: @blue5,
       color15: @dark5
     )
+  end
 
-    @neovim = Neovim.highlights.new(
+  def lualine
+    @lualine ||= Lualine.highlights.new(
+      bg: @bg_dark,
+      fg: @foreground,
+      red: @red,
+      green: @green1,
+      yellow: @yellow,
+      blue: @blue,
+      cyan: @cyan,
+      magenta: @magenta2,
+      violet: @magenta,
+      orange: @orange,
+      darkblue: @bg_dark
+    )
+  end
+
+  def kitty
+    @kitty ||= Kitty.highlights.new(
+      cursor: @yellow,
+      foreground: @foreground,
+      background: @background,
+      color0: @black,
+      color1: @red,
+      color2: @green,
+      color3: @yellow,
+      color4: @blue,
+      color5: @magenta,
+      color6: @cyan,
+      color7: @comment,
+      color8: @dark3,
+      color9: @red1,
+      color10: @green2,
+      color11: @orange,
+      color12: @blue5,
+      color13: @purple,
+      color14: @cyan,
+      color15: @dark5
+    )
+  end
+
+  def neovim
+    @neovim ||= Neovim.highlights.new(
       boolean: { fg: @green },
       buffer_current: { fg: @yellow, bg: @background, style: :bold },
       buffer_current_mod: { fg: @blue, bg: @background },
@@ -183,44 +226,9 @@ class Tokyo < Theme
       which_key_float: { fg: @foreground, bg: @bg_dark },
       nvim_tree_normal: { fg: @foreground, bg: @bg_dark }
     )
-
-    @kitty = Kitty.highlights.new(
-      cursor: @yellow,
-      foreground: @foreground,
-      background: @background,
-      color0: @black,
-      color1: @red,
-      color2: @green,
-      color3: @yellow,
-      color4: @blue,
-      color5: @magenta,
-      color6: @cyan,
-      color7: @comment,
-      color8: @dark3,
-      color9: @red1,
-      color10: @green2,
-      color11: @orange,
-      color12: @blue5,
-      color13: @purple,
-      color14: @cyan,
-      color15: @dark5
-    )
-
-    @lualine = Lualine.highlights.new(
-      bg: @bg_dark,
-      fg: @foreground,
-      red: @red,
-      green: @green1,
-      yellow: @yellow,
-      blue: @blue,
-      cyan: @cyan,
-      magenta: @magenta2,
-      violet: @magenta,
-      orange: @orange,
-      darkblue: @bg_dark
-    )
   end
 end
+
 
 class TokyoStorm < Tokyo
 end
