@@ -158,7 +158,6 @@ class One
       buffer_line_separator_selected: { fg: @background, bg: @bg_brighter },
       which_key_float: { fg: @foreground, bg: @bg_dark }
     )
-
   end
 
   def kitty

@@ -2,6 +2,18 @@
 
 require 'constants'
 
+module Inkd
+  def theme_names
+    theme_file_dir = File.join __dir__, Constants.theme_files
+    theme_files = Dir.glob theme_file_dir
+    theme_files.map { |file| File.basename(file, '.rb') }
+  end
+
+  def font_names
+    Constants.fonts.keys
+  end
+end
+
 module Utils
   module_function
 
@@ -35,17 +47,6 @@ module Utils
       File.open(path, 'w') do |file|
         lines.each { |line| file.write "#{line}\n" }
       end
-    end
-
-    def print_theme_names
-      puts 'Enter one of the following colors:'
-      theme_file_dir = File.join __dir__, Constants.theme_files
-      theme_files = Dir.glob theme_file_dir
-      theme_files.each { |file| puts File.basename(file, '.rb') }
-    end
-
-    def print_font_names
-      Constants.fonts.each_key { |font| puts font }
     end
   end
 end

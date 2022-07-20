@@ -13,7 +13,7 @@ class InkdCLI < Thor
   desc 'color COLORSCHEME', 'Generate colorscheme files and reload apps'
   option :list, type: :boolean
   def color(colorscheme = nil, shade = 'dark')
-    return Utils::Filesystem.print_theme_names if options[:list] || !colorscheme
+    return print_themes if options[:list] || !colorscheme
 
     Utils::Filesystem.create_output_directory
 
@@ -28,8 +28,18 @@ class InkdCLI < Thor
   desc 'font FONT', 'Generate font files and reload apps'
   option :list, type: :boolean
   def font(font = nil)
-    return Utils::Filesystem.print_font_names if options[:list] || !font
+    return print_fonts if options[:list] || !font
 
     Kitty.font = font
+  end
+
+  private
+
+  def print_themes
+    Inkd.theme_names.each { |name| puts name }
+  end
+
+  def print_fonts
+    Inkd.font_names.each { |name| puts name }
   end
 end

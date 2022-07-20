@@ -162,6 +162,7 @@ module Neovim
   ].freeze
   @output_file = 'neovim.ink.lua'
 
+  module_function
 
   def highlights
     Struct.new(*@highlights, keyword_init: true)
@@ -196,6 +197,5 @@ module Neovim
     `nvr --nostart --remote-send ':Restart<CR>'` if File.exist? nvim_socket
   end
 
-  module_function :theme=, :highlights, :reload
   private_class_method :to_lua_table, :filter_empty_properties
 end
