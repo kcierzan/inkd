@@ -6,7 +6,8 @@ module Inkd
   def theme_names
     theme_file_dir = File.join __dir__, Constants.theme_files
     theme_files = Dir.glob theme_file_dir
-    theme_files.map { |file| File.basename(file, '.rb') }
+    theme_files.map { |f| File.basename(f, '.rb') }
+               .filter { |f| File.basename(f, '.rb') != Constants.theme_base_class }
   end
 
   def font_names
@@ -15,12 +16,6 @@ module Inkd
 end
 
 module Utils
-  module_function
-
-  def to_pascal(input)
-    input.to_s.split('_').map(&:capitalize).join
-  end
-
   module OS
     module_function
 

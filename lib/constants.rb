@@ -2,6 +2,7 @@
 
 module Constants
   @output_dir = "#{Dir.home}/.inkd"
+  @theme_base_class = 'theme'
   @theme_files = 'themes/*.rb'
   @fonts = {
     sf: {
@@ -44,6 +45,6 @@ module Constants
   }
 
   class << self
-    attr_reader :output_dir, :theme_files, :fonts
+    attr_reader :output_dir, :theme_files, :fonts, :theme_base_class
   end
 end
