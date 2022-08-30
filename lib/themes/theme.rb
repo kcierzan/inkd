@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'rgb'
+require_relative '../../vendor/rgb-0.1.0/lib/rgb'
 
 class Theme
   def blend(target_color, mix_color, percent)

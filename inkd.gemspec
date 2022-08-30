@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.description = 'Theme all your apps'
   s.authors = ['Kyle Cierzan']
   s.email = 'kcierzan@gmail.com'
-  s.files = FileList.new 'lib/**/*.rb', 'lib/**/*.erb', 'bin/*'
+  s.files = FileList.new 'lib/**/*.rb', 'lib/**/*.erb', 'bin/*', 'vendor/**/*.rb'
   s.homepage = 'https://rubygems.org/gems/inkd'
   s.license = 'MIT'
   s.executables << 'ink'
