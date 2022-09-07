@@ -23,6 +23,6 @@ class Kitty < App
   private
 
   def reload!
-    `ps aux | grep 'kitty' | grep -v 'grep' | awk '{print $2}' | xargs kill -SIGUSR1`
+    `pgrep -a 'kitty' | xargs kill -SIGUSR1`
   end
 end
