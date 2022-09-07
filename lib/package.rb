@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Package
   module_function
 
@@ -28,4 +30,10 @@ module Package
   end
 
   private_class_method :supported_app_files, :app_directory_glob, :theme_directory_glob
+end
+
+module AppAutoloader
+  def self.included(_module)
+    Package.supported_app_names.each { |app| require "apps/#{app}" }
+  end
 end

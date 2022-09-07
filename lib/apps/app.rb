@@ -1,8 +1,6 @@
-require 'autoloader'
+# frozen_string_literal: true
 
 class App
-  include AppAutoloader
-
   def apply_theme!
     raise NotImplementedError
   end

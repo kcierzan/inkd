@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'autoloader'
 require 'constants'
 require 'package'
 require 'thor'
