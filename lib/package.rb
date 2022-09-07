@@ -16,9 +16,10 @@ module Package
   end
 
   def theme_names
-    Dir.glob(theme_directory_glob).select do |e|
-      File.file?(e) && File.basename(e, '.rb') != 'theme'
-    end
+    Dir.glob(theme_directory_glob)
+       .select { |e| File.file?(e) && File.basename(e, '.rb') != 'theme' }
+       .select { |e| File.extname(e) == '.rb' }
+       .map { |f| File.basename(f, '.rb') }
   end
 
   def app_directory_glob
