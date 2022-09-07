@@ -1,10 +1,8 @@
 # frozen_string_literal: true
 
 module Constants
-  @output_dir = "#{Dir.home}/.inkd"
-  @theme_base_class = 'theme'
-  @theme_files = 'themes/*.rb'
-  @fonts = {
+  OUTPUT_DIR = "#{Dir.home}/.inkd"
+  FONTS = {
     sf: {
       font_family: 'Liga SFMono Nerd Font'
     },
@@ -42,9 +40,5 @@ module Constants
     hack: {
       font_family: 'Hack Nerd Font'
     }
-  }
-
-  class << self
-    attr_reader :output_dir, :theme_files, :fonts, :theme_base_class
-  end
+  }.freeze
 end

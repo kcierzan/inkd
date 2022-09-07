@@ -1,27 +1,21 @@
 # frozen_string_literal: true
 
-require_relative 'apps/kitty'
-require_relative 'apps/neovim'
-require_relative 'apps/xcolors'
-require_relative 'apps/lualine'
-require_relative 'constants'
-require_relative 'utils'
-
+require 'autoloader'
+require 'constants'
+require 'package'
 require 'thor'
+require 'utils'
 
 class InkdCLI < Thor
+  include AppAutoloader
+
   desc 'color COLORSCHEME', 'Generate colorscheme files and reload apps'
   option :list, type: :boolean
   def color(colorscheme = nil, shade = 'dark')
     return print_themes if options[:list] || !colorscheme
 
-    Utils::Filesystem.create_output_directory
-
-    theme = ColorschemeBuilder.load(theme: colorscheme, shade: shade)
-    Kitty.theme = theme.kitty
-    Neovim.theme = theme.neovim
-    Xcolors.theme = theme.xcolors if Utils::OS.linux?
-    Lualine.theme = theme.lualine
+    create_output_directory
+    apply_theme!(colorscheme: colorscheme, shade: shade)
   end
 
   # TODO: implement me!
@@ -35,11 +29,26 @@ class InkdCLI < Thor
 
   private
 
+  def apply_theme!(colorscheme:, shade:)
+    theme = ColorschemeBuilder.load(theme: colorscheme, shade: shade)
+    apps.each { |app| app.apply_theme! theme.data_for_app(app.name) }
+  end
+
+  def create_output_directory
+    Utils::Filesystem.create_output_directory
+  end
+
   def print_themes
-    Inkd.theme_names.each { |name| puts name }
+    Package.theme_names.each { |name| puts name }
   end
 
   def print_fonts
-    Inkd.font_names.each { |name| puts name }
+    Constants::FONTS.each_key { |font| puts font }
+  end
+
+  def apps
+    Package.supported_app_names.map do |app|
+      eval "#{app.capitalize}.new", binding, __FILE__, __LINE__
+    end
   end
 end

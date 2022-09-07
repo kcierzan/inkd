@@ -1,0 +1,406 @@
+palette:
+  foreground: &fg "#B2BED1"
+  background: &bg "#2c2e34"
+  bg_dark: &bg_dark "#212226"
+  bg_bright: &bg_bright "#303339"
+  bg_brighter: &bg_brighter "#42444e"
+  bg_brightest: &bg_brightest "#4d4f5b"
+  black: &black "#393f4a"
+  red: &red "#ec7279"
+  green: &green "#a0c980"
+  yellow: &yellow "#deb974"
+  blue: &blue "#6cb6eb"
+  purple: &purple "#d38aea"
+  cyan: &cyan "#5dbbc1"
+  cyan_bright: &cyan_bright "#4db5bd"
+  white: &white "#b9bfc9"
+  black_bright: &black_bright "#6f7683"
+  red_bright: &red_bright "#c9665b"
+  green_bright: &green_bright "#62ac65"
+  yellow_bright: &yellow_bright "#d9a97c"
+  blue_bright: &blue_bright "#71bdf2"
+  purple_bright: &purple_bright "#a9a1e1"
+  white_bright: &white_bright "#afb0b5"
+  cursor: &cursor "#528bff"
+  cursor_text: *bg
+
+neovim:
+  Boolean:
+    fg: *green
+  BufferCurrent:
+    fg: *yellow
+    bg: *bg
+    style: "bold"
+  BufferCurrentMod:
+    fg: *blue
+    bg: *bg
+  BufferCurrentSign:
+    fg: *blue
+    bg: *bg
+  BufferInactive:
+    fg: *fg
+    bg: *bg_bright
+  BufferInactiveSign:
+    fg: *blue
+    bg: *bg_bright
+  BufferInactiveTarge:
+    fg: *fg
+    bg: *bg_bright
+  BufferTabPageFill:
+    fg: *blue
+    bg: *bg
+  Character:
+    fg: *green
+  ColorColumn:
+    fg: "none"
+    bg: *bg_bright
+  Comment:
+    fg: *black_bright
+    style: "italic"
+  Conceal:
+    fg: *bg_bright
+    bg: "none"
+  Conditional:
+    fg: *purple
+  Constant:
+    fg: *yellow
+    style: "italic"
+  Cursor:
+    fg: "none"
+    bg: "none"
+    style: "reverse"
+  CursorColumn:
+    fg: "none"
+    bg: *black_bright
+  CursorIm:
+    fg: "none"
+    bg: "none"
+    sytle: "reverse"
+  CursorLineNr:
+    fg: *blue
+    bg: *bg_bright
+    style: "bold"
+  Define:
+    fg: *purple
+  DiffAdd:
+    fg: *green
+    bg: *bg
+  DiffChange:
+    fg: *yellow
+    bg: *bg
+  DiffDelete:
+    fg: *red
+    bg: *bg
+  DiffText:
+    fg: *bg
+    bg: *fg
+  Directory:
+    fg: *fg
+    bg: "none"
+  EndOfBuffer:
+    fg: *bg
+    bg: "none"
+  Error:
+    fg: *red
+  ErrorMsg:
+    fg: *purple
+  Exception:
+    fg: *purple
+  Float:
+    fg: *green
+  FoldColumn:
+    fg: *fg
+    bg: *bg
+  Folded:
+    fg: *bg_bright
+    bg: *bg_bright
+  Function:
+    fg: *blue
+  Identifier:
+    fg: *cyan
+  IncSearch:
+    fg: *bg_bright
+    bg: *yellow
+    style: "none"
+  Include:
+    fg: *purple
+  Keyword:
+    fg: *purple
+  Label:
+    fg: *yellow
+  LineNr:
+    fg: *black_bright
+  Macro:
+    fg: *yellow
+  MatchParen:
+    fg: *red
+    bg: "none"
+  ModeMsg:
+    fg: *fg
+    bg: "none"
+    style: "bold"
+  NonText:
+    fg: *bg_bright
+  Normal:
+    bg: *bg
+  NormalFloat:
+    fg: *fg
+    bg: *bg_bright
+  Number:
+    fg: *green
+  Operator:
+    fg: *purple
+  Pmenu:
+    fg: *fg
+    bg: *bg_brighter
+  PmenuSbar:
+    fg: *purple
+    bg: *bg_brighter
+  PmenuSel:
+    fg: *bg_brighter
+    bg: *blue
+  PmenuSelBold:
+    fg: *bg_brighter
+    bg: *blue
+    style: "bold"
+  PmenuThumb:
+    fg: *purple
+    bg: *green
+  PreCondit:
+    fg: *purple
+  PreProc:
+    fg: *purple
+  Question:
+    fg: *yellow
+  QuickFixLine:
+    fg: *purple
+    style: "bold"
+  Repeat:
+    fg: *purple
+  Search:
+    fg: *bg
+    bg: *yellow
+  Special:
+    fg: *blue
+  SpecialChar:
+    fg: *yellow
+  SpecialComment:
+    fg: *bg_bright
+  SpecialKey:
+    fg: *bg_bright
+  SpellBad:
+    fg: *red
+    bg: "none"
+    style: "undercurl"
+  SpellCap:
+    fg: *blue
+    bg: "none"
+    style: "undercurl"
+  SpellLocal:
+    fg: *cyan
+    bg: "none"
+    style: "undercurl"
+  SpellRare:
+    fg: *purple
+    bg: "none"
+    style: "undercurl"
+  Statement:
+    fg: *purple
+  StatusLine:
+    fg: *bg_bright
+    bg: *bg_brighter
+    style: "none"
+  StatusLineNc:
+    fg: *bg_bright
+    bg: *bg_brighter
+    style: "none"
+  StorageClass:
+    fg: *red
+    style: "italic"
+  String:
+    fg: *green
+  Structure:
+    fg: *red
+    style: "italic"
+  SignColumn:
+    fg: "none"
+    bg: "none"
+  TSAnnotation:
+    fg: *purple
+  TSAttribute:
+    fg: *yellow
+  TSBoolean:
+    fg: *green
+  TSCharacter:
+    fg: *green
+  TSConstBuiltin: 
+    fg: *cyan
+    style: "italic"
+  TSConstant: 
+    fg: *red
+    style: "italic"
+  TSConstructor:
+    fg: *fg
+  TSFunction:
+    fg: *blue
+  TSFuncBuiltin:
+    fg: *blue
+  TSInclude:
+    fg: *purple
+  TSKeywordFunction:
+    fg: *purple
+  TSKeywordOperator:
+    fg: *purple
+  TSLabel:
+    fg: *purple
+  TSMath:
+    fg: *green
+  TSMethod:
+    fg: *blue
+  TSNamespace:
+    fg: *yellow
+  TSNumber:
+    fg: *yellow
+  TSParameter:
+    fg: *red
+    style: "italic"
+  TSPunctDelimitter:
+    fg: *bg_brighter
+  TSPunctSpecial:
+    fg: *yellow
+  TSSymbol:
+    fg: *yellow
+  TSText:
+    fg: *green
+  TSType:
+    fg: *yellow
+  TSTypeBuiltin:
+    fg: *cyan
+  TSVariable:
+    fg: *red
+  TSVariableBuiltin:
+    fg: *cyan
+  TabLineFill:
+    style: "none"
+  TabLineSel:
+    bg: *bg
+  Tag:
+    fg: *yellow
+  Terminal:
+    fg: *fg
+    bg: *bg
+  Title:
+    fg: *purple
+    style: "bold"
+  Todo:
+    fg: *yellow
+    style: "italic"
+  Type:
+    fg: *red
+    style: "italic"
+  Typedef:
+    fg: *purple
+  Underlined:
+    style: "underline"
+  VertSplit:
+    fg: *bg
+  Visual:
+    fg: "none"
+    bg: *bg_brighter
+  VisualNos:
+    fg: *bg
+    bg: *bg
+    style: "underline"
+  WarningMsg:
+    fg: *yellow
+    bg: "none"
+    style: "bold"
+  Whitespace:
+    fg: *bg_brighter
+  WildMenu:
+    fg: *fg
+    bg: *green
+  DebugBreakpoint:
+    fg: *bg
+    bg: *red
+  iCursor:
+    fg: *bg_bright
+    bg: "none"
+    style: "reverse"
+  lCursor:
+    fg: "none"
+    bg: "none"
+    style: "reverse"
+  vCursor:
+    fg: "none"
+    bg: "none"
+    style: "reverse"
+  BufferLineSeparator:
+    fg: *bg
+    bg: *bg_brighter
+  BufferLineSeparatorSelected:
+    fg: *bg
+    bg: *bg_brighter
+  WhichKeyFloat:
+    fg: *fg
+    bg: *bg_dark
+  htmlH1:
+    fg: *blue
+  htmlH2:
+    fg: *purple
+  htmlH3:
+    fg: *green 
+
+kitty:
+  cursor: *cursor
+  foreground: *fg
+  background: *bg
+  color0: *black
+  color1: *red
+  color2: *green
+  color3: *yellow
+  color4: *blue
+  color5: *purple
+  color6: *cyan
+  color7: *white
+  color8: *black_bright
+  color9: *red_bright
+  color10: *green_bright
+  color11: *yellow_bright
+  color12: *blue_bright
+  color13: *purple_bright
+  color14: *cyan_bright
+  color15: *white_bright
+
+xcolors:
+  foreground: *fg
+  background: *bg
+  color0: *black
+  color1: *red
+  color2: *green
+  color3: *yellow
+  color4: *blue
+  color5: *purple
+  color6: *cyan
+  color7: *white
+  color8: *black_bright
+  color9: *red_bright
+  color10: *green_bright
+  color11: *yellow_bright
+  color12: *blue_bright
+  color13: *purple_bright
+  color14: *cyan_bright
+  color15: *white_bright
+
+lualine:
+  bg: *bg_dark
+  fg: *fg
+  red: *red
+  green: *green
+  yellow: *yellow
+  blue: *blue
+  cyan: *cyan
+  magenta: *purple_bright
+  violet: *purple
+  orange: *yellow_bright
+  darkblue: *blue_bright
