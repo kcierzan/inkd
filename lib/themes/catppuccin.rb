@@ -3,12 +3,14 @@
 require 'themes/theme'
 
 class Catppuccin < Theme
-  def neovim
-    theme = super
-    theme['Search']['bg'] = search
-    theme['IncSearch']['bg'] = inc_search
-    theme['CursorLine']['bg'] = cursorline
-    theme
+  def data_for_app(app)
+    return super(app) unless app == :neovim
+
+    super(app).tap do |theme|
+      theme['Search']['bg'] = search
+      theme['IncSearch']['bg'] = inc_search
+      theme['CursorLine']['bg'] = cursorline
+    end
   end
 
   private
