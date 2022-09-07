@@ -5,16 +5,13 @@
 Inkd is a command-line utility that attempts to coordinate themes
 between all my most-used applications. Those applications are:
 
-1. xorg
-2. neovim
-3. kitty
-4. fish (planned)
-5. gitui (planned)
-6. plasma (planned)
-7. gtk (planned)
+1. neovim
+2. kitty
+3. starship (planned)
+4. gitui (planned)
 
 Inkd strives to make things look nice together and provide a common
-interface for setting the appearance of (most) things.
+interface for setting the appearance of (most) as many apps as possible.
 
 ## Installation
 Inkd requires Ruby >= 2.5.
