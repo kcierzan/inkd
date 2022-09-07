@@ -163,11 +163,11 @@ neovim:
     bg: "none"
     style: "undercurl" 
   SpellLocal:
-    fg: *cyan
+    fg: *sapphire
     bg: "none"
     style: "undercurl" 
   SpellRare:
-    fg: *purple
+    fg: *mauve
     bg: "none"
     style: "undercurl" 
   Statement:
@@ -218,7 +218,7 @@ neovim:
   TSKeywordOperator:
     fg: *mauve 
   TSLabel:
-    fg: *purple 
+    fg: *mauve
   TSMath:
     fg: *green 
   TSMethod:

@@ -22,7 +22,7 @@ class Catppuccin < Theme
   end
 
   def inc_search
-    blend palette['sky'], paletee['base'], 90
+    blend palette['sky'], palette['base'], 90
   end
 end
 
