@@ -16,7 +16,7 @@ class Theme
     theme_data['palette']
   end
 
-  def data_for_app(app)
+  def colors_for_app(app)
     theme_data[app.to_s]
   end
 

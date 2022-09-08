@@ -15,7 +15,7 @@ class Kitty < App
   end
 
   def apply_font!(font)
-    lines = Constants::FONTS[font].reduce([]) { |memo, (k, v)| memo << "#{k} #{v}" }
+    lines = Constants::FONTS[font.to_sym].reduce([]) { |memo, (k, v)| memo << "#{k} #{v}" }
     Utils::Filesystem.write_file lines, FONT_OUTPUT_FILE
     reload!
   end
