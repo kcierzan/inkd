@@ -1,0 +1,536 @@
+palette:
+  base0: &base0 "#1B2229"
+  base1: &base1 "#1c1f24"
+  base2: &base2 "#202328"
+  base3: &base3 "#23272e"
+  base4: &base4 "#3f444a"
+  base5: &base5 "#5B6268"
+  base6: &base6 "#73797e"
+  base7: &base7 "#9ca0a4"
+  base8: &base8 "#b1b1b1"
+  bg: &bg "#262a33"
+  bg1: &bg1 "#504945"
+  bg_popup: &bg_popup "#3E4556"
+  bg_highlight: &bg_highlight "#2E323C"
+  bg_visual: &bg_visual "#b3deef"
+  fg: &fg "#bbc2cf"
+  fg_alt: &fg_alt "#5B6268"
+  red: &red "#e95678"
+  redwine: &redwine "#d16d9e"
+  orange: &orange "#FF8700"
+  yellow: &yellow "#f7bb3b"
+  lignt_orange: &lignt_orange "#fab795"
+  green: &green "#afd700"
+  dark_green: &dark_green "#98be65"
+  cyan: &cyan "#36d0e0"
+  blue: &blue "#61afef"
+  violet: &violet "#CBA6F7"
+  magenta: &magenta "#c678dd"
+  teal: &teal "#1abc9c"
+  grey: &grey "#928374"
+  brown: &brown "#c78665"
+  black: &black "#000000"
+  bracket: &bracket "#80A0C2"
+
+neovim:
+  Normal:
+    fg: *fg
+    bg: *bg
+  Terminal:
+    fg: *fg
+    bg: *bg
+  SignColumn: 
+    fg: *fg
+    bg: *bg
+  FoldColumn: 
+    fg: *fg_alt
+    bg: *black
+  VertSplit: 
+    fg: *black
+    bg: *bg
+  Folded: 
+    fg: *lignt_orange
+    bg: *bg_highlight
+  EndOfBuffer: 
+    fg: *bg
+    bg: 'none'
+  IncSearch: 
+    fg: *bg1
+    bg: *orange
+  Search: 
+    fg: *bg
+    bg: *orange
+  ColorColumn:
+    bg: *bg_highlight
+  Conceal:  
+    fg: *grey
+    bg: 'none'
+  Cursor:
+    bg: 'none'
+    reverse: true
+  vCursor:
+    bg: 'none'
+    reverse: true
+  iCursor:
+    bg: 'none'
+    reverse: true
+  lCursor:
+    bg: 'none'
+    reverse: true
+  CursorIM:
+    bg: 'none'
+    reverse: true
+  CursorColumn:
+    bg: *bg_highlight
+  CursorLine:
+    bg: *bg_highlight
+  LineNr:
+    fg: *base4
+  qfLineNr:
+    fg: *cyan
+  CursorLineNr:
+    fg: *blue
+  DiffAdd:
+    fg: *black
+    bg: *dark_green
+  DiffChange:
+    fg: *black
+    bg: *yellow
+  DiffDelete:
+    fg: *black
+    bg: *red
+  DiffText:
+    fg: *black
+    bg: *fg
+  Directory:
+    fg: *blue
+    bg: 'none'
+  ErrorMsg:
+    fg: *red
+    bg: 'none'
+    bold: true
+  WarningMsg:
+    fg: *yellow
+    bg: 'none'
+    bold: true
+  ModeMsg:
+    fg: *fg
+    bg: none
+    bold: true
+  MatchParen:
+    fg: *red
+    bg: 'none'
+  NonText:
+    fg: *bg1
+  Whitespace:
+    fg: *base4
+  SpecialKey:
+    fg: *bg1
+  Pmenu:
+    fg: *fg
+    bg: *bg_popup
+  PmenuSel:
+    fg: *base0
+    bg: *blue
+  PmenuSelBold:
+    fg: *base0
+    bg: *blue
+  PmenuSbar:
+    bg: *base4
+  PmenuThumb:
+    fg: *violet
+    bg: *dark_green
+  WildMenu:
+    fg: *bg1
+    bg: *green
+  StatusLine:
+    fg: *base8
+    bg: *base2
+  StatusLineNC:
+    fg: *grey
+    bg: *base2
+  Question:
+    fg: *yellow
+  NormalFloat:
+    fg: *base8
+    bg: *bg_highlight
+  Tabline:
+    fg: *base6
+    bg: *base2
+  TabLineSel:
+    fg: *fg
+    bg: *blue
+  SpellBad:
+    fg: *red
+    bg: 'none'
+    undercurl: true
+  SpellCap:
+    fg: *blue
+    bg: 'none'
+    undercurl: true
+  SpellLocal:
+    fg: *cyan
+    bg: 'none'
+    undercurl: true
+  SpellRare:
+    fg: *violet
+    bg: 'none'
+    undercurl: true
+  Visual:
+    fg: *black
+    bg: *bg_visual
+  VisualNOS:
+    fg: *black
+    bg: *bg_visual
+  QuickFixLine:
+    fg: *violet
+    bold: true
+  Debug:
+    fg: *orange
+  debugBreakpoint:
+    fg: *bg
+    bg: *red
+  Boolean:
+    fg: *orange
+  Number:
+    fg: *brown
+  Float:
+    fg: *brown
+  PreProc:
+    fg: *violet
+  PreCondit:
+    fg: *violet
+  Include:
+    fg: *violet
+  Define:
+    fg: *violet
+  Conditional:
+    fg: *magenta
+  Repeat:
+    fg: *magenta
+  Keyword:
+    fg: *green
+  Typedef:
+    fg: *red
+  Exception:
+    fg: *red
+  Statement:
+    fg: *red
+  Error:
+    fg: *red
+  StorageClass:
+    fg: *orange
+  Tag:
+    fg: *orange
+  Label:
+    fg: *orange
+  Structure:
+    fg: *orange
+  Operator:
+    fg: *redwine
+  Title:
+    fg: *orange
+    bold: true
+  Special:
+    fg: *yellow
+  SpecialChar:
+    fg: *yellow
+  Type:
+    fg: *teal
+  Function:
+    fg: *yellow
+  String:
+    fg: *lignt_orange
+  Character:
+    fg: *green
+  Constant:
+    fg: *cyan
+  Macro:
+    fg: *cyan
+  Identifier:
+    fg: *blue
+  Comment:
+    fg: *base6
+    italic: true
+  SpecialComment:
+    fg: *grey 
+  Todo:
+    fg: *violet
+  Delimiter:
+    fg: *fg
+  Ignore:
+    fg: *grey
+  Underlined:
+    underline: true
+  DashboardShortCut:
+    fg: *magenta
+  DashboardHeader:
+    fg: *orange
+  DashboardCenter:
+    fg: *teal
+  DashboardCenterIcon:
+    fg: *blue
+  DashboardFooter:
+    fg: *yellow
+    bold: true
+  TSFunction:
+    fg: *cyan
+  TSMethod:
+    fg: *cyan
+  TSKeywordFunction:
+    fg: *red
+  TSProperty:
+    fg: *yellow
+  TSType:
+    fg: *teal
+  TSVariable:
+    fg: "#f2f2bf"
+  TSPunctBracket:
+    fg: *bracket
+  vimCommentTitle:
+    fg: *grey
+    bold: true
+  vimLet:
+    fg: *orange
+  vimVar:
+    fg: *cyan
+  vimFunction:
+    fg: *redwine
+  vimIsCommand:
+    fg: *fg
+  vimCommand:
+    fg: *blue
+  vimNotFunc:
+    fg: *violet
+    bold: true
+  vimUserFunc:
+    fg: *yellow
+    bold: true
+  vimFuncName:
+    fg: *yellow
+    bold: true
+  diffAdded:
+    fg: *dark_green
+  diffRemoved:
+    fg: *red
+  diffChanged:
+    fg: *blue
+  diffOldFile:
+    fg: *yellow
+  diffNewFile:
+    fg: *orange
+  diffFile:
+    fg: *cyan
+  diffLine:
+    fg: *grey
+  diffIndexLine:
+    fg: *violet
+  gitcommitSummary:
+    fg: *red
+  gitcommitUntracked:
+    fg: *grey
+  gitcommitDiscarded:
+    fg: *grey
+  gitcommitSelected:
+    fg: *grey
+  gitcommitUnmerged:
+    fg: *grey
+  gitcommitOnBranch:
+    fg: *grey
+  gitcommitArrow:
+    fg: *grey
+  gitcommitFile:
+    fg: *dark_green
+  VistaBracket:
+    fg: *grey
+  VistaChildrenNr:
+    fg: *orange
+  VistaKind:
+    fg: *violet
+  VistaScope:
+    fg: *red
+  VistaScopeKind:
+    fg: *blue
+  VistaTag:
+    fg: *magenta
+    bold: true
+  VistaPrefix:
+    fg: *grey
+  VistaColon:
+    fg: *magenta
+  VistaIcon:
+    fg: *yellow
+  VistaLineNr:
+    fg: *fg
+  GitGutterAdd:
+    fg: *dark_green
+  GitGutterChange:
+    fg: *blue
+  GitGutterDelete:
+    fg: *red
+  GitGutterChangeDelete:
+    fg: *violet
+  GitSignsAdd:
+    fg: *dark_green
+  GitSignsChange:
+    fg: *blue
+  GitSignsDelete:
+    fg: *red
+  GitSignsAddNr:
+    fg: *dark_green
+  GitSignsChangeNr:
+    fg: *blue
+  GitSignsDeleteNr:
+    fg: *red
+  GitSignsAddLn:
+    bg: *bg_popup
+  GitSignsChangeLn:
+    bg: *bg_highlight
+  GitSignsDeleteLn:
+    bg: *bg1
+  SignifySignAdd:
+    fg: *dark_green
+  SignifySignChange:
+    fg: *blue
+  SignifySignDelete:
+    fg: *red
+  dbui_tables:
+    fg: *blue
+  CursorWord:
+    bg: *base4
+    underline: true
+  NvimTreeFolderName:
+    fg: *blue
+  NvimTreeRootFolder:
+    fg: *red
+    bold: true
+  NvimTreeSpecialFile:
+    fg: *fg
+    bg: 'none'
+  NvimTreeGitDirty:
+    fg: *redwine
+  TelescopeBorder:
+    fg: *teal
+  TelescopePromptBorder:
+    fg: *blue
+  TelescopeMatching:
+    fg: *teal
+  TelescopeSelection:
+    fg: *yellow
+    bg: *bg_highlight
+    bold: true
+  TelescopeSelectionCaret:
+    fg: *yellow
+  TelescopeMultiSelection:
+    fg: *teal
+  DiagnosticSignError:
+    fg: *red
+  DiagnosticSignWarn:
+    fg: *yellow
+  DiagnosticSignInfo:
+    fg: *blue
+  DiagnosticSignHint:
+    fg: *cyan
+  DiagnosticError:
+    fg: *red
+  DiagnosticWarn:
+    fg: *yellow
+  DiagnosticInfo:
+    fg: *blue
+  DiagnosticHint:
+    fg: *cyan
+  LspReferenceRead:
+    bg: *bg_highlight
+    bold: true
+  LspReferenceText:
+    bg: *bg_highlight
+    bold: true
+  LspReferenceWrite:
+    bg: *bg_highlight
+    bold: true
+  DiagnosticVirtualTextError:
+    fg: *red
+  DiagnosticVirtualTextWarn:
+    fg: *yellow
+  DiagnosticVirtualTextInfo:
+    fg: *blue
+  DiagnosticVirtualTextHint:
+    fg: *cyan
+  DiagnosticUnderlineError:
+    undercurl: true
+    sp: *red
+  DiagnosticUnderlineWarn:
+    undercurl: true
+    sp: *yellow
+  DiagnosticUnderlineInfo:
+    undercurl: true
+    sp: *blue
+  DiagnosticUnderlineHint:
+    undercurl: true
+    sp: *cyan
+  CmpItemAbbr:
+    fg: *fg
+  CmpItemAbbrMatch:
+    fg: "#A6E22E"
+  CmpItemMenu:
+    fg: *violet
+  CmpItemKindVariable:
+    fg: *blue
+  CmpItemKindFiled:
+    fg: *magenta
+  CmpItemKindFunction:
+    fg: *yellow
+  CmpItemKindClass:
+    fg: *orange
+  CmpItemKindMethod:
+    fg: *teal
+  CmpItemKindKeyWord:
+    fg: *red
+  CmpItemKindText:
+    fg: *dark_green
+  CmpItemKindModule:
+    fg: *cyan
+  NeogitDiffAddHighlight:
+    fg: *green
+  NeogitDiffDeleteHighlight:
+    fg: *red
+  NeogitDiffContextHighlight:
+    fg: *blue
+  NeogitHunkHeader:
+    fg: *fg
+  NeogitHunkHeaderHighlight:
+    fg: *redwine
+
+kitty:
+  cursor: *blue
+  foreground: *fg
+  background: *bg
+  color0: *black
+  color1: *red
+  color2: *green
+  color3: *yellow
+  color4: *blue
+  color5: *violet
+  color6: *cyan
+  color7: *base8
+  color8: *base6
+  color9: *redwine
+  color10: *dark_green
+  color11: *orange
+  color12: *bg_visual
+  color13: *magenta
+  color14: *teal
+  color15: *base7
+
+lualine:
+  bg: *base4
+  fg: *fg
+  red: *red
+  green: *green
+  yellow: *yellow
+  blue: *blue
+  cyan: *cyan
+  magenta: *magenta
+  violet: *violet
+  orange: *orange
+  darkblue: *teal
