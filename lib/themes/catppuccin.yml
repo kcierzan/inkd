@@ -27,6 +27,11 @@ palette:
   crust: &crust "#181926"
 
 neovim:
+  BufferLineBufferSelected:
+    style: "underline"
+    sp: *red
+  BufferLineFill:
+    bg: *base
   Boolean:
     fg: *peach 
   BufferCurrent:
@@ -52,15 +57,15 @@ neovim:
   Constant:
     fg: *peach 
   Cursor:
-    fg: *base
-    bg: *text 
+    fg: "none"
+    bg: "none"
   CursorColumn:
     bg: *mantle 
   CursorIm:
     fg: *base
     bg: *text 
   CursorLine:
-    bg: *surface0 
+    bg: "#323549"
   CursorLineNr:
     fg: *lavender 
   DebugBreakpoint:
@@ -294,11 +299,17 @@ neovim:
     fg: *mantle 
   WildMenu:
     bg: *overlay0 
+  NvimTreeNormal:
+    bg: *mantle
 
 kitty:
   cursor: *peach
   foreground: *text
   background: *base
+  active_tab_foreground: *mantle
+  active_tab_background: *maroon
+  inactive_tab_foreground: *mantle
+  inactive_tab_background: *surface1
   color0: *crust
   color1: *red
   color2: *green
@@ -317,7 +328,7 @@ kitty:
   color15: *text
 
 lualine:
-  bg: *crust
+  bg: *mantle
   fg: *text
   red: *red
   green: *green

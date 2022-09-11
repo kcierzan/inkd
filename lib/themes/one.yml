@@ -357,6 +357,8 @@ neovim:
     fg: *purple
   htmlH3:
     fg: *green 
+  NvimTreeNormal:
+    bg: "#23252A"
 
 kitty:
   cursor: *cursor

@@ -48,6 +48,11 @@ palette:
   katanaGray: &katanaGray "#717C7C"
 
 neovim:
+  BufferLineBufferSelected:
+    style: "underline"
+    sp: *waveRed
+  BufferLineFill:
+    bg: *sumiInk1
   Comment:
     fg: *fujiGray
   ColorColumn: 
@@ -534,6 +539,8 @@ neovim:
   IndentBlanklineContextStart: 
     sp: *springViolet1
     underline: true 
+  NvimTreeNormal:
+    bg: *sumiInk0
 
 kitty:
   cursor: *fujiWhite

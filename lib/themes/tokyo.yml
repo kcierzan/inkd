@@ -70,6 +70,10 @@ kitty:
   cursor: *yellow
   foreground: *foreground
   background: *background
+  active_tab_foreground: *bg_dark
+  active_tab_background: *blue
+  inactive_tab_foreground: *bg_dark
+  inactive_tab_background: *fg_gutter
   color0: *black
   color1: *red
   color2: *green
@@ -88,6 +92,11 @@ kitty:
   color15: *dark5
 
 neovim:
+  BufferLineBufferSelected:
+    style: "underline"
+    sp: *red
+  BufferLineFill:
+    bg: *background
   Boolean:
     fg: *green 
   BufferCurrent:
@@ -394,5 +403,4 @@ neovim:
     fg: *foreground
     bg: *bg_dark 
   NvimTreeNormal:
-    fg: *foreground
     bg: *bg_dark 
