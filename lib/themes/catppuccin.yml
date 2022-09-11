@@ -30,6 +30,9 @@ neovim:
   BufferLineBufferSelected:
     style: "underline"
     sp: *red
+  BufferLineOffsetSeparator:
+    bg: *base
+    fg: *base
   BufferLineFill:
     bg: *base
   Boolean:
@@ -259,7 +262,7 @@ neovim:
     fg: *surface1 
     bg: *mantle 
   TabLineFill:
-    bg: *crust 
+    bg: *mantle
   TabLineSel:
     fg: *green
     bg: *surface1 
@@ -294,7 +297,7 @@ neovim:
     style: "bold" 
   WhichKeyFloat:
     fg: *text 
-    bg: *base 
+    bg: *mantle
   Whitespace:
     fg: *mantle 
   WildMenu:
