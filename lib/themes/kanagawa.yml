@@ -105,6 +105,7 @@ neovim:
     fg: *sumiInk4 
   CursorLineNr: 
     fg: *roninYellow
+    bg: *sumiInk3
     bold: "true" 
   MatchParen: 
     fg: *roninYellow
@@ -538,6 +539,10 @@ kitty:
   cursor: *fujiWhite
   foreground: *fujiWhite
   background: *sumiInk1
+  active_tab_foreground: *sumiInk1b
+  active_tab_background: *dragonBlue
+  inactive_tab_foreground: *sumiInk1b
+  inactive_tab_background: *sumiInk3
   color0: *sumiInk0
   color1: *waveRed
   color2: *springGreen
