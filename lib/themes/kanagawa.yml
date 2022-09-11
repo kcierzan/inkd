@@ -54,7 +54,7 @@ neovim:
     bg: *sumiInk2 
   Conceal: 
     fg: *springViolet1
-    bold: "true" 
+    bold: true 
   Cursor: 
     fg: *sumiInk1
     bg: *fujiWhite 
@@ -106,13 +106,13 @@ neovim:
   CursorLineNr: 
     fg: *roninYellow
     bg: *sumiInk3
-    bold: "true" 
+    bold: true 
   MatchParen: 
     fg: *roninYellow
-    bold: "true" 
+    bold: true 
   ModeMsg: 
     fg: *roninYellow
-    bold: "true" 
+    bold: true 
   MsgArea: 
     fg: *oldWhite 
   MoreMsg: 
@@ -163,16 +163,16 @@ neovim:
   SpecialKey: 
     fg: *sumiInk4 
   SpellBad: 
-    undercurl: "true" 
+    undercurl: true 
     sp: *samuraiRed
   SpellCap: 
-    undercurl: "true" 
+    undercurl: true 
     sp: *roninYellow 
   SpellLocal: 
-    undercurl: "true" 
+    undercurl: true 
     sp: *roninYellow 
   SpellRare: 
-    undercurl: "true" 
+    undercurl: true 
     sp: *roninYellow 
   StatusLine: 
     fg: *oldWhite
@@ -196,7 +196,7 @@ neovim:
     bg: *sumiInk3 
   Title: 
     fg: *crystalBlue
-    bold: "true" 
+    bold: true 
   Visual: 
     bg: *waveBlue1 
   VisualNOS: 
@@ -218,7 +218,7 @@ neovim:
     fg: *sakuraPink 
   Boolean: 
     fg: *surimiOrange
-    bold: "true" 
+    bold: true 
   Float: 
     fg: *sakuraPink 
   Identifier: 
@@ -243,10 +243,10 @@ neovim:
     fg: *springBlue 
   Underlined: 
     fg: *springBlue
-    underline: "true" 
-    bold: "true" 
+    underline: true 
+    bold: true 
   Italic: 
-    italic: "true" 
+    italic: true 
   Ignore: 
     fg: *sumiInk4 
   Error: 
@@ -254,7 +254,7 @@ neovim:
   Todo: 
     fg: *waveBlue1
     bg: *dragonBlue
-    bold: "true" 
+    bold: true 
   qfLineNr: 
     fg: *sumiInk4 
   qfFileName: 
@@ -300,16 +300,16 @@ neovim:
   DiagnosticVirtualTextHint: 
     fg: *waveAqua1 
   DiagnosticUnderlineError: 
-    undercurl: "true"
+    undercurl: true
     sp: *samuraiRed
   DiagnosticUnderlineWarn: 
-    undercurl: "true"
+    undercurl: true
     sp: *roninYellow 
   DiagnosticUnderlineInfo: 
-    undercurl: "true"
+    undercurl: true
     sp: *dragonBlue 
   DiagnosticUnderlineHint: 
-    undercurl: "true"
+    undercurl: true
     sp: *waveAqua1 
   LspSignatureActiveParameter: 
     fg: *roninYellow 
@@ -320,7 +320,7 @@ neovim:
   TSWarning: 
     fg: *waveBlue1
     bg: *dragonBlue
-    bold: "true" 
+    bold: true 
   TSDanger: 
     fg: *roninYellow 
   TSConstructor: 
@@ -339,7 +339,7 @@ neovim:
     fg: *boatYellow2 
   TSKeywordOperator: 
     fg: *boatYellow2
-    bold: "true" 
+    bold: true 
   TSParameter: 
     fg: *carpYellow 
   TSProperty: 
@@ -354,7 +354,7 @@ neovim:
     fg: *boatYellow2 
   TSStringEscape: 
     fg: *boatYellow2
-    bold: "true" 
+    bold: true 
   TSVariable: 
     fg: *fujiWhite 
   TSVariableBuiltin:
@@ -407,7 +407,7 @@ neovim:
     bg: *sumiInk1b
   NvimTreeRootFolder: 
     fg: *carpYellow
-    bold: "true" 
+    bold: true 
   NvimTreeGitDirty: 
     fg: *autumnYellow 
   NvimTreeGitNew: 
@@ -424,12 +424,12 @@ neovim:
     fg: *crystalBlue 
   NvimTreeExecFile: 
     fg: *springGreen
-    bold: "true" 
+    bold: true 
   NvimTreeGitStaged: 
     fg: *autumnGreen 
   NvimTreeOpenedFile: 
     fg: *springBlue 
-    italic: "true" 
+    italic: true 
   NvimTreeWinSeparator: 
     fg: *sumiInk2
     bg: *sumiInk1b
@@ -474,7 +474,7 @@ neovim:
     fg: *fujiWhite 
   CmpItemAbbrDeprecated: 
     fg: *fujiGray
-    strikethrough: "true" 
+    strikethrough: true 
   CmpItemAbbrMatch: 
     fg: *crystalBlue 
   CmpItemAbbrMatchFuzzy: 
@@ -533,7 +533,7 @@ neovim:
     fg: *springViolet1
   IndentBlanklineContextStart: 
     sp: *springViolet1
-    underline: "true" 
+    underline: true 
 
 kitty:
   cursor: *fujiWhite

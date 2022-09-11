@@ -49,6 +49,11 @@ neovim:
   BufferTabPageFill:
     fg: *blue
     bg: *bg
+  BufferLineBufferSelected:
+    style: "underline"
+    sp: *red
+  BufferLineFill:
+    bg: *bg
   Character:
     fg: *green
   ColorColumn:
@@ -75,7 +80,9 @@ neovim:
   CursorIm:
     fg: "none"
     bg: "none"
-    sytle: "reverse"
+    style: "reverse"
+  CursorLine:
+    bg: *bg_bright
   CursorLineNr:
     fg: *blue
     bg: *bg_bright
@@ -355,6 +362,10 @@ kitty:
   cursor: *cursor
   foreground: *fg
   background: *bg
+  active_tab_foreground: *bg_dark
+  active_tab_background: *blue
+  inactive_tab_foreground: *bg_dark
+  inactive_tab_background: *bg_brighter
   color0: *black
   color1: *red
   color2: *green
@@ -393,7 +404,7 @@ xcolors:
   color15: *white_bright
 
 lualine:
-  bg: *bg_dark
+  bg: "#23252A"
   fg: *fg
   red: *red
   green: *green

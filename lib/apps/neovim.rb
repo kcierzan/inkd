@@ -25,11 +25,25 @@ class Neovim < App
   def to_lua_table(theme)
     table = theme.map do |hi, props|
       props = props.reduce([]) do |memo, (k, v)|
-        memo << "#{k} = '#{v}'"
+        memo << parse_lua_key_value(k, v)
       end
-      "  #{hi} = { #{props.join(', ')} };"
+      to_lua_highlight_key(highlight: hi, properties: props)
     end
+    wrap_return_lua_table_literal table
+  end
+
+  def parse_lua_key_value(key, value)
+    value = "'#{value}'" unless [true, false].include? value
+
+    "#{key} = #{value}"
+  end
+
+  def wrap_return_lua_table_literal(table)
     table.unshift 'return {'
     table << '}'
+  end
+
+  def to_lua_highlight_key(highlight:, properties:)
+    "  #{highlight} = { #{properties.join(', ')} };"
   end
 end
