@@ -1,0 +1,569 @@
+palette:
+  # Bg Shades
+  sumiInk0: &sumiInk0 "#16161D"
+  sumiInk1b: &sumiInk1b "#181820"
+  sumiInk1 : &sumiInk1 "#1F1F28"
+  sumiInk2: &sumiInk2 "#2A2A37"
+  sumiInk3: &sumiInk3 "#363646"
+  sumiInk4: &sumiInk4 "#54546D"
+  # Popup and Floats
+  waveBlue1: &waveBlue1 "#223249"
+  waveBlue2: &waveBlue2 "#2D4F67"
+  # Diff and Git
+  winterGreen: &winterGreen "#2B3328"
+  winterYellow: &winterYellow "#49443C"
+  winterRed: &winterRed "#43242B"
+  winterBlue: &winterBlue "#252535"
+  autumnGreen: &autumnGreen "#76946A"
+  autumnRed: &autumnRed "#C34043"
+  autumnYellow: &autumnYellow "#DCA561"
+  # Diag
+  samuraiRed: &samuraiRed "#E82424"
+  roninYellow: &roninYellow "#FF9E3B"
+  waveAqua1: &waveAqua1 "#6A9589"
+  dragonBlue: &dragonBlue "#658594"
+  # Fg and Comments
+  oldWhite: &oldWhite "#C8C093"
+  fujiWhite: &fujiWhite "#DCD7BA"
+  fujiGray: &fujiGray "#727169"
+  springViolet1: &springViolet1 "#938AA9"
+  oniViolet: &oniViolet "#957FB8"
+  crystalBlue: &crystalBlue "#7E9CD8"
+  springViolet2: &springViolet2 "#9CABCA"
+  springBlue: &springBlue "#7FB4CA"
+  lightBlue: &lightBlue "#A3D4D5" # unused yet
+  waveAqua2: &waveAqua2 "#7AA89F" # improve lightness: desaturated greenish Aqua
+  # waveAqua2: "#68AD99"
+  # waveAqua4: "#7AA880"
+  # waveAqua5: "#6CAF95"
+  # waveAqua3: "#68AD99"
+  springGreen: &springGreen "#98BB6C"
+  boatYellow1: &boatYellow1 "#938056"
+  boatYellow2: &boatYellow2 "#C0A36E"
+  carpYellow: &carpYellow "#E6C384"
+  sakuraPink: &sakuraPink "#D27E99"
+  waveRed: &waveRed "#E46876"
+  peachRed: &peachRed "#FF5D62"
+  surimiOrange: &surimiOrange "#FFA066"
+  katanaGray: &katanaGray "#717C7C"
+
+neovim:
+  Comment:
+    fg: *fujiGray
+  ColorColumn: 
+    bg: *sumiInk2 
+  Conceal: 
+    fg: *springViolet1
+    bold: "true" 
+  Cursor: 
+    fg: *sumiInk1
+    bg: *fujiWhite 
+  lCursor: 
+    fg: *sumiInk1
+    bg: *fujiWhite 
+  CursorIM: 
+    fg: *sumiInk1
+    bg: *fujiWhite 
+  CursorLine: 
+    bg: *sumiInk3 
+  CursorColumn: 
+    bg: *sumiInk3 
+  Directory: 
+    fg: *crystalBlue 
+  DiffAdd: 
+    bg: *winterGreen 
+  DiffChange: 
+    bg: *winterBlue 
+  DiffDelete: 
+    fg: *autumnRed
+    bg: *winterRed 
+  DiffText: 
+    bg: *winterYellow 
+  EndOfBuffer: 
+    fg: *sumiInk1 
+  ErrorMsg: 
+    fg: *samuraiRed
+  WinSeparator: 
+    fg: *sumiInk2
+    bg: *sumiInk1b
+  VertSplit: 
+    fg: *sumiInk2
+    bg: *sumiInk1b
+  Folded: 
+    fg: *springViolet1
+    bg: *sumiInk2 
+  FoldColumn: 
+    fg: *sumiInk4 
+  SignColumn: 
+    fg: *sumiInk4 
+  SignColumnSB: 
+    fg: *sumiInk4 
+  Substitute: 
+    fg: *fujiWhite
+    bg: *autumnRed 
+  LineNr: 
+    fg: *sumiInk4 
+  CursorLineNr: 
+    fg: *roninYellow
+    bold: "true" 
+  MatchParen: 
+    fg: *roninYellow
+    bold: "true" 
+  ModeMsg: 
+    fg: *roninYellow
+    bold: "true" 
+  MsgArea: 
+    fg: *oldWhite 
+  MoreMsg: 
+    fg: *dragonBlue
+    bg: *sumiInk1 
+  NonText: 
+    fg: *sumiInk4 
+  Normal: 
+    fg: *fujiWhite
+    bg: "none"
+  NormalNC:
+    fg: *oldWhite
+    bg: *sumiInk1b
+  NormalSB: 
+    fg: *fujiWhite
+    bg: "none"
+  NormalFloat: 
+    fg: *oldWhite
+    bg: *sumiInk0 
+  FloatBorder: 
+    fg: *sumiInk4
+    bg: *sumiInk0 
+  Pmenu: 
+    fg: *fujiWhite
+    bg: *waveBlue1 
+  PmenuSel: 
+    fg: *fujiWhite
+    bg: *waveBlue2 
+  PmenuSbar: 
+    fg: *fujiWhite
+    bg: *waveBlue1 
+  PmenuThumb: 
+    bg: *waveBlue1
+  Question: 
+    fg: *dragonBlue
+    bg: *sumiInk1 
+  QuickFixLine: 
+    bg: *sumiInk3 
+  Search: 
+    fg: *fujiWhite
+    bg: *waveBlue1
+  CurSearch: 
+    fg: *fujiWhite
+    bg: *waveBlue1
+  IncSearch: 
+    fg: *waveBlue1
+    bg: *roninYellow 
+  SpecialKey: 
+    fg: *sumiInk4 
+  SpellBad: 
+    undercurl: "true" 
+    sp: *samuraiRed
+  SpellCap: 
+    undercurl: "true" 
+    sp: *roninYellow 
+  SpellLocal: 
+    undercurl: "true" 
+    sp: *roninYellow 
+  SpellRare: 
+    undercurl: "true" 
+    sp: *roninYellow 
+  StatusLine: 
+    fg: *oldWhite
+    bg: *sumiInk0 
+  StatusLineNC: 
+    fg: *fujiGray
+    bg: *sumiInk0 
+  Winbar: 
+    fg: *oldWhite
+    bg: "none" 
+  WinbarNC: 
+    fg: *oldWhite
+    bg: *sumiInk1b
+  TabLine: 
+    bg: *sumiInk0
+    fg: *springViolet1
+  TabLineFill: 
+    bg: *sumiInk1 
+  TabLineSel: 
+    fg: *oldWhite
+    bg: *sumiInk3 
+  Title: 
+    fg: *crystalBlue
+    bold: "true" 
+  Visual: 
+    bg: *waveBlue1 
+  VisualNOS: 
+    bg: *waveBlue1 
+  WarningMsg: 
+    fg: *roninYellow 
+  Whitespace: 
+    fg: *sumiInk4 
+  WildMenu: 
+    fg: *fujiWhite
+    bg: *waveBlue1 
+  Constant: 
+    fg: *surimiOrange 
+  String: 
+    fg: *springGreen 
+  Character: 
+    fg: *springGreen 
+  Number: 
+    fg: *sakuraPink 
+  Boolean: 
+    fg: *surimiOrange
+    bold: "true" 
+  Float: 
+    fg: *sakuraPink 
+  Identifier: 
+    fg: *carpYellow 
+  Function:
+    fg: *crystalBlue
+  Method: 
+    fg: *crystalBlue
+  Statement:
+    fg: *oniViolet
+  Operator: 
+    fg: *boatYellow2 
+  Keyword:
+    fg: *oniViolet
+  Exception: 
+    fg: *springBlue
+  PreProc: 
+    fg: *surimiOrange 
+  Type:
+    fg: *waveAqua2
+  Special: 
+    fg: *springBlue 
+  Underlined: 
+    fg: *springBlue
+    underline: "true" 
+    bold: "true" 
+  Italic: 
+    italic: "true" 
+  Ignore: 
+    fg: *sumiInk4 
+  Error: 
+    fg: *samuraiRed
+  Todo: 
+    fg: *waveBlue1
+    bg: *dragonBlue
+    bold: "true" 
+  qfLineNr: 
+    fg: *sumiInk4 
+  qfFileName: 
+    fg: *crystalBlue 
+  markdownCode: 
+    fg: *springGreen 
+  markdownCodeBlock: 
+    fg: *springGreen 
+  markdownEscape: 
+    fg: "none" 
+  debugPC: 
+    bg: *winterRed 
+  debugBreakpoint: 
+    fg: *springBlue 
+  LspReferenceText: 
+    bg: *winterYellow 
+  LspReferenceRead: 
+    bg: *winterYellow 
+  LspReferenceWrite: 
+    bg: *winterYellow 
+  DiagnosticError: 
+    fg: *samuraiRed
+  DiagnosticWarn: 
+    fg: *roninYellow 
+  DiagnosticInfo: 
+    fg: *dragonBlue 
+  DiagnosticHint: 
+    fg: *waveAqua1 
+  DiagnosticSignError: 
+    fg: *samuraiRed
+  DiagnosticSignWarn: 
+    fg: *roninYellow 
+  DiagnosticSignInfo: 
+    fg: *dragonBlue 
+  DiagnosticSignHint: 
+    fg: *waveAqua1 
+  DiagnosticVirtualTextError: 
+    fg: *samuraiRed
+  DiagnosticVirtualTextWarn: 
+    fg: *roninYellow 
+  DiagnosticVirtualTextInfo: 
+    fg: *dragonBlue 
+  DiagnosticVirtualTextHint: 
+    fg: *waveAqua1 
+  DiagnosticUnderlineError: 
+    undercurl: "true"
+    sp: *samuraiRed
+  DiagnosticUnderlineWarn: 
+    undercurl: "true"
+    sp: *roninYellow 
+  DiagnosticUnderlineInfo: 
+    undercurl: "true"
+    sp: *dragonBlue 
+  DiagnosticUnderlineHint: 
+    undercurl: "true"
+    sp: *waveAqua1 
+  LspSignatureActiveParameter: 
+    fg: *roninYellow 
+  LspCodeLens: 
+    fg: *fujiGray 
+  TSAttribute: 
+    fg: *surimiOrange 
+  TSWarning: 
+    fg: *waveBlue1
+    bg: *dragonBlue
+    bold: "true" 
+  TSDanger: 
+    fg: *roninYellow 
+  TSConstructor: 
+    fg: *oniViolet  # Function/Special/Statement/Keyword
+  TSException:
+    fg: *oniViolet
+  TSField: 
+    fg: *carpYellow 
+  TSKeyword: 
+    fg: *oniViolet
+  TSKeywordReturn:
+    fg: *oniViolet
+  TSMethod: 
+    fg: *crystalBlue
+  TSOperator: 
+    fg: *boatYellow2 
+  TSKeywordOperator: 
+    fg: *boatYellow2
+    bold: "true" 
+  TSParameter: 
+    fg: *carpYellow 
+  TSProperty: 
+    fg: *carpYellow 
+  TSPunctDelimiter: 
+    fg: *springViolet2 
+  TSPunctBracket: 
+    fg: *springViolet2 
+  TSPunctSpecial: 
+    fg: *springViolet2 
+  TSStringRegex: 
+    fg: *boatYellow2 
+  TSStringEscape: 
+    fg: *boatYellow2
+    bold: "true" 
+  TSVariable: 
+    fg: *fujiWhite 
+  TSVariableBuiltin:
+    fg: *springBlue
+  diffAdded: 
+    fg: *autumnGreen 
+  diffRemoved: 
+    fg: *autumnRed 
+  diffDeleted: 
+    fg: *autumnRed 
+  diffChanged: 
+    fg: *autumnYellow 
+  diffOldFile: 
+    fg: *autumnRed 
+  diffNewFile: 
+    fg: *autumnGreen 
+  NeogitDiffDelete: 
+    fg: *autumnRed
+    bg: *winterRed 
+  NeogitDiffAdd: 
+    fg: *autumnGreen
+    bg: *winterGreen 
+  NeogitHunkHeader: 
+    fg: *carpYellow 
+  NeogitDiffContextHighlight: 
+    bg: *winterBlue 
+  GitSignsAdd: 
+    fg: *autumnGreen 
+  GitSignsChange: 
+    fg: *autumnYellow 
+  GitSignsDelete: 
+    fg: *autumnRed 
+  GitSignsDeleteLn: 
+    bg: *winterRed 
+  # Telescope: 
+  TelescopeBorder: 
+    fg: *sumiInk4
+    bg: *sumiInk1 
+  TelescopeResultsClass: 
+    fg: *waveAqua2
+  TelescopeResultsStruct: 
+    fg: *waveAqua2
+  TelescopeResultsVariable: 
+    fg: *fujiWhite 
+  NvimTreeNormal: 
+    fg: *fujiWhite
+    bg: "none"
+  NvimTreeNormalNC: 
+    fg: *oldWhite
+    bg: *sumiInk1b
+  NvimTreeRootFolder: 
+    fg: *carpYellow
+    bold: "true" 
+  NvimTreeGitDirty: 
+    fg: *autumnYellow 
+  NvimTreeGitNew: 
+    fg: *autumnGreen 
+  NvimTreeGitDeleted: 
+    fg: *autumnRed 
+  NvimTreeSpecialFile: 
+    fg: *springBlue 
+  NvimTreeImageFile: 
+    fg: *springBlue
+  NvimTreeSymlink: 
+    fg: *waveAqua2
+  NvimTreeFolderName: 
+    fg: *crystalBlue 
+  NvimTreeExecFile: 
+    fg: *springGreen
+    bold: "true" 
+  NvimTreeGitStaged: 
+    fg: *autumnGreen 
+  NvimTreeOpenedFile: 
+    fg: *springBlue 
+    italic: "true" 
+  NvimTreeWinSeparator: 
+    fg: *sumiInk2
+    bg: *sumiInk1b
+  DashboardShortCut: 
+    fg: *springBlue 
+  DashboardHeader: 
+    fg: *autumnRed 
+  DashboardCenter: 
+    fg: *carpYellow 
+  DashboardFooter: 
+    fg: *crystalBlue 
+  FloatermBorder: 
+    fg: *sumiInk4
+    bg: *sumiInk1 
+  healthError: 
+    fg: *samuraiRed
+  healthSuccess: 
+    fg: *springGreen 
+  healthWarning: 
+    fg: *roninYellow 
+  CmpDocumentation: 
+    fg: *oldWhite
+    bg: *sumiInk0 
+  CmpDocumentationBorder: 
+    fg: *sumiInk4
+    bg: *sumiInk0 
+  CmpCompletion: 
+    fg: *fujiWhite
+    bg: *waveBlue1 
+  CmpCompletionSel: 
+    fg: "none"
+    bg: *waveBlue2 
+  CmpCompletionBorder: 
+    fg: *waveBlue1
+    bg: *waveBlue1 
+  CmpCompletionThumb: 
+    bg: *waveBlue1
+  CmpCompletionSbar: 
+    fg: *fujiWhite
+    bg: *waveBlue1 
+  CmpItemAbbr: 
+    fg: *fujiWhite 
+  CmpItemAbbrDeprecated: 
+    fg: *fujiGray
+    strikethrough: "true" 
+  CmpItemAbbrMatch: 
+    fg: *crystalBlue 
+  CmpItemAbbrMatchFuzzy: 
+    fg: *crystalBlue 
+  CmpItemKindDefault: 
+    fg: *katanaGray 
+  CmpItemMenu: 
+    fg: *fujiGray 
+  CmpItemKindVariable: 
+    fg: *oldWhite 
+  CmpItemKindFunction: 
+    fg: *crystalBlue
+  CmpItemKindMethod: 
+    fg: *crystalBlue
+  CmpItemKindConstructor: 
+    fg: *oniViolet  # Function/Special/Statement/Keyword
+  CmpItemKindClass: 
+    fg: *waveAqua2
+  CmpItemKindInterface: 
+    fg: *waveAqua2
+  CmpItemKindStruct: 
+    fg: *waveAqua2
+  CmpItemKindProperty: 
+    fg: *carpYellow 
+  CmpItemKindField: 
+    fg: *carpYellow 
+  CmpItemKindEnum: 
+    fg: *carpYellow 
+  CmpItemKindSnippet: 
+    fg: *springBlue 
+  CmpItemKindFile: 
+    fg: *crystalBlue 
+  CmpItemKindFolder: 
+    fg: *crystalBlue 
+  CmpItemKindKeyword: 
+    fg: *oniViolet
+  CmpItemKindTypeParameter: 
+    fg: *carpYellow 
+  CmpItemKindConstant: 
+    fg: *surimiOrange 
+  CmpItemKindOperator: 
+    fg: *boatYellow2 
+  CmpItemKindEnumMember: 
+    fg: *carpYellow 
+  CmpItemKindValue: 
+    fg: *springGreen 
+  CmpItemKindCopilot: 
+    fg: *springGreen 
+  IndentBlanklineChar: 
+    fg: *sumiInk4 
+  IndentBlanklineSpaceChar: 
+    fg: *sumiInk4 
+  IndentBlanklineSpaceCharBlankline: 
+    fg: *sumiInk4 
+  IndentBlanklineContextChar: 
+    fg: *springViolet1
+  IndentBlanklineContextStart: 
+    sp: *springViolet1
+    underline: "true" 
+
+kitty:
+  cursor: *fujiWhite
+  foreground: *fujiWhite
+  background: *sumiInk1
+  color0: *sumiInk0
+  color1: *waveRed
+  color2: *springGreen
+  color3: *carpYellow
+  color4: *dragonBlue
+  color5: *oniViolet
+  color6: *springBlue
+  color7: *oldWhite
+  color8: *sumiInk4
+  color9: *samuraiRed
+  color10: *waveAqua1
+  color11: *autumnYellow
+  color12: *crystalBlue
+  color13: *springViolet1
+  color14: *lightBlue
+  color15: *fujiGray
+
+lualine:
+  bg: *sumiInk3
+  fg: *fujiWhite
+  red: *waveRed
+  green: *springGreen
+  yellow: *carpYellow
+  blue: *dragonBlue
+  cyan: *springBlue
+  magenta: *sakuraPink
+  violet: *oniViolet
+  orange: *roninYellow
+  darkblue: *crystalBlue
