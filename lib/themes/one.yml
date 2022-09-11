@@ -25,6 +25,9 @@ palette:
   cursor_text: *bg
 
 neovim:
+  BufferLineOffsetSeparator:
+    bg: *bg
+    fg: *bg
   Boolean:
     fg: *green
   BufferCurrent:
