@@ -53,7 +53,7 @@ neovim:
     bg: *bg_highlight
   EndOfBuffer: 
     fg: *bg
-    bg: 'none'
+    bg: "none"
   IncSearch: 
     fg: *bg1
     bg: *orange
@@ -64,21 +64,21 @@ neovim:
     bg: *bg_highlight
   Conceal:  
     fg: *grey
-    bg: 'none'
+    bg: "none"
   Cursor:
-    bg: 'none'
+    bg: "none"
     reverse: true
   vCursor:
-    bg: 'none'
+    bg: "none"
     reverse: true
   iCursor:
-    bg: 'none'
+    bg: "none"
     reverse: true
   lCursor:
-    bg: 'none'
+    bg: "none"
     reverse: true
   CursorIM:
-    bg: 'none'
+    bg: "none"
     reverse: true
   CursorColumn:
     bg: *bg_highlight
@@ -90,6 +90,7 @@ neovim:
     fg: *cyan
   CursorLineNr:
     fg: *blue
+    bg: *bg_highlight
   DiffAdd:
     fg: *black
     bg: *dark_green
@@ -104,14 +105,14 @@ neovim:
     bg: *fg
   Directory:
     fg: *blue
-    bg: 'none'
+    bg: "none"
   ErrorMsg:
     fg: *red
-    bg: 'none'
+    bg: "none"
     bold: true
   WarningMsg:
     fg: *yellow
-    bg: 'none'
+    bg: "none"
     bold: true
   ModeMsg:
     fg: *fg
@@ -119,7 +120,7 @@ neovim:
     bold: true
   MatchParen:
     fg: *red
-    bg: 'none'
+    bg: "none"
   NonText:
     fg: *bg1
   Whitespace:
@@ -162,19 +163,19 @@ neovim:
     bg: *blue
   SpellBad:
     fg: *red
-    bg: 'none'
+    bg: "none"
     undercurl: true
   SpellCap:
     fg: *blue
-    bg: 'none'
+    bg: "none"
     undercurl: true
   SpellLocal:
     fg: *cyan
-    bg: 'none'
+    bg: "none"
     undercurl: true
   SpellRare:
     fg: *violet
-    bg: 'none'
+    bg: "none"
     undercurl: true
   Visual:
     fg: *black
@@ -406,7 +407,7 @@ neovim:
     bold: true
   NvimTreeSpecialFile:
     fg: *fg
-    bg: 'none'
+    bg: "none"
   NvimTreeGitDirty:
     fg: *redwine
   TelescopeBorder:
@@ -500,11 +501,25 @@ neovim:
     fg: *fg
   NeogitHunkHeaderHighlight:
     fg: *redwine
+  BufferLineBufferSelected:
+    style: "underline"
+    sp: *red
+  BufferLineFill:
+    bg: *bg
+  NvimTreeNormal:
+    bg: *base2
+  WhichKeyFloat:
+    fg: *fg
+    bg: *base2
 
 kitty:
   cursor: *blue
   foreground: *fg
   background: *bg
+  active_tab_foreground: *base2
+  active_tab_background: *dark_green
+  inactive_tab_foreground: *base2
+  inactive_tab_background: *base5
   color0: *black
   color1: *red
   color2: *green
@@ -523,7 +538,7 @@ kitty:
   color15: *base7
 
 lualine:
-  bg: *base4
+  bg: *base2
   fg: *fg
   red: *red
   green: *green
