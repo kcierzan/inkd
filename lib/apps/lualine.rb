@@ -12,8 +12,4 @@ class Lualine < App
     lines << '}'
     Utils::Filesystem.write_file lines, OUTPUT_FILE
   end
-
-  private
-
-  def reload!; end
 end
