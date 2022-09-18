@@ -370,7 +370,7 @@ kitty:
   active_tab_foreground: *bg_dark
   active_tab_background: *blue
   inactive_tab_foreground: *bg_dark
-  inactive_tab_background: *base5
+  inactive_tab_background: *blue
   color0: *black
   color1: *red
   color2: *green
