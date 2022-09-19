@@ -579,3 +579,8 @@ lualine:
   violet: *oniViolet
   orange: *roninYellow
   darkblue: *crystalBlue
+
+sketchybar:
+  bg: *sumiInk1
+  label_color: *fujiWhite
+  icon_color: *fujiWhite

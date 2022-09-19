@@ -23,6 +23,7 @@ class InkdCLI < Thor
     return print_fonts if options[:list] || invalid_font?(font)
 
     kitty.apply_font! font
+    sketchybar.apply_font! font
   end
 
   private
@@ -56,6 +57,10 @@ class InkdCLI < Thor
 
   def kitty
     @kitty ||= Kitty.new
+  end
+
+  def sketchybar
+    @sketchybar ||= Sketchybar.new
   end
 
   def apps
