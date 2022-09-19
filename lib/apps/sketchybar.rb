@@ -6,32 +6,23 @@ require 'utils'
 class Sketchybar < App
   OUTPUT_FILE = 'sketchybar.ink.sh'
   FONT_OUTPUT_FILE = 'sketchybar-font.ink.sh'
-  THEME_TEMPLATE = <<~CONFIG
+  THEME_TEMPLATE = <<~THEME
     #!/usr/bin/env sh
 
     sketchybar --bar color=0xFF%<bg>s
     sketchybar --default label.color=0xFF%<label_color>s \\
                          icon.color=0xFF%<icon_color>s
-  CONFIG
+  THEME
 
-  FONT_TEMPLATE = <<~FONT_CONFIG
+  FONT_TEMPLATE = <<~FONT
     #!/usr/bin/env sh
 
     sketchybar --default icon.font=%<font>s \\
                          label.font=%<font>s
-  FONT_CONFIG
+  FONT
 
   def apply_theme!(theme)
-    theme = strip_hashes theme
-    lines = format(
-      THEME_TEMPLATE,
-      {
-        bg: theme['bg'],
-        label_color: theme['label_color'],
-        icon_color: theme['icon_color']
-      }
-    )
-    Utils::Filesystem.write_file lines.split("\n"), OUTPUT_FILE
+    Utils::Filesystem.write_file(theme_file_lines(theme), OUTPUT_FILE)
     reload!
   end
 
@@ -50,5 +41,17 @@ class Sketchybar < App
 
   def strip_hashes(theme)
     theme.each { |k, v| theme[k] = v[1..].upcase }
+  end
+
+  def theme_file_lines(theme)
+    theme = strip_hashes theme
+    format(
+      THEME_TEMPLATE,
+      {
+        bg: theme['bg'],
+        label_color: theme['label_color'],
+        icon_color: theme['icon_color']
+      }
+    ).split("\n")
   end
 end
