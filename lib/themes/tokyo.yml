@@ -404,3 +404,8 @@ neovim:
     bg: *bg_dark 
   NvimTreeNormal:
     bg: *bg_dark 
+
+sketchybar:
+  bg: *background
+  label_color: *foreground
+  icon_color: *foreground

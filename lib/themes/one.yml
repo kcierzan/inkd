@@ -420,3 +420,8 @@ lualine:
   violet: *purple
   orange: *yellow_bright
   darkblue: *blue_bright
+
+sketchybar:
+  bg: *bg
+  label_color: *fg
+  icon_color: *fg

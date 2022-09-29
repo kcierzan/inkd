@@ -355,3 +355,8 @@ xcolors:
   violet: *mauve
   orange: *peach
   darkblue: *sapphire
+
+sketchybar:
+  bg: *base
+  label_color: *text
+  icon_color: *text
