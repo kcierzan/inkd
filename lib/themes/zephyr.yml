@@ -549,3 +549,8 @@ lualine:
   violet: *violet
   orange: *orange
   darkblue: *teal
+
+sketchybar:
+  bg: *bg
+  label_color: *fg
+  icon_color: *fg
