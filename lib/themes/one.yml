@@ -235,60 +235,56 @@ neovim:
   SignColumn:
     fg: "none"
     bg: "none"
-  TSAnnotation:
+  "@annotation":
     fg: *purple
-  TSAttribute:
+  "@attribute":
     fg: *yellow
-  TSBoolean:
+  "@boolean":
     fg: *green
-  TSCharacter:
-    fg: *green
-  TSConstBuiltin: 
+  "@constant.builtin":
     fg: *cyan
     style: "italic"
-  TSConstant: 
+  "@constant":
     fg: *red
     style: "italic"
-  TSConstructor:
+  "@constructor":
     fg: *fg
-  TSFunction:
+  "@function":
     fg: *blue
-  TSFuncBuiltin:
+  "@function.builtin":
     fg: *blue
-  TSInclude:
+  "@include":
     fg: *purple
-  TSKeywordFunction:
+  "@keyword.function":
     fg: *purple
-  TSKeywordOperator:
+  "@keyword.operator":
     fg: *purple
-  TSLabel:
+  "@label":
     fg: *purple
-  TSMath:
-    fg: *green
-  TSMethod:
+  "@method":
     fg: *blue
-  TSNamespace:
+  "@namespace":
     fg: *yellow
-  TSNumber:
+  "@number":
     fg: *yellow
-  TSParameter:
+  "@parameter":
     fg: *red
     style: "italic"
-  TSPunctDelimitter:
+  "@punctuation.delimiter":
     fg: *bg_brighter
-  TSPunctSpecial:
+  "@punctuation.special":
     fg: *yellow
-  TSSymbol:
+  "@symbol":
     fg: *yellow
-  TSText:
+  "@text":
     fg: *green
-  TSType:
+  "@type":
     fg: *yellow
-  TSTypeBuiltin:
+  "@type.builtin":
     fg: *cyan
-  TSVariable:
+  "@variable":
     fg: *red
-  TSVariableBuiltin:
+  "@variable.builtin":
     fg: *cyan
   TabLineFill:
     style: "none"
@@ -359,7 +355,7 @@ neovim:
   htmlH2:
     fg: *purple
   htmlH3:
-    fg: *green 
+    fg: *green
   NvimTreeNormal:
     bg: "#23252A"
 

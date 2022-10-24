@@ -36,272 +36,328 @@ neovim:
   BufferLineFill:
     bg: *base
   Boolean:
-    fg: *peach 
+    fg: *peach
   BufferCurrent:
     fg: *yellow
-    style: "bold" 
+    style: "bold"
   BufferCurrentMod:
-    fg: *blue 
+    fg: *blue
   BufferCurrentSign:
-    fg: *blue 
+    fg: *blue
   BufferTabPageFill:
-    fg: *blue 
+    fg: *blue
   Character:
-    fg: *teal 
+    fg: *teal
   ColorColumn:
-    bg: *surface0 
+    bg: *surface0
   Comment:
     fg: *surface2
-    style: "italic" 
+    style: "italic"
   Conceal:
-    fg: *overlay1 
+    fg: *overlay1
   Conditional:
-    fg: *red 
+    fg: *red
   Constant:
-    fg: *peach 
+    fg: *peach
   Cursor:
     fg: "none"
     bg: "none"
   CursorColumn:
-    bg: *mantle 
+    bg: *mantle
   CursorIm:
     fg: *base
-    bg: *text 
+    bg: *text
   CursorLine:
     bg: "#323549"
   CursorLineNr:
-    fg: *lavender 
+    fg: *lavender
   DebugBreakpoint:
     fg: *base
-    bg: *red 
+    bg: *red
   DiffAdd:
-    fg: *green 
+    fg: *green
   DiffChange:
-    fg: *yellow 
+    fg: *yellow
   DiffDelete:
-    fg: *red 
+    fg: *red
   DiffText:
-    style: "reverse" 
+    style: "reverse"
   Directory:
-    fg: *blue 
+    fg: *blue
   EndOfBuffer:
-    fg: *base 
+    fg: *base
   Error:
-    fg: *red 
+    fg: *red
   ErrorMsg:
     fg: *red
-    style: "bold" 
+    style: "bold"
   Float:
-    fg: *peach 
+    fg: *peach
   FoldColumn:
     fg: *base
-    bg: *overlay0 
+    bg: *overlay0
   Folded:
     fg: *blue
-    bg: *surface1 
+    bg: *surface1
   Function:
-    fg: *blue 
+    fg: *blue
   htmlH1:
-    fg: *pink 
+    fg: *pink
   htmlH2:
-    fg: *blue 
+    fg: *blue
   htmlH3:
-    fg: *peach 
+    fg: *peach
   Identifier:
-    fg: *flamingo 
+    fg: *flamingo
   IncSearch:
-    fg: *mantle 
+    fg: *mantle
   Include:
-    fg: *pink 
+    fg: *pink
   Keyword:
-    fg: *pink 
+    fg: *pink
+  "@keyword.export":
+    fg: *sky
+    style: "bold"
+  "@keyword.function":
+    fg: *mauve
   lCursor:
     fg: "none"
     bg: "none"
-    style: "reverse" 
+    style: "reverse"
   Label:
-    fg: *peach 
+    fg: *peach
   LineNr:
-    fg: *surface1 
+    fg: *surface1
   Macro:
-    fg: *yellow 
+    fg: *yellow
   MatchParen:
     fg: *peach
-    style: "bold" 
+    style: "bold"
   ModeMsg:
     fg: *text
-    style: "bold" 
+    style: "bold"
   Normal:
-    bg: *base 
+    bg: *base
   Number:
-    fg: *peach 
+    fg: *peach
+  "@number":
+    fg: *peach
   Operator:
-    fg: *sky 
+    fg: *sky
   Pmenu:
     bg: *surface0
-    fg: *overlay2 
+    fg: *overlay2
   PmenuSel:
     fg: *text
     bg: *surface1
-    style: "bold" 
+    style: "bold"
   PreProc:
-    fg: *pink 
+    fg: *pink
   Question:
-    fg: *blue 
+    fg: *blue
   QuickFixLine:
     bg: *surface1
-    style: "bold" 
+    style: "bold"
   Repeat:
-    fg: *red 
+    fg: *red
   Search:
-    fg: *text 
+    fg: *text
   SignColumn:
     fg: *surface1
     bg: "none"
   Special:
-    fg: *pink 
+    fg: *pink
   SpecialChar:
-    fg: *yellow 
+    fg: *yellow
   SpellBad:
     fg: *red
     bg: "none"
-    style: "undercurl" 
+    style: "undercurl"
   SpellCap:
     fg: *blue
     bg: "none"
-    style: "undercurl" 
+    style: "undercurl"
   SpellLocal:
     fg: *sapphire
     bg: "none"
-    style: "undercurl" 
+    style: "undercurl"
   SpellRare:
     fg: *mauve
     bg: "none"
-    style: "undercurl" 
+    style: "undercurl"
   Statement:
-    fg: *mauve 
+    fg: *mauve
   StatusLine:
     fg: *text
-    bg: *mantle 
+    bg: *mantle
   StatusLineNc:
-    fg: *surface1 
-    bg: *mantle 
+    fg: *surface1
+    bg: *mantle
   StorageClass:
-    fg: *yellow 
+    fg: *yellow
   String:
-    fg: *green 
+    fg: *green
+  "@string":
+    fg: *green
+  "@string.regex":
+    fg: *peach
   Structure:
     fg: *yellow
-    style: "italic" 
-  TSAttribute:
-    fg: *yellow 
-  TSBoolean:
-    fg: *green 
-  TSCharacter:
-    fg: *green 
-  TSConditional:
-    fg: *mauve 
-  TSConstBuiltin:
-    fg: *peach
-    style: "italic" 
-  TSConstant:
-    fg: *red
-    style: "italic" 
-  TSConstructor:
-    fg: *base
-  TSException:
-    fg: *mauve 
-  TSField:
-    fg: *teal 
-  TSFloat:
-    fg: *peach 
-  TSFuncBuiltin:
-    fg: *peach 
-  TSFuncMacro:
-    fg: *teal 
-  TSFunction:
-    fg: *blue 
-  TSInclude:
-    fg: *mauve 
-  TSKeywordOperator:
-    fg: *mauve 
-  TSLabel:
+    style: "italic"
+  "@attribute":
+    fg: *yellow
+  "@boolean":
+    fg: *green
+  "@conditional":
     fg: *mauve
-  TSMath:
-    fg: *green 
-  TSMethod:
-    fg: *blue 
-  TSNamespace:
-    fg: *blue 
-  TSNumber:
-    fg: *peach 
-  TSOperator:
-    fg: *sky 
-  TSParameter:
+  "@constant.builtin":
+    fg: *peach
+    style: "italic"
+  "@constant.macro":
+    fg: *mauve
+  "@constant":
+    fg: *peach
+    style: "italic"
+  "@constructor":
+    fg: *base
+  "@constructor.lua":
+    fg: *lavender
+  "@constructor.typescript":
+    fg: *lavender
+  "@constructor.tsx":
+    fg: *lavender
+  "@tag.attribute.tsx":
+    fg: *mauve
+  "@exception":
+    fg: *mauve
+  "@field":
+    fg: *teal
+  "@float":
+    fg: *peach
+  "@function.builtin":
+    fg: *peach
+  "@function.macro":
+    fg: *teal
+  "@function":
+    fg: *blue
+  "@include":
+    fg: *mauve
+  "@keyword.operator":
+    fg: *mauve
+  "@label":
+    fg: *sapphire
+  "@label.json":
+    fg: *blue
+  "@field.yaml":
+    fg: *blue
+  "@method":
+    fg: *blue
+  "@namespace":
+    fg: *blue
+  "@operator":
+    fg: *sky
+  "@parameter":
     fg: *red
-    style: "italic" 
-  TSProperty:
-    fg: *teal 
-  TSPunctSpecial:
-    fg: *sky 
-  TSRepeat:
-    fg: *mauve 
-  TSSymbol:
-    fg: *yellow 
-  TSText:
-    fg: *green 
-  TSType:
-    fg: *yellow 
-  TSTypeBuiltin:
-    fg: *yellow 
-  TSVariable:
-    fg: *red 
-  TSVariableBuiltin:
-    fg: *red 
+    style: "italic"
+  "@property":
+    fg: *teal
+  "@punctuation.special":
+    fg: *sky
+  "@punctuation.delimiter":
+    fg: *overlay2
+  "@punctuation.bracket":
+    fg: *overlay2
+  "@repeat":
+    fg: *mauve
+  "@text":
+    fg: *text
+  "@text.note":
+    fg: *base
+    bg: *blue
+  "@text.warning":
+    fg: *base
+    bg: *yellow
+  "@text.danger":
+    fg: *base
+    bg: *red
+  "@text.uri":
+    fg: *rosewater
+  "@text.literal":
+    fg: *teal
+    style: "italic"
+  "@text.reference":
+    fg: *lavender
+    style: "italic"
+  "@text.title":
+    fg: *blue
+  "@text.emphasis":
+    fg: *maroon
+    style: "italic"
+  "@text.strong":
+    fg: *maroon
+    style: "italic"
+  "@string.escape":
+    fg: *pink
+  "@property.toml":
+    fg: *blue
+  "@property.cpp":
+    fg: *rosewater
+  "@type":
+    fg: *yellow
+  "@type.builtin":
+    fg: *yellow
+  "@variable":
+    fg: *text
+  "@tag.attribute":
+    fg: *teal
+  "@tag":
+    fg: *mauve
+  "@tag.delimiter":
+    fg: *sky
   TabLine:
-    fg: *surface1 
-    bg: *mantle 
+    fg: *surface1
+    bg: *mantle
   TabLineFill:
     bg: *mantle
   TabLineSel:
     fg: *green
-    bg: *surface1 
+    bg: *surface1
   Tag:
-    fg: *yellow 
+    fg: *yellow
   Terminal:
-    fg: *text 
-    bg: *base 
+    fg: *text
+    bg: *base
   Todo:
     fg: *yellow
-    style: "italic" 
+    style: "italic"
   Type:
-    fg: *blue 
+    fg: *blue
   Typedef:
-    fg: *yellow 
+    fg: *yellow
   Underlined:
-    style: :underline 
+    style: :underline
   vCursor:
     fg: "none"
     bg: "none"
-    style: "reverse" 
+    style: "reverse"
   VertSplit:
-    fg: *crust 
+    fg: *crust
   Visual:
     bg: *surface1
-    style: "bold" 
+    style: "bold"
   VisualNos:
     fg: *surface1
-    style: "bold" 
+    style: "bold"
   WarningMsg:
     fg: *yellow
-    style: "bold" 
+    style: "bold"
   WhichKeyFloat:
-    fg: *text 
+    fg: *text
     bg: *mantle
   Whitespace:
-    fg: *mantle 
+    fg: *mantle
   WildMenu:
-    bg: *overlay0 
+    bg: *overlay0
   NvimTreeNormal:
     bg: *mantle
 

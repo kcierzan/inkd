@@ -274,19 +274,19 @@ neovim:
   DashboardFooter:
     fg: *yellow
     bold: true
-  TSFunction:
+  "@function":
     fg: *cyan
-  TSMethod:
+  "@method":
     fg: *cyan
-  TSKeywordFunction:
+  "@keyword.function":
     fg: *red
-  TSProperty:
+  "@property":
     fg: *yellow
-  TSType:
+  "@type":
     fg: *teal
-  TSVariable:
+  "@variable":
     fg: "#f2f2bf"
-  TSPunctBracket:
+  "@punctuation.bracket":
     fg: *bracket
   vimCommentTitle:
     fg: *grey

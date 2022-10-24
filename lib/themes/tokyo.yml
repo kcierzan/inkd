@@ -282,72 +282,76 @@ neovim:
     style: "italic" 
   String:
     fg: *green 
+  "@string.regex":
+    fg: *blue6
+  "@string.escape":
+    fg: *magenta
   Structure:
     fg: *red
     style: "italic" 
   SignColumn:
     fg: "none"
     bg: "none" 
-  TSAnnotation:
+  "@annotation":
     fg: *purple 
-  TSAttribute:
+  "@attribute":
     fg: *yellow 
-  TSBoolean:
+  "@boolean":
     fg: *green 
-  TSCharacter:
+  "@character":
     fg: *green 
-  TSConstBuiltin:
+  "@constant.builtin":
     fg: *cyan
     style: "italic" 
-  TSConstant:
+  "@constant":
     fg: *red
     style: "italic" 
-  TSConstructor:
-    fg: *foreground 
-  TSField:
+  "@constructor":
+    fg: *magenta
+  "@field":
     fg: *green1 
-  TSFunction:
+  "@function":
     fg: *blue 
-  TSFuncBuiltin:
+  "@function.builtin":
     fg: *blue 
-  TSInclude:
+  "@include":
     fg: *purple 
-  TSKeyword:
+  "@keyword":
     fg: *purple 
-  TSKeywordFunction:
+  "@keyword.function":
     fg: *magenta 
-  TSKeywordOperator:
+  "@keyword.operator":
     fg: *purple 
-  TSLabel:
+  "@operator":
+    fg: *blue5
+  "@label":
     fg: *blue 
-  TSMath:
-    fg: *green 
-  TSMethod:
+  "@method":
     fg: *blue 
-  TSNamespace:
+  "@namespace":
     fg: *yellow 
-  TSNumber:
+  "@number":
     fg: *yellow 
-  TSParameter:
+  "@parameter":
     fg: *yellow
     style: "italic" 
-  TSPunctDelimitter:
+  "@punctuation.delimiter":
     fg: *blue5 
-  TSPunctBracket:
+  "@punctuation.bracket":
     fg: *fg_dark 
-  TSPunctSpecial:
+  "@punctuation.special":
+    fg: *blue5
+  "@symbol":
     fg: *yellow 
-  TSSymbol:
-    fg: *yellow 
-  TSTextReference:
+  "@text.reference":
     fg: *teal 
-  TSText:
+  "@text":
     fg: *green 
-  TSType:
+  "@type":
     fg: *yellow 
-  TSTypeBuiltin:
+  "@type.builtin":
     fg: *magenta 
-  TSVariableBuiltin:
+  "@variable.builtin":
     fg: *red 
   TabLineFill:
     style: "none" 

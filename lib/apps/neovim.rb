@@ -44,6 +44,10 @@ class Neovim < App
   end
 
   def to_lua_highlight_key(highlight:, properties:)
+    if highlight.chr == "@"
+      highlight = "[\"#{highlight}\"]"
+    end
+
     "  #{highlight} = { #{properties.join(', ')} };"
   end
 end
