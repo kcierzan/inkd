@@ -1,339 +1,424 @@
-palette:
-  rosewater: &rosewater "#F4DBD6"
-  flamingo: &flamingo "#F0C6C6"
-  pink: &pink "#F5BDE6"
-  mauve: &mauve "#C6A0F6"
-  red: &red "#ED8796"
-  maroon: &maroon "#EE99A0"
-  peach: &peach "#F5A97F"
-  yellow: &yellow "#EED49F"
-  green: &green "#A6DA95"
-  teal: &teal "#8BD5CA"
-  sky: &sky "#91D7E3"
-  sapphire: &sapphire "#7DC4E4"
-  blue: &blue "#8AADF4"
-  lavender: &lavender "#B7BDF8"
-  text: &text "#CAD3F5"
-  subtext1: &subtext1 "#B8C0E0"
-  subtext0: &subtext0 "#A5ADCB"
-  overlay2: &overlay2 "#939AB7"
-  overlay1: &overlay1 "#8087A2"
-  overlay0: &overlay0 "#6E738D"
-  surface2: &surface2 "#5B6078"
-  surface1: &surface1 "#494D64"
-  surface0: &surface0 "#363A4F"
-  base: &base "#24273A"
-  mantle: &mantle "#1E2030"
-  crust: &crust "#181926"
+palettes:
+  macchiato:
+    rosewater: "#F4DBD6"
+    flamingo: "#F0C6C6"
+    pink: "#F5BDE6"
+    mauve: "#C6A0F6"
+    red: "#ED8796"
+    maroon: "#EE99A0"
+    peach: "#F5A97F"
+    yellow: "#EED49F"
+    green: "#A6DA95"
+    teal: "#8BD5CA"
+    sky: "#91D7E3"
+    sapphire: "#7DC4E4"
+    blue: "#8AADF4"
+    lavender: "#B7BDF8"
+    text: "#CAD3F5"
+    subtext1: "#B8C0E0"
+    subtext0: "#A5ADCB"
+    overlay2: "#939AB7"
+    overlay1: "#8087A2"
+    overlay0: "#6E738D"
+    surface2: "#5B6078"
+    surface1: "#494D64"
+    surface0: "#363A4F"
+    base: "#24273A"
+    mantle: "#1E2030"
+    crust: "#181926"
+
+  latte:
+    rosewater: "#dc8a78"
+    flamingo: "#dd7878"
+    pink: "#ea76cb"
+    mauve: "#8839ef"
+    red: "#d20f39"
+    maroon: "#e64553"
+    peach: "#fe640b"
+    yellow: "#df8e1d"
+    green: "#40a02b"
+    teal: "#179299"
+    sky: "#04a5e5"
+    sapphire: "#209fb5"
+    blue: "#209fb5"
+    lavender: "#7287fd"
+    text: "#4c4f69"
+    subtext1: "#5c5f77"
+    subtext0: "#6c6f85"
+    overlay2: "#7c7f93"
+    overlay1: "#8c8fa1"
+    overlay0: "#9ca0b0"
+    surface2: "#acb0be"
+    surface1: "#bcc0cc"
+    surface0: "#ccd0da"
+    base: "#eff1f5"
+    mantle: "#e6e9ef"
+    crust: "#dce0e8"
+
+  frappe:
+    rosewater: "#f2d5cf"
+    flamingo: "#eebebe"
+    pink: "#f4b8e4"
+    mauve: "#ca9ee6"
+    red: "#e78284"
+    maroon: "#ea999c"
+    peach: "#ef9f76"
+    yellow: "#e5c890"
+    green: "#a6d189"
+    teal: "#81c8be"
+    sky: "#99d1db"
+    sapphire: "#85c1dc"
+    blue: "#8caaee"
+    lavender: "#babbf1"
+    text: "#c6d0f5"
+    subtext1: "#b5bfe2"
+    subtext0: "#a5adce"
+    overlay2: "#949cbb"
+    overlay1: "#838ba7"
+    overlay0: "#737994"
+    surface2: "#626880"
+    surface1: "#51576d"
+    surface0: "#414559"
+    base: "#303446"
+    mantle: "#292c3c"
+    crust: "#232634"
+
+  mocha:
+    rosewater: "#f5e0dc"
+    flamingo: "#f2cdcd"
+    pink: "#f5c2e7"
+    mauve: "#cba6f7"
+    red: "#f38ba8"
+    maroon: "#eba0ac"
+    peach: "#fab387"
+    yellow: "#f9e2af"
+    green: "#a6e3a1"
+    teal: "#94e2d5"
+    sky: "#89dceb"
+    sapphire: "#74c7ec"
+    blue: "#89b4fa"
+    lavender: "#b4befe"
+    text: "#cdd6f4"
+    subtext1: "#bac2de"
+    subtext0: "#a6adc8"
+    overlay2: "#9399b2"
+    overlay1: "#7f849c"
+    overlay0: "#6c7086"
+    surface2: "#585b70"
+    surface1: "#45475a"
+    surface0: "#313244"
+    base: "#1e1e2e"
+    mantle: "#181825"
+    crust: "#11111b"
 
 neovim:
   BufferLineBufferSelected:
     style: "underline"
-    sp: *red
+    sp: "%{red}"
   BufferLineOffsetSeparator:
-    bg: *base
-    fg: *base
+    bg: "%{base}"
+    fg: "%{base}"
   BufferLineFill:
-    bg: *base
+    bg: "%{base}"
   Boolean:
-    fg: *peach
+    fg: "%{peach}"
   BufferCurrent:
-    fg: *yellow
+    fg: "%{yellow}"
     style: "bold"
   BufferCurrentMod:
-    fg: *blue
+    fg: "%{blue}"
   BufferCurrentSign:
-    fg: *blue
+    fg: "%{blue}"
   BufferTabPageFill:
-    fg: *blue
+    fg: "%{blue}"
   Character:
-    fg: *teal
+    fg: "%{teal}"
   ColorColumn:
-    bg: *surface0
+    bg: "%{surface0}"
   Comment:
-    fg: *surface2
+    fg: "%{surface2}"
     style: "italic"
   Conceal:
-    fg: *overlay1
+    fg: "%{overlay1}"
   Conditional:
-    fg: *red
+    fg: "%{red}"
   Constant:
-    fg: *peach
+    fg: "%{peach}"
   Cursor:
     fg: "none"
     bg: "none"
   CursorColumn:
-    bg: *mantle
+    bg: "%{mantle}"
   CursorIm:
-    fg: *base
-    bg: *text
+    fg: "%{base}"
+    bg: "%{text}"
   CursorLine:
     bg: "#323549"
   CursorLineNr:
-    fg: *lavender
+    fg: "%{lavender}"
   DebugBreakpoint:
-    fg: *base
-    bg: *red
+    fg: "%{base}"
+    bg: "%{red}"
   DiffAdd:
-    fg: *green
+    fg: "%{green}"
   DiffChange:
-    fg: *yellow
+    fg: "%{yellow}"
   DiffDelete:
-    fg: *red
+    fg: "%{red}"
   DiffText:
     style: "reverse"
   Directory:
-    fg: *blue
+    fg: "%{blue}"
   EndOfBuffer:
-    fg: *base
+    fg: "%{base}"
   Error:
-    fg: *red
+    fg: "%{red}"
   ErrorMsg:
-    fg: *red
+    fg: "%{red}"
     style: "bold"
   Float:
-    fg: *peach
+    fg: "%{peach}"
   FoldColumn:
-    fg: *base
-    bg: *overlay0
+    fg: "%{base}"
+    bg: "%{overlay0}"
   Folded:
-    fg: *blue
-    bg: *surface1
+    fg: "%{blue}"
+    bg: "%{surface1}"
   Function:
-    fg: *blue
+    fg: "%{blue}"
   htmlH1:
-    fg: *pink
+    fg: "%{pink}"
   htmlH2:
-    fg: *blue
+    fg: "%{blue}"
   htmlH3:
-    fg: *peach
+    fg: "%{peach}"
   Identifier:
-    fg: *flamingo
+    fg: "%{flamingo}"
   IncSearch:
-    fg: *mantle
+    fg: "%{mantle}"
   Include:
-    fg: *pink
+    fg: "%{pink}"
   Keyword:
-    fg: *pink
+    fg: "%{pink}"
   "@keyword.export":
-    fg: *sky
+    fg: "%{sky}"
     style: "bold"
   "@keyword.function":
-    fg: *mauve
+    fg: "%{mauve}"
   lCursor:
     fg: "none"
     bg: "none"
     style: "reverse"
   Label:
-    fg: *peach
+    fg: "%{peach}"
   LineNr:
-    fg: *surface1
+    fg: "%{surface1}"
   Macro:
-    fg: *yellow
+    fg: "%{yellow}"
   MatchParen:
-    fg: *peach
+    fg: "%{peach}"
     style: "bold"
   ModeMsg:
-    fg: *text
+    fg: "%{text}"
     style: "bold"
   Normal:
-    bg: *base
+    bg: "%{base}"
   Number:
-    fg: *peach
+    fg: "%{peach}"
   "@number":
-    fg: *peach
+    fg: "%{peach}"
   Operator:
-    fg: *sky
+    fg: "%{sky}"
   Pmenu:
-    bg: *surface0
-    fg: *overlay2
+    bg: "%{surface0}"
+    fg: "%{overlay2}"
   PmenuSel:
-    fg: *text
-    bg: *surface1
+    fg: "%{text}"
+    bg: "%{surface1}"
     style: "bold"
   PreProc:
-    fg: *pink
+    fg: "%{pink}"
   Question:
-    fg: *blue
+    fg: "%{blue}"
   QuickFixLine:
-    bg: *surface1
+    bg: "%{surface1}"
     style: "bold"
   Repeat:
-    fg: *red
+    fg: "%{red}"
   Search:
-    fg: *text
+    fg: "%{text}"
   SignColumn:
-    fg: *surface1
+    fg: "%{surface1}"
     bg: "none"
   Special:
-    fg: *pink
+    fg: "%{pink}"
   SpecialChar:
-    fg: *yellow
+    fg: "%{yellow}"
   SpellBad:
-    fg: *red
+    fg: "%{red}"
     bg: "none"
     style: "undercurl"
   SpellCap:
-    fg: *blue
+    fg: "%{blue}"
     bg: "none"
     style: "undercurl"
   SpellLocal:
-    fg: *sapphire
+    fg: "%{sapphire}"
     bg: "none"
     style: "undercurl"
   SpellRare:
-    fg: *mauve
+    fg: "%{mauve}"
     bg: "none"
     style: "undercurl"
   Statement:
-    fg: *mauve
+    fg: "%{mauve}"
   StatusLine:
-    fg: *text
-    bg: *mantle
+    fg: "%{text}"
+    bg: "%{mantle}"
   StatusLineNc:
-    fg: *surface1
-    bg: *mantle
+    fg: "%{surface1}"
+    bg: "%{mantle}"
   StorageClass:
-    fg: *yellow
+    fg: "%{yellow}"
   String:
-    fg: *green
+    fg: "%{green}"
   "@string":
-    fg: *green
+    fg: "%{green}"
   "@string.regex":
-    fg: *peach
+    fg: "%{peach}"
   Structure:
-    fg: *yellow
+    fg: "%{yellow}"
     style: "italic"
   "@attribute":
-    fg: *yellow
+    fg: "%{yellow}"
   "@boolean":
-    fg: *green
+    fg: "%{green}"
   "@conditional":
-    fg: *mauve
+    fg: "%{mauve}"
   "@constant.builtin":
-    fg: *peach
+    fg: "%{peach}"
     style: "italic"
   "@constant.macro":
-    fg: *mauve
+    fg: "%{mauve}"
   "@constant":
-    fg: *peach
+    fg: "%{peach}"
     style: "italic"
   "@constructor":
-    fg: *base
+    fg: "%{base}"
   "@constructor.lua":
-    fg: *lavender
+    fg: "%{lavender}"
   "@constructor.typescript":
-    fg: *lavender
+    fg: "%{lavender}"
   "@constructor.tsx":
-    fg: *lavender
+    fg: "%{lavender}"
   "@tag.attribute.tsx":
-    fg: *mauve
+    fg: "%{mauve}"
   "@exception":
-    fg: *mauve
+    fg: "%{mauve}"
   "@field":
-    fg: *teal
+    fg: "%{teal}"
   "@float":
-    fg: *peach
+    fg: "%{peach}"
   "@function.builtin":
-    fg: *peach
+    fg: "%{peach}"
   "@function.macro":
-    fg: *teal
+    fg: "%{teal}"
   "@function":
-    fg: *blue
+    fg: "%{blue}"
   "@include":
-    fg: *mauve
+    fg: "%{mauve}"
   "@keyword.operator":
-    fg: *mauve
+    fg: "%{mauve}"
   "@label":
-    fg: *sapphire
+    fg: "%{sapphire}"
   "@label.json":
-    fg: *blue
+    fg: "%{blue}"
   "@field.yaml":
-    fg: *blue
+    fg: "%{blue}"
   "@method":
-    fg: *blue
+    fg: "%{blue}"
   "@namespace":
-    fg: *blue
+    fg: "%{blue}"
   "@operator":
-    fg: *sky
+    fg: "%{sky}"
   "@parameter":
-    fg: *red
+    fg: "%{red}"
     style: "italic"
   "@property":
-    fg: *teal
+    fg: "%{teal}"
   "@punctuation.special":
-    fg: *sky
+    fg: "%{sky}"
   "@punctuation.delimiter":
-    fg: *overlay2
+    fg: "%{overlay2}"
   "@punctuation.bracket":
-    fg: *overlay2
+    fg: "%{overlay2}"
   "@repeat":
-    fg: *mauve
+    fg: "%{mauve}"
   "@text":
-    fg: *text
+    fg: "%{text}"
   "@text.note":
-    fg: *base
-    bg: *blue
+    fg: "%{base}"
+    bg: "%{blue}"
   "@text.warning":
-    fg: *base
-    bg: *yellow
+    fg: "%{base}"
+    bg: "%{yellow}"
   "@text.danger":
-    fg: *base
-    bg: *red
+    fg: "%{base}"
+    bg: "%{red}"
   "@text.uri":
-    fg: *rosewater
+    fg: "%{rosewater}"
   "@text.literal":
-    fg: *teal
+    fg: "%{teal}"
     style: "italic"
   "@text.reference":
-    fg: *lavender
+    fg: "%{lavender}"
     style: "italic"
   "@text.title":
-    fg: *blue
+    fg: "%{blue}"
   "@text.emphasis":
-    fg: *maroon
+    fg: "%{maroon}"
     style: "italic"
   "@text.strong":
-    fg: *maroon
+    fg: "%{maroon}"
     style: "italic"
   "@string.escape":
-    fg: *pink
+    fg: "%{pink}"
   "@property.toml":
-    fg: *blue
+    fg: "%{blue}"
   "@property.cpp":
-    fg: *rosewater
+    fg: "%{rosewater}"
   "@type":
-    fg: *yellow
+    fg: "%{yellow}"
   "@type.builtin":
-    fg: *yellow
+    fg: "%{yellow}"
   "@variable":
-    fg: *text
+    fg: "%{text}"
   "@tag.attribute":
-    fg: *teal
+    fg: "%{teal}"
   "@tag":
-    fg: *mauve
+    fg: "%{mauve}"
   "@tag.delimiter":
-    fg: *sky
+    fg: "%{sky}"
   TabLine:
-    fg: *surface1
-    bg: *mantle
+    fg: "%{surface1}"
+    bg: "%{mantle}"
   TabLineFill:
-    bg: *mantle
+    bg: "%{mantle}"
   TabLineSel:
-    fg: *green
-    bg: *surface1
+    fg: "%{green}"
+    bg: "%{surface1}"
   Tag:
-    fg: *yellow
+    fg: "%{yellow}"
   Terminal:
-    fg: *text
-    bg: *base
+    fg: "%{text}"
+    bg: "%{base}"
   Todo:
-    fg: *yellow
+    fg: "%{yellow}"
     style: "italic"
   Type:
-    fg: *blue
+    fg: "%{blue}"
   Typedef:
-    fg: *yellow
+    fg: "%{yellow}"
   Underlined:
     style: :underline
   vCursor:
@@ -341,78 +426,78 @@ neovim:
     bg: "none"
     style: "reverse"
   VertSplit:
-    fg: *crust
+    fg: "%{crust}"
   Visual:
-    bg: *surface1
+    bg: "%{surface1}"
     style: "bold"
   VisualNos:
-    fg: *surface1
+    fg: "%{surface1}"
     style: "bold"
   WarningMsg:
-    fg: *yellow
+    fg: "%{yellow}"
     style: "bold"
   WhichKeyFloat:
-    fg: *text
-    bg: *mantle
+    fg: "%{text}"
+    bg: "%{mantle}"
   Whitespace:
-    fg: *mantle
+    fg: "%{mantle}"
   WildMenu:
-    bg: *overlay0
+    bg: "%{overlay0}"
   NvimTreeNormal:
-    bg: *mantle
+    bg: "%{mantle}"
 
 kitty:
-  cursor: *peach
-  foreground: *text
-  background: *base
-  active_tab_foreground: *mantle
-  active_tab_background: *maroon
-  inactive_tab_foreground: *mantle
-  inactive_tab_background: *surface1
-  color0: *crust
-  color1: *red
-  color2: *green
-  color3: *yellow
-  color4: *blue
-  color5: *pink
-  color6: *sky
-  color7: *text
-  color8: *surface1
-  color9: *red
-  color10: *green
-  color11: *yellow
-  color12: *blue
-  color13: *pink
-  color14: *sky
-  color15: *text
+  cursor: "%{peach}"
+  foreground: "%{text}"
+  background: "%{base}"
+  active_tab_foreground: "%{mantle}"
+  active_tab_background: "%{maroon}"
+  inactive_tab_foreground: "%{mantle}"
+  inactive_tab_background: "%{surface1}"
+  color0: "%{crust}"
+  color1: "%{red}"
+  color2: "%{green}"
+  color3: "%{yellow}"
+  color4: "%{blue}"
+  color5: "%{pink}"
+  color6: "%{sky}"
+  color7: "%{text}"
+  color8: "%{surface1}"
+  color9: "%{red}"
+  color10: "%{green}"
+  color11: "%{yellow}"
+  color12: "%{blue}"
+  color13: "%{pink}"
+  color14: "%{sky}"
+  color15: "%{text}"
 
 lualine:
-  bg: *mantle
-  fg: *text
-  red: *red
-  green: *green
-  yellow: *yellow
-  blue: *blue
-  cyan: *sky
-  magenta: *pink
-  violet: *mauve
-  orange: *peach
-  darkblue: *sapphire
+  bg: "%{mantle}"
+  fg: "%{text}"
+  red: "%{red}"
+  green: "%{green}"
+  yellow: "%{yellow}"
+  blue: "%{blue}"
+  cyan: "%{sky}"
+  magenta: "%{pink}"
+  violet: "%{mauve}"
+  orange: "%{peach}"
+  darkblue: "%{sapphire}"
 
 xcolors:
-  bg: *crust
-  fg: *text
-  red: *red
-  green: *green
-  yellow: *yellow
-  blue: *blue
-  cyan: *sky
-  magenta: *pink
-  violet: *mauve
-  orange: *peach
-  darkblue: *sapphire
+  bg: "%{crust}"
+  fg: "%{text}"
+  red: "%{red}"
+  green: "%{green}"
+  yellow: "%{yellow}"
+  blue: "%{blue}"
+  cyan: "%{sky}"
+  magenta: "%{pink}"
+  violet: "%{mauve}"
+  orange: "%{peach}"
+  darkblue: "%{sapphire}"
 
 sketchybar:
-  bg: *base
-  label_color: *text
-  icon_color: *text
+  bg: "%{base}"
+  label_color: "%{text}"
+  icon_color: "%{text}"

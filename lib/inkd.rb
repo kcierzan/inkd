@@ -8,13 +8,13 @@ require 'utils'
 class InkdCLI < Thor
   include AppAutoloader
 
-  desc 'color COLORSCHEME', 'Generate colorscheme files and reload apps'
+  desc 'theme THEME', 'Generate theme files and reload apps'
   option :list, type: :boolean
-  def color(colorscheme = nil, shade = 'dark')
-    return print_themes if options[:list] || invalid_colorscheme?(colorscheme)
+  def theme(theme = nil, palette = 'dark')
+    return print_themes if options[:list] || invalid_theme?(theme)
 
     create_output_directory
-    apply_theme!(colorscheme: colorscheme, shade: shade)
+    apply_theme!(theme: theme, palette: palette)
   end
 
   desc 'font FONT', 'Generate font files and reload apps'
@@ -28,8 +28,8 @@ class InkdCLI < Thor
 
   private
 
-  def apply_theme!(colorscheme:, shade:)
-    theme = ColorschemeBuilder.load(theme: colorscheme, shade: shade)
+  def apply_theme!(theme:, palette:)
+    theme = ThemeBuilder.load(theme: theme, palette: palette)
     apps.each { |app| app.apply_theme! theme.colors_for_app(app.name) }
   end
 
@@ -37,8 +37,8 @@ class InkdCLI < Thor
     !Constants::FONTS.keys.include?(font.to_sym)
   end
 
-  def invalid_colorscheme?(colorscheme)
-    !Package.theme_names.include?(colorscheme)
+  def invalid_theme?(theme)
+    !Package.theme_names.include?(theme)
   end
 
   def create_output_directory
@@ -46,7 +46,7 @@ class InkdCLI < Thor
   end
 
   def print_themes
-    puts 'Enter one of the follow colorschemes:'
+    puts 'Enter one of the follow themes:'
     Package.theme_names.each { |name| puts name }
   end
 

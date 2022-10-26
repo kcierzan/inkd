@@ -22,7 +22,10 @@ class Sketchybar < App
   FONT
 
   def apply_theme!(theme)
-    Utils::Filesystem.write_file(theme_file_lines(theme), OUTPUT_FILE)
+    Utils::Filesystem.write_file(
+      theme_file_lines(theme),
+      OUTPUT_FILE
+    )
     reload!
   end
 
@@ -40,7 +43,7 @@ class Sketchybar < App
   end
 
   def strip_hashes(theme)
-    theme.each { |k, v| theme[k] = v[1..].upcase }
+    theme.transform_values { |val| val[1..].upcase }
   end
 
   def theme_file_lines(theme)

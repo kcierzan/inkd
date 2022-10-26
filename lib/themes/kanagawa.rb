@@ -2,5 +2,5 @@
 
 require 'themes/theme'
 
-class KanagawaDark < Theme
+class Kanagawa < Theme
 end

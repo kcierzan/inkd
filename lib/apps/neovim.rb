@@ -25,15 +25,15 @@ class Neovim < App
   def to_lua_table(theme)
     table = theme.map do |hi, props|
       props = props.reduce([]) do |memo, (k, v)|
-        memo << parse_lua_key_value(k, v)
+        memo << wrap_lua_strings(k, v)
       end
       to_lua_highlight_key(highlight: hi, properties: props)
     end
     wrap_return_lua_table_literal table
   end
 
-  def parse_lua_key_value(key, value)
-    value = "'#{value}'" unless [true, false].include? value
+  def wrap_lua_strings(key, value)
+    value = "\"#{value}\"" unless [true, false].include? value
 
     "#{key} = #{value}"
   end
@@ -44,9 +44,7 @@ class Neovim < App
   end
 
   def to_lua_highlight_key(highlight:, properties:)
-    if highlight.chr == "@"
-      highlight = "[\"#{highlight}\"]"
-    end
+    highlight = "[\"#{highlight}\"]" if highlight.chr == '@'
 
     "  #{highlight} = { #{properties.join(', ')} };"
   end

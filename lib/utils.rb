@@ -3,18 +3,6 @@
 require 'constants'
 
 module Utils
-  module OS
-    module_function
-
-    def linux?
-      RUBY_PLATFORM.include? 'linux'
-    end
-
-    def darwin?
-      RUBY_PLATFORM.include? 'darwin'
-    end
-  end
-
   module Filesystem
     module_function
 
@@ -33,12 +21,11 @@ module Utils
   end
 end
 
-module ColorschemeBuilder
+module ThemeBuilder
   module_function
 
-  def load(theme:, shade:)
-    theme_class = "#{theme.capitalize}#{shade.capitalize}"
+  def load(theme:, palette:)
     require "themes/#{theme}"
-    eval "#{theme_class}.new", binding, __FILE__, __LINE__
+    eval "#{theme.capitalize}.new(\"#{palette}\")", binding, __FILE__, __LINE__
   end
 end

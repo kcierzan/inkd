@@ -2,5 +2,5 @@
 
 require 'themes/theme'
 
-class ZephyrDark < Theme
+class Zephyr < Theme
 end

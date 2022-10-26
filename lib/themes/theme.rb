@@ -5,6 +5,12 @@ require 'yaml'
 require 'package'
 
 class Theme
+  def initialize(palette)
+    raise InvalidPaletteError unless palettes.include? palette
+
+    @palette = theme_data['palettes'][palette]
+  end
+
   def blend(target_color, mix_color, percent)
     target = RGB::Color.from_rgb_hex target_color
     mixer = RGB::Color.from_rgb_hex mix_color
@@ -12,15 +18,31 @@ class Theme
     RGB::Color.from_fractions(*mixed).to_rgb_hex
   end
 
-  def palette
-    theme_data['palette']
+  def palettes
+    theme_data['palettes'].keys
   end
 
   def colors_for_app(app)
-    theme_data[app.to_s]
+    theme = theme_data[app.to_s]
+    deep_apply_palette theme
   end
 
   private
+
+  def deep_apply_palette(theme)
+    theme.transform_values do |val|
+      case val
+      when Hash
+        deep_apply_palette val
+      when String
+        val % palette.transform_keys(&:to_sym)
+      else
+        val
+      end
+    end
+  end
+
+  attr_reader :palette
 
   def basename
     self.class.to_s.split(/(?=[A-Z])/).first.downcase
@@ -33,4 +55,7 @@ class Theme
   def theme_data
     @theme_data ||= YAML.load_file theme_filename
   end
+end
+
+class InvalidPaletteError < StandardError
 end
