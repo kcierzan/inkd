@@ -1,70 +1,70 @@
 palettes:
   dark:
-    base0: &base0 "#1B2229"
-    base1: &base1 "#1c1f24"
-    base2: &base2 "#202328"
-    base3: &base3 "#23272e"
-    base4: &base4 "#3f444a"
-    base5: &base5 "#5B6268"
-    base6: &base6 "#73797e"
-    base7: &base7 "#9ca0a4"
-    base8: &base8 "#b1b1b1"
-    bg: &bg "#262a33"
-    bg1: &bg1 "#504945"
-    bg_popup: &bg_popup "#3E4556"
-    bg_highlight: &bg_highlight "#2E323C"
-    bg_visual: &bg_visual "#b3deef"
-    fg: &fg "#bbc2cf"
-    fg_alt: &fg_alt "#5B6268"
-    red: &red "#e95678"
-    redwine: &redwine "#d16d9e"
-    orange: &orange "#FF8700"
-    yellow: &yellow "#f7bb3b"
-    lignt_orange: &lignt_orange "#fab795"
-    green: &green "#afd700"
-    dark_green: &dark_green "#98be65"
-    cyan: &cyan "#36d0e0"
-    blue: &blue "#61afef"
-    violet: &violet "#CBA6F7"
-    magenta: &magenta "#c678dd"
-    teal: &teal "#1abc9c"
-    grey: &grey "#928374"
-    brown: &brown "#c78665"
-    black: &black "#000000"
-    bracket: &bracket "#80A0C2"
+    base0: "#1B2229"
+    base1: "#1c1f24"
+    base2: "#202328"
+    base3: "#23272e"
+    base4: "#3f444a"
+    base5: "#5B6268"
+    base6: "#73797e"
+    base7: "#9ca0a4"
+    base8: "#b1b1b1"
+    bg: "#262a33"
+    bg1: "#504945"
+    bg_popup: "#3E4556"
+    bg_highlight: "#2E323C"
+    bg_visual: "#b3deef"
+    fg: "#bbc2cf"
+    fg_alt: "#5B6268"
+    red: "#e95678"
+    redwine: "#d16d9e"
+    orange: "#FF8700"
+    yellow: "#f7bb3b"
+    lignt_orange: "#fab795"
+    green: "#afd700"
+    dark_green: "#98be65"
+    cyan: "#36d0e0"
+    blue: "#61afef"
+    violet: "#CBA6F7"
+    magenta: "#c678dd"
+    teal: "#1abc9c"
+    grey: "#928374"
+    brown: "#c78665"
+    black: "#000000"
+    bracket: "#80A0C2"
 
 neovim:
   Normal:
-    fg: *fg
-    bg: *bg
+    fg: "%{fg}"
+    bg: "%{bg}"
   Terminal:
-    fg: *fg
-    bg: *bg
+    fg: "%{fg}"
+    bg: "%{bg}"
   SignColumn: 
-    fg: *fg
-    bg: *bg
+    fg: "%{fg}"
+    bg: "%{bg}"
   FoldColumn: 
-    fg: *fg_alt
-    bg: *black
+    fg: "%{fg_alt}"
+    bg: "%{black}"
   VertSplit: 
-    fg: *black
-    bg: *bg
+    fg: "%{black}"
+    bg: "%{bg}"
   Folded: 
-    fg: *lignt_orange
-    bg: *bg_highlight
+    fg: "%{lignt_orange}"
+    bg: "%{bg_highlight}"
   EndOfBuffer: 
-    fg: *bg
+    fg: "%{bg}"
     bg: "none"
   IncSearch: 
-    fg: *bg1
-    bg: *orange
+    fg: "%{bg1}"
+    bg: "%{orange}"
   Search: 
-    fg: *bg
-    bg: *orange
+    fg: "%{bg}"
+    bg: "%{orange}"
   ColorColumn:
-    bg: *bg_highlight
+    bg: "%{bg_highlight}"
   Conceal:  
-    fg: *grey
+    fg: "%{grey}"
     bg: "none"
   Cursor:
     bg: "none"
@@ -82,476 +82,476 @@ neovim:
     bg: "none"
     reverse: true
   CursorColumn:
-    bg: *bg_highlight
+    bg: "%{bg_highlight}"
   CursorLine:
-    bg: *bg_highlight
+    bg: "%{bg_highlight}"
   LineNr:
-    fg: *base4
+    fg: "%{base4}"
   qfLineNr:
-    fg: *cyan
+    fg: "%{cyan}"
   CursorLineNr:
-    fg: *blue
-    bg: *bg_highlight
+    fg: "%{blue}"
+    bg: "%{bg_highlight}"
   DiffAdd:
-    fg: *black
-    bg: *dark_green
+    fg: "%{black}"
+    bg: "%{dark_green}"
   DiffChange:
-    fg: *black
-    bg: *yellow
+    fg: "%{black}"
+    bg: "%{yellow}"
   DiffDelete:
-    fg: *black
-    bg: *red
+    fg: "%{black}"
+    bg: "%{red}"
   DiffText:
-    fg: *black
-    bg: *fg
+    fg: "%{black}"
+    bg: "%{fg}"
   Directory:
-    fg: *blue
+    fg: "%{blue}"
     bg: "none"
   ErrorMsg:
-    fg: *red
+    fg: "%{red}"
     bg: "none"
     bold: true
   WarningMsg:
-    fg: *yellow
+    fg: "%{yellow}"
     bg: "none"
     bold: true
   ModeMsg:
-    fg: *fg
+    fg: "%{fg}"
     bg: none
     bold: true
   MatchParen:
-    fg: *red
+    fg: "%{red}"
     bg: "none"
   NonText:
-    fg: *bg1
+    fg: "%{bg1}"
   Whitespace:
-    fg: *base4
+    fg: "%{base4}"
   SpecialKey:
-    fg: *bg1
+    fg: "%{bg1}"
   Pmenu:
-    fg: *fg
-    bg: *bg_popup
+    fg: "%{fg}"
+    bg: "%{bg_popup}"
   PmenuSel:
-    fg: *base0
-    bg: *blue
+    fg: "%{base0}"
+    bg: "%{blue}"
   PmenuSelBold:
-    fg: *base0
-    bg: *blue
+    fg: "%{base0}"
+    bg: "%{blue}"
   PmenuSbar:
-    bg: *base4
+    bg: "%{base4}"
   PmenuThumb:
-    fg: *violet
-    bg: *dark_green
+    fg: "%{violet}"
+    bg: "%{dark_green}"
   WildMenu:
-    fg: *bg1
-    bg: *green
+    fg: "%{bg1}"
+    bg: "%{green}"
   StatusLine:
-    fg: *base8
-    bg: *base2
+    fg: "%{base8}"
+    bg: "%{base2}"
   StatusLineNC:
-    fg: *grey
-    bg: *base2
+    fg: "%{grey}"
+    bg: "%{base2}"
   Question:
-    fg: *yellow
+    fg: "%{yellow}"
   NormalFloat:
-    fg: *base8
-    bg: *bg_highlight
+    fg: "%{base8}"
+    bg: "%{bg_highlight}"
   Tabline:
-    fg: *base6
-    bg: *base2
+    fg: "%{base6}"
+    bg: "%{base2}"
   TabLineSel:
-    fg: *fg
-    bg: *blue
+    fg: "%{fg}"
+    bg: "%{blue}"
   SpellBad:
-    fg: *red
+    fg: "%{red}"
     bg: "none"
     undercurl: true
   SpellCap:
-    fg: *blue
+    fg: "%{blue}"
     bg: "none"
     undercurl: true
   SpellLocal:
-    fg: *cyan
+    fg: "%{cyan}"
     bg: "none"
     undercurl: true
   SpellRare:
-    fg: *violet
+    fg: "%{violet}"
     bg: "none"
     undercurl: true
   Visual:
-    fg: *black
-    bg: *bg_visual
+    fg: "%{black}"
+    bg: "%{bg_visual}"
   VisualNOS:
-    fg: *black
-    bg: *bg_visual
+    fg: "%{black}"
+    bg: "%{bg_visual}"
   QuickFixLine:
-    fg: *violet
+    fg: "%{violet}"
     bold: true
   Debug:
-    fg: *orange
+    fg: "%{orange}"
   debugBreakpoint:
-    fg: *bg
-    bg: *red
+    fg: "%{bg}"
+    bg: "%{red}"
   Boolean:
-    fg: *orange
+    fg: "%{orange}"
   Number:
-    fg: *brown
+    fg: "%{brown}"
   Float:
-    fg: *brown
+    fg: "%{brown}"
   PreProc:
-    fg: *violet
+    fg: "%{violet}"
   PreCondit:
-    fg: *violet
+    fg: "%{violet}"
   Include:
-    fg: *violet
+    fg: "%{violet}"
   Define:
-    fg: *violet
+    fg: "%{violet}"
   Conditional:
-    fg: *magenta
+    fg: "%{magenta}"
   Repeat:
-    fg: *magenta
+    fg: "%{magenta}"
   Keyword:
-    fg: *green
+    fg: "%{green}"
   Typedef:
-    fg: *red
+    fg: "%{red}"
   Exception:
-    fg: *red
+    fg: "%{red}"
   Statement:
-    fg: *red
+    fg: "%{red}"
   Error:
-    fg: *red
+    fg: "%{red}"
   StorageClass:
-    fg: *orange
+    fg: "%{orange}"
   Tag:
-    fg: *orange
+    fg: "%{orange}"
   Label:
-    fg: *orange
+    fg: "%{orange}"
   Structure:
-    fg: *orange
+    fg: "%{orange}"
   Operator:
-    fg: *redwine
+    fg: "%{redwine}"
   Title:
-    fg: *orange
+    fg: "%{orange}"
     bold: true
   Special:
-    fg: *yellow
+    fg: "%{yellow}"
   SpecialChar:
-    fg: *yellow
+    fg: "%{yellow}"
   Type:
-    fg: *teal
+    fg: "%{teal}"
   Function:
-    fg: *yellow
+    fg: "%{yellow}"
   String:
-    fg: *lignt_orange
+    fg: "%{lignt_orange}"
   Character:
-    fg: *green
+    fg: "%{green}"
   Constant:
-    fg: *cyan
+    fg: "%{cyan}"
   Macro:
-    fg: *cyan
+    fg: "%{cyan}"
   Identifier:
-    fg: *blue
+    fg: "%{blue}"
   Comment:
-    fg: *base6
+    fg: "%{base6}"
     italic: true
   SpecialComment:
-    fg: *grey 
+    fg: "%{grey}" 
   Todo:
-    fg: *violet
+    fg: "%{violet}"
   Delimiter:
-    fg: *fg
+    fg: "%{fg}"
   Ignore:
-    fg: *grey
+    fg: "%{grey}"
   Underlined:
     underline: true
   DashboardShortCut:
-    fg: *magenta
+    fg: "%{magenta}"
   DashboardHeader:
-    fg: *orange
+    fg: "%{orange}"
   DashboardCenter:
-    fg: *teal
+    fg: "%{teal}"
   DashboardCenterIcon:
-    fg: *blue
+    fg: "%{blue}"
   DashboardFooter:
-    fg: *yellow
+    fg: "%{yellow}"
     bold: true
   "@function":
-    fg: *cyan
+    fg: "%{cyan}"
   "@method":
-    fg: *cyan
+    fg: "%{cyan}"
   "@keyword.function":
-    fg: *red
+    fg: "%{red}"
   "@property":
-    fg: *yellow
+    fg: "%{yellow}"
   "@type":
-    fg: *teal
+    fg: "%{teal}"
   "@variable":
     fg: "#f2f2bf"
   "@punctuation.bracket":
-    fg: *bracket
+    fg: "%{bracket}"
   vimCommentTitle:
-    fg: *grey
+    fg: "%{grey}"
     bold: true
   vimLet:
-    fg: *orange
+    fg: "%{orange}"
   vimVar:
-    fg: *cyan
+    fg: "%{cyan}"
   vimFunction:
-    fg: *redwine
+    fg: "%{redwine}"
   vimIsCommand:
-    fg: *fg
+    fg: "%{fg}"
   vimCommand:
-    fg: *blue
+    fg: "%{blue}"
   vimNotFunc:
-    fg: *violet
+    fg: "%{violet}"
     bold: true
   vimUserFunc:
-    fg: *yellow
+    fg: "%{yellow}"
     bold: true
   vimFuncName:
-    fg: *yellow
+    fg: "%{yellow}"
     bold: true
   diffAdded:
-    fg: *dark_green
+    fg: "%{dark_green}"
   diffRemoved:
-    fg: *red
+    fg: "%{red}"
   diffChanged:
-    fg: *blue
+    fg: "%{blue}"
   diffOldFile:
-    fg: *yellow
+    fg: "%{yellow}"
   diffNewFile:
-    fg: *orange
+    fg: "%{orange}"
   diffFile:
-    fg: *cyan
+    fg: "%{cyan}"
   diffLine:
-    fg: *grey
+    fg: "%{grey}"
   diffIndexLine:
-    fg: *violet
+    fg: "%{violet}"
   gitcommitSummary:
-    fg: *red
+    fg: "%{red}"
   gitcommitUntracked:
-    fg: *grey
+    fg: "%{grey}"
   gitcommitDiscarded:
-    fg: *grey
+    fg: "%{grey}"
   gitcommitSelected:
-    fg: *grey
+    fg: "%{grey}"
   gitcommitUnmerged:
-    fg: *grey
+    fg: "%{grey}"
   gitcommitOnBranch:
-    fg: *grey
+    fg: "%{grey}"
   gitcommitArrow:
-    fg: *grey
+    fg: "%{grey}"
   gitcommitFile:
-    fg: *dark_green
+    fg: "%{dark_green}"
   VistaBracket:
-    fg: *grey
+    fg: "%{grey}"
   VistaChildrenNr:
-    fg: *orange
+    fg: "%{orange}"
   VistaKind:
-    fg: *violet
+    fg: "%{violet}"
   VistaScope:
-    fg: *red
+    fg: "%{red}"
   VistaScopeKind:
-    fg: *blue
+    fg: "%{blue}"
   VistaTag:
-    fg: *magenta
+    fg: "%{magenta}"
     bold: true
   VistaPrefix:
-    fg: *grey
+    fg: "%{grey}"
   VistaColon:
-    fg: *magenta
+    fg: "%{magenta}"
   VistaIcon:
-    fg: *yellow
+    fg: "%{yellow}"
   VistaLineNr:
-    fg: *fg
+    fg: "%{fg}"
   GitGutterAdd:
-    fg: *dark_green
+    fg: "%{dark_green}"
   GitGutterChange:
-    fg: *blue
+    fg: "%{blue}"
   GitGutterDelete:
-    fg: *red
+    fg: "%{red}"
   GitGutterChangeDelete:
-    fg: *violet
+    fg: "%{violet}"
   GitSignsAdd:
-    fg: *dark_green
+    fg: "%{dark_green}"
   GitSignsChange:
-    fg: *blue
+    fg: "%{blue}"
   GitSignsDelete:
-    fg: *red
+    fg: "%{red}"
   GitSignsAddNr:
-    fg: *dark_green
+    fg: "%{dark_green}"
   GitSignsChangeNr:
-    fg: *blue
+    fg: "%{blue}"
   GitSignsDeleteNr:
-    fg: *red
+    fg: "%{red}"
   GitSignsAddLn:
-    bg: *bg_popup
+    bg: "%{bg_popup}"
   GitSignsChangeLn:
-    bg: *bg_highlight
+    bg: "%{bg_highlight}"
   GitSignsDeleteLn:
-    bg: *bg1
+    bg: "%{bg1}"
   SignifySignAdd:
-    fg: *dark_green
+    fg: "%{dark_green}"
   SignifySignChange:
-    fg: *blue
+    fg: "%{blue}"
   SignifySignDelete:
-    fg: *red
+    fg: "%{red}"
   dbui_tables:
-    fg: *blue
+    fg: "%{blue}"
   CursorWord:
-    bg: *base4
+    bg: "%{base4}"
     underline: true
   NvimTreeFolderName:
-    fg: *blue
+    fg: "%{blue}"
   NvimTreeRootFolder:
-    fg: *red
+    fg: "%{red}"
     bold: true
   NvimTreeSpecialFile:
-    fg: *fg
+    fg: "%{fg}"
     bg: "none"
   NvimTreeGitDirty:
-    fg: *redwine
+    fg: "%{redwine}"
   TelescopeBorder:
-    fg: *teal
+    fg: "%{teal}"
   TelescopePromptBorder:
-    fg: *blue
+    fg: "%{blue}"
   TelescopeMatching:
-    fg: *teal
+    fg: "%{teal}"
   TelescopeSelection:
-    fg: *yellow
-    bg: *bg_highlight
+    fg: "%{yellow}"
+    bg: "%{bg_highlight}"
     bold: true
   TelescopeSelectionCaret:
-    fg: *yellow
+    fg: "%{yellow}"
   TelescopeMultiSelection:
-    fg: *teal
+    fg: "%{teal}"
   DiagnosticSignError:
-    fg: *red
+    fg: "%{red}"
   DiagnosticSignWarn:
-    fg: *yellow
+    fg: "%{yellow}"
   DiagnosticSignInfo:
-    fg: *blue
+    fg: "%{blue}"
   DiagnosticSignHint:
-    fg: *cyan
+    fg: "%{cyan}"
   DiagnosticError:
-    fg: *red
+    fg: "%{red}"
   DiagnosticWarn:
-    fg: *yellow
+    fg: "%{yellow}"
   DiagnosticInfo:
-    fg: *blue
+    fg: "%{blue}"
   DiagnosticHint:
-    fg: *cyan
+    fg: "%{cyan}"
   LspReferenceRead:
-    bg: *bg_highlight
+    bg: "%{bg_highlight}"
     bold: true
   LspReferenceText:
-    bg: *bg_highlight
+    bg: "%{bg_highlight}"
     bold: true
   LspReferenceWrite:
-    bg: *bg_highlight
+    bg: "%{bg_highlight}"
     bold: true
   DiagnosticVirtualTextError:
-    fg: *red
+    fg: "%{red}"
   DiagnosticVirtualTextWarn:
-    fg: *yellow
+    fg: "%{yellow}"
   DiagnosticVirtualTextInfo:
-    fg: *blue
+    fg: "%{blue}"
   DiagnosticVirtualTextHint:
-    fg: *cyan
+    fg: "%{cyan}"
   DiagnosticUnderlineError:
     undercurl: true
-    sp: *red
+    sp: "%{red}"
   DiagnosticUnderlineWarn:
     undercurl: true
-    sp: *yellow
+    sp: "%{yellow}"
   DiagnosticUnderlineInfo:
     undercurl: true
-    sp: *blue
+    sp: "%{blue}"
   DiagnosticUnderlineHint:
     undercurl: true
-    sp: *cyan
+    sp: "%{cyan}"
   CmpItemAbbr:
-    fg: *fg
+    fg: "%{fg}"
   CmpItemAbbrMatch:
     fg: "#A6E22E"
   CmpItemMenu:
-    fg: *violet
+    fg: "%{violet}"
   CmpItemKindVariable:
-    fg: *blue
+    fg: "%{blue}"
   CmpItemKindFiled:
-    fg: *magenta
+    fg: "%{magenta}"
   CmpItemKindFunction:
-    fg: *yellow
+    fg: "%{yellow}"
   CmpItemKindClass:
-    fg: *orange
+    fg: "%{orange}"
   CmpItemKindMethod:
-    fg: *teal
+    fg: "%{teal}"
   CmpItemKindKeyWord:
-    fg: *red
+    fg: "%{red}"
   CmpItemKindText:
-    fg: *dark_green
+    fg: "%{dark_green}"
   CmpItemKindModule:
-    fg: *cyan
+    fg: "%{cyan}"
   NeogitDiffAddHighlight:
-    fg: *green
+    fg: "%{green}"
   NeogitDiffDeleteHighlight:
-    fg: *red
+    fg: "%{red}"
   NeogitDiffContextHighlight:
-    fg: *blue
+    fg: "%{blue}"
   NeogitHunkHeader:
-    fg: *fg
+    fg: "%{fg}"
   NeogitHunkHeaderHighlight:
-    fg: *redwine
+    fg: "%{redwine}"
   BufferLineBufferSelected:
     style: "underline"
-    sp: *red
+    sp: "%{red}"
   BufferLineFill:
-    bg: *bg
+    bg: "%{bg}"
   NvimTreeNormal:
-    bg: *base2
+    bg: "%{base2}"
   WhichKeyFloat:
-    fg: *fg
-    bg: *base2
+    fg: "%{fg}"
+    bg: "%{base2}"
 
 kitty:
-  cursor: *blue
-  foreground: *fg
-  background: *bg
-  active_tab_foreground: *base2
-  active_tab_background: *dark_green
-  inactive_tab_foreground: *base2
-  inactive_tab_background: *base5
-  color0: *black
-  color1: *red
-  color2: *green
-  color3: *yellow
-  color4: *blue
-  color5: *violet
-  color6: *cyan
-  color7: *base8
-  color8: *base6
-  color9: *redwine
-  color10: *dark_green
-  color11: *orange
-  color12: *bg_visual
-  color13: *magenta
-  color14: *teal
-  color15: *base7
+  cursor: "%{blue}"
+  foreground: "%{fg}"
+  background: "%{bg}"
+  active_tab_foreground: "%{base2}"
+  active_tab_background: "%{dark_green}"
+  inactive_tab_foreground: "%{base2}"
+  inactive_tab_background: "%{base5}"
+  color0: "%{black}"
+  color1: "%{red}"
+  color2: "%{green}"
+  color3: "%{yellow}"
+  color4: "%{blue}"
+  color5: "%{violet}"
+  color6: "%{cyan}"
+  color7: "%{base8}"
+  color8: "%{base6}"
+  color9: "%{redwine}"
+  color10: "%{dark_green}"
+  color11: "%{orange}"
+  color12: "%{bg_visual}"
+  color13: "%{magenta}"
+  color14: "%{teal}"
+  color15: "%{base7}"
 
 lualine:
-  bg: *base2
-  fg: *fg
-  red: *red
-  green: *green
-  yellow: *yellow
-  blue: *blue
-  cyan: *cyan
-  magenta: *magenta
-  violet: *violet
-  orange: *orange
-  darkblue: *teal
+  bg: "%{base2}"
+  fg: "%{fg}"
+  red: "%{red}"
+  green: "%{green}"
+  yellow: "%{yellow}"
+  blue: "%{blue}"
+  cyan: "%{cyan}"
+  magenta: "%{magenta}"
+  violet: "%{violet}"
+  orange: "%{orange}"
+  darkblue: "%{teal}"
 
 sketchybar:
-  bg: *bg
-  label_color: *fg
-  icon_color: *fg
+  bg: "%{bg}"
+  label_color: "%{fg}"
+  icon_color: "%{fg}"

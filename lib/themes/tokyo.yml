@@ -1,416 +1,416 @@
 palettes:
   dark:
-    bg_dark: &bg_dark "#1f2335"
-    background: &background "#24283b"
-    bg_highlight: &bg_highlight "#292e42"
-    black: &black "#414868"
-    foreground: &foreground "#c0caf5"
-    fg_dark: &fg_dark "#a9b1d6"
-    fg_gutter: &fg_gutter "#3b4261"
-    dark3: &dark3 "#545c7e"
-    comment: &comment "#565f89"
-    dark5: &dark5 "#737aa2"
-    blue0: &blue0 "#3d59a1"
-    blue: &blue "#7aa2f7"
-    cyan: &cyan "#7dcfff"
-    blue1: &blue1 "#2ac3de"
-    blue2: &blue2 "#0db9d7"
-    blue5: &blue5 "#89ddff"
-    blue6: &blue6 "#B4F9F8"
-    blue7: &blue7 "#394b70"
-    magenta: &magenta "#bb9af7"
-    magenta2: &magenta2 "#ff007c"
-    purple: &purple "#9d7cd8"
-    orange: &orange "#ff9e64"
-    yellow: &yellow "#e0af68"
-    green: &green "#9ece6a"
-    green1: &green1 "#73daca"
-    green2: &green2 "#41a6b5"
-    teal: &teal "#1abc9c"
-    red: &red "#f7768e"
-    red1: &red1 "#db4b4b"
-    git_add: &git_add "#164846"
-    git_change: &git_change "#394b70"
-    git_delete: &git_delete "#823c41"
-    git_conflict: &git_conflict "#bb7a61"
+    bg_dark: "#1f2335"
+    background: "#24283b"
+    bg_highlight: "#292e42"
+    black: "#414868"
+    foreground: "#c0caf5"
+    fg_dark: "#a9b1d6"
+    fg_gutter: "#3b4261"
+    dark3: "#545c7e"
+    comment: "#565f89"
+    dark5: "#737aa2"
+    blue0: "#3d59a1"
+    blue: "#7aa2f7"
+    cyan: "#7dcfff"
+    blue1: "#2ac3de"
+    blue2: "#0db9d7"
+    blue5: "#89ddff"
+    blue6: "#B4F9F8"
+    blue7: "#394b70"
+    magenta: "#bb9af7"
+    magenta2: "#ff007c"
+    purple: "#9d7cd8"
+    orange: "#ff9e64"
+    yellow: "#e0af68"
+    green: "#9ece6a"
+    green1: "#73daca"
+    green2: "#41a6b5"
+    teal: "#1abc9c"
+    red: "#f7768e"
+    red1: "#db4b4b"
+    git_add: "#164846"
+    git_change: "#394b70"
+    git_delete: "#823c41"
+    git_conflict: "#bb7a61"
 
 xcolors:
-  foreground: *foreground
-  background: *background
-  color0: *black
-  color1: *red
-  color2: *green
-  color3: *yellow
-  color4: *blue
-  color5: *purple
-  color6: *cyan
-  color7: *comment
-  color8: *dark3
-  color9: *magenta2
-  color10: *green1
-  color11: *orange
-  color12: *blue1
-  color13: *magenta
-  color14: *blue5
-  color15: *dark5
+  foreground: "%{foreground}"
+  background: "%{background}"
+  color0: "%{black}"
+  color1: "%{red}"
+  color2: "%{green}"
+  color3: "%{yellow}"
+  color4: "%{blue}"
+  color5: "%{purple}"
+  color6: "%{cyan}"
+  color7: "%{comment}"
+  color8: "%{dark3}"
+  color9: "%{magenta2}"
+  color10: "%{green1}"
+  color11: "%{orange}"
+  color12: "%{blue1}"
+  color13: "%{magenta}"
+  color14: "%{blue5}"
+  color15: "%{dark5}"
 
 lualine:
-  bg: *bg_dark
-  fg: *foreground
-  red: *red
-  green: *green1
-  yellow: *yellow
-  blue: *blue
-  cyan: *cyan
-  magenta: *magenta2
-  violet: *magenta
-  orange: *orange
-  darkblue: *bg_dark
+  bg: "%{bg_dark}"
+  fg: "%{foreground}"
+  red: "%{red}"
+  green: "%{green1}"
+  yellow: "%{yellow}"
+  blue: "%{blue}"
+  cyan: "%{cyan}"
+  magenta: "%{magenta2}"
+  violet: "%{magenta}"
+  orange: "%{orange}"
+  darkblue: "%{bg_dark}"
 
 kitty:
-  cursor: *yellow
-  foreground: *foreground
-  background: *background
-  active_tab_foreground: *bg_dark
-  active_tab_background: *blue
-  inactive_tab_foreground: *bg_dark
-  inactive_tab_background: *fg_gutter
-  color0: *black
-  color1: *red
-  color2: *green
-  color3: *yellow
-  color4: *blue
-  color5: *magenta
-  color6: *cyan
-  color7: *comment
-  color8: *dark3
-  color9: *red1
-  color10: *green2
-  color11: *orange
-  color12: *blue5
-  color13: *purple
-  color14: *cyan
-  color15: *dark5
+  cursor: "%{yellow}"
+  foreground: "%{foreground}"
+  background: "%{background}"
+  active_tab_foreground: "%{bg_dark}"
+  active_tab_background: "%{blue}"
+  inactive_tab_foreground: "%{bg_dark}"
+  inactive_tab_background: "%{fg_gutter}"
+  color0: "%{black}"
+  color1: "%{red}"
+  color2: "%{green}"
+  color3: "%{yellow}"
+  color4: "%{blue}"
+  color5: "%{magenta}"
+  color6: "%{cyan}"
+  color7: "%{comment}"
+  color8: "%{dark3}"
+  color9: "%{red1}"
+  color10: "%{green2}"
+  color11: "%{orange}"
+  color12: "%{blue5}"
+  color13: "%{purple}"
+  color14: "%{cyan}"
+  color15: "%{dark5}"
 
 neovim:
   BufferLineBufferSelected:
     style: "underline"
-    sp: *red
+    sp: "%{red}"
   BufferLineFill:
-    bg: *background
+    bg: "%{background}"
   Boolean:
-    fg: *green 
+    fg: "%{green}"
   BufferCurrent:
-    fg: *yellow
-    bg: *background 
-    style: "bold" 
+    fg: "%{yellow}"
+    bg: "%{background}"
+    style: "bold"
   BufferCurrentMod:
-    fg: *blue
-    bg: *background 
+    fg: "%{blue}"
+    bg: "%{background}"
   BufferCurrentSign:
-    fg: *blue
-    bg: *background 
+    fg: "%{blue}"
+    bg: "%{background}"
   BufferInactive:
-    fg: *foreground
-    bg: *bg_highlight 
+    fg: "%{foreground}"
+    bg: "%{bg_highlight}"
   BufferInactiveMod:
-    fg: *blue
-    bg: *bg_highlight 
+    fg: "%{blue}"
+    bg: "%{bg_highlight}"
   BufferInactiveSign:
-    fg: *blue
-    bg: *bg_highlight 
+    fg: "%{blue}"
+    bg: "%{bg_highlight}"
   BufferInactiveTarge:
-    fg: *foreground
-    bg: *bg_highlight 
+    fg: "%{foreground}"
+    bg: "%{bg_highlight}"
   BufferTabPageFill:
-    fg: *blue
-    bg: *background 
+    fg: "%{blue}"
+    bg: "%{background}"
   Character:
-    fg: *green 
+    fg: "%{green}"
   ColorColumn:
     fg: "none"
-    bg: *black 
+    bg: "%{black}"
   Comment:
-    fg: *comment
-    style: "italic" 
+    fg: "%{comment}"
+    style: "italic"
   Conceal:
-    fg: *dark5
-    bg: "none" 
+    fg: "%{dark5}"
+    bg: "none"
   Conditional:
-    fg: *purple 
+    fg: "%{purple}"
   Constant:
-    fg: *orange
-    style: "italic" 
+    fg: "%{orange}"
+    style: "italic"
   Cursor:
     fg: "none"
     bg: "none"
-    style: "reverse" 
+    style: "reverse"
   CursorColumn:
     fg: "none"
-    bg: *bg_highlight 
+    bg: "%{bg_highlight}"
   CursorIm:
     fg: "none"
     bg: "none"
-    style: "reverse" 
+    style: "reverse"
   CursorLine:
     fg: "none"
-    bg: *bg_highlight 
+    bg: "%{bg_highlight}"
   CursorLineNr:
-    fg: *dark5
-    style: "bold" 
+    fg: "%{dark5}"
+    style: "bold"
   Define:
-    fg: *purple 
+    fg: "%{purple}"
   DiffAdd:
-    fg: *git_add
-    bg: *background 
+    fg: "%{git_add}"
+    bg: "%{background}"
   DiffChange:
-    fg: *git_change
-    bg: *background 
+    fg: "%{git_change}"
+    bg: "%{background}"
   DiffDelete:
-    fg: *git_delete
-    bg: *background 
+    fg: "%{git_delete}"
+    bg: "%{background}"
   DiffText:
-    fg: *background
-    bg: *foreground 
+    fg: "%{background}"
+    bg: "%{foreground}"
   Directory:
-    fg: *foreground
-    bg: "none" 
+    fg: "%{foreground}"
+    bg: "none"
   EndOfBuffer:
-    fg: *background
-    bg: "none" 
+    fg: "%{background}"
+    bg: "none"
   Error:
-    fg: *red 
+    fg: "%{red}"
   ErrorMsg:
-    fg: *red
+    fg: "%{red}"
     bg: "none"
-    style: "bold" 
+    style: "bold"
   Exception:
-    fg: *cyan 
+    fg: "%{cyan}"
   Float:
-    fg: *green 
+    fg: "%{green}"
   FoldColumn:
-    fg: *foreground
-    bg: *background 
+    fg: "%{foreground}"
+    bg: "%{background}"
   Folded:
-    fg: *blue
-    bg: *fg_gutter 
+    fg: "%{blue}"
+    bg: "%{fg_gutter}"
   Function:
-    fg: *blue 
+    fg: "%{blue}"
   Identifier:
-    fg: *magenta 
+    fg: "%{magenta}"
   IncSearch:
-    fg: *black
-    bg: *orange 
+    fg: "%{black}"
+    bg: "%{orange}"
   LineNr:
-    fg: *fg_gutter 
+    fg: "%{fg_gutter}"
   Macro:
-    fg: *yellow 
+    fg: "%{yellow}"
   MatchParen:
-    fg: *orange
-    bg: "none" 
+    fg: "%{orange}"
+    bg: "none"
   ModeMsg:
-    fg: *foreground
+    fg: "%{foreground}"
     bg: "none"
-    style: "bold" 
+    style: "bold"
   NonText:
-    fg: *dark3 
+    fg: "%{dark3}"
   Normal:
-    bg: *background 
+    bg: "%{background}"
   NormalFloat:
-    fg: *foreground
-    bg: *bg_highlight 
+    fg: "%{foreground}"
+    bg: "%{bg_highlight}"
   Operator:
-    fg: *blue5 
+    fg: "%{blue5}"
   Pmenu:
-    fg: *foreground
-    bg: *background 
+    fg: "%{foreground}"
+    bg: "%{background}"
   PmenuSbar:
-    fg: *purple
-    bg: *bg_highlight 
+    fg: "%{purple}"
+    bg: "%{bg_highlight}"
   PmenuSel:
-    fg: *bg_highlight
-    bg: *blue2 
+    fg: "%{bg_highlight}"
+    bg: "%{blue2}"
   PmenuThumb:
-    bg: *fg_gutter 
+    bg: "%{fg_gutter}"
   PreProc:
-    fg: *cyan 
+    fg: "%{cyan}"
   Question:
-    fg: *blue 
+    fg: "%{blue}"
   QuickFixLine:
-    fg: *purple
-    style: "bold" 
+    fg: "%{purple}"
+    style: "bold"
   Repeat:
-    fg: *purple 
+    fg: "%{purple}"
   Search:
-    fg: *background
-    bg: *foreground 
+    fg: "%{background}"
+    bg: "%{foreground}"
   Special:
-    fg: *blue1 
+    fg: "%{blue1}"
   SpecialChar:
-    fg: *yellow 
+    fg: "%{yellow}"
   SpecialComment:
-    fg: *bg_highlight 
+    fg: "%{bg_highlight}"
   SpecialKey:
-    fg: *dark3 
+    fg: "%{dark3}"
   SpellBad:
-    fg: *red
+    fg: "%{red}"
     bg: "none"
-    style: "undercurl" 
+    style: "undercurl"
   SpellCap:
-    fg: *yellow
+    fg: "%{yellow}"
     bg: "none"
-    style: "undercurl" 
+    style: "undercurl"
   SpellLocal:
-    fg: *blue2
+    fg: "%{blue2}"
     bg: "none"
-    style: "undercurl" 
+    style: "undercurl"
   SpellRare:
-    fg: *blue5
+    fg: "%{blue5}"
     bg: "none"
-    style: "undercurl" 
+    style: "undercurl"
   Statement:
-    fg: *magenta 
+    fg: "%{magenta}"
   StatusLine:
-    fg: *bg_highlight
-    bg: *fg_gutter
-    style: "none" 
+    fg: "%{bg_highlight}"
+    bg: "%{fg_gutter}"
+    style: "none"
   StatusLineNc:
-    fg: *bg_highlight
-    bg: *fg_gutter
-    style: "none" 
+    fg: "%{bg_highlight}"
+    bg: "%{fg_gutter}"
+    style: "none"
   StorageClass:
-    fg: *red
-    style: "italic" 
+    fg: "%{red}"
+    style: "italic"
   String:
-    fg: *green 
+    fg: "%{green}"
   "@string.regex":
-    fg: *blue6
+    fg: "%{blue6}"
   "@string.escape":
-    fg: *magenta
+    fg: "%{magenta}"
   Structure:
-    fg: *red
-    style: "italic" 
+    fg: "%{red}"
+    style: "italic"
   SignColumn:
     fg: "none"
-    bg: "none" 
+    bg: "none"
   "@annotation":
-    fg: *purple 
+    fg: "%{purple}"
   "@attribute":
-    fg: *yellow 
+    fg: "%{yellow}"
   "@boolean":
-    fg: *green 
+    fg: "%{green}"
   "@character":
-    fg: *green 
+    fg: "%{green}"
   "@constant.builtin":
-    fg: *cyan
-    style: "italic" 
+    fg: "%{cyan}"
+    style: "italic"
   "@constant":
-    fg: *red
-    style: "italic" 
+    fg: "%{red}"
+    style: "italic"
   "@constructor":
-    fg: *magenta
+    fg: "%{magenta}"
   "@field":
-    fg: *green1 
+    fg: "%{green1}"
   "@function":
-    fg: *blue 
+    fg: "%{blue}"
   "@function.builtin":
-    fg: *blue 
+    fg: "%{blue}"
   "@include":
-    fg: *purple 
+    fg: "%{purple}"
   "@keyword":
-    fg: *purple 
+    fg: "%{purple}"
   "@keyword.function":
-    fg: *magenta 
+    fg: "%{magenta}"
   "@keyword.operator":
-    fg: *purple 
+    fg: "%{purple}"
   "@operator":
-    fg: *blue5
+    fg: "%{blue5}"
   "@label":
-    fg: *blue 
+    fg: "%{blue}"
   "@method":
-    fg: *blue 
+    fg: "%{blue}"
   "@namespace":
-    fg: *yellow 
+    fg: "%{yellow}"
   "@number":
-    fg: *yellow 
+    fg: "%{yellow}"
   "@parameter":
-    fg: *yellow
-    style: "italic" 
+    fg: "%{yellow}"
+    style: "italic"
   "@punctuation.delimiter":
-    fg: *blue5 
+    fg: "%{blue5}"
   "@punctuation.bracket":
-    fg: *fg_dark 
+    fg: "%{fg_dark}"
   "@punctuation.special":
-    fg: *blue5
+    fg: "%{blue5}"
   "@symbol":
-    fg: *yellow 
+    fg: "%{yellow}"
   "@text.reference":
-    fg: *teal 
+    fg: "%{teal}"
   "@text":
-    fg: *green 
+    fg: "%{green}"
   "@type":
-    fg: *yellow 
+    fg: "%{yellow}"
   "@type.builtin":
-    fg: *magenta 
+    fg: "%{magenta}"
   "@variable.builtin":
-    fg: *red 
+    fg: "%{red}"
   TabLineFill:
-    style: "none" 
+    style: "none"
   TabLineSel:
-    bg: *background
-    fg: *blue 
+    bg: "%{background}"
+    fg: "%{blue}"
   Tag:
-    fg: *yellow 
+    fg: "%{yellow}"
   Terminal:
-    fg: *foreground
-    bg: *background 
+    fg: "%{foreground}"
+    bg: "%{background}"
   Title:
-    fg: *purple
-    style: "bold" 
+    fg: "%{purple}"
+    style: "bold"
   Todo:
-    fg: *yellow
-    style: "italic" 
+    fg: "%{yellow}"
+    style: "italic"
   Type:
-    fg: *blue1
-    style: "italic" 
+    fg: "%{blue1}"
+    style: "italic"
   Typedef:
-    fg: *purple 
+    fg: "%{purple}"
   Underlined:
-    style: "underline" 
+    style: "underline"
   VertSplit:
-    fg: *background 
+    fg: "%{background}"
   Visual:
     fg: "none"
-    bg: *fg_gutter 
+    bg: "%{fg_gutter}"
   VisualNos:
-    fg: *background
-    bg: *background
-    style: "underline" 
+    fg: "%{background}"
+    bg: "%{background}"
+    style: "underline"
   WarningMsg:
-    fg: *yellow
+    fg: "%{yellow}"
     bg: "none"
-    style: "bold" 
+    style: "bold"
   Whitespace:
-    fg: *bg_highlight 
+    fg: "%{bg_highlight}"
   WildMenu:
-    fg: *foreground
-    bg: *green 
+    fg: "%{foreground}"
+    bg: "%{green}"
   DebugBreakpoint:
-    fg: *background
-    bg: *red 
+    fg: "%{background}"
+    bg: "%{red}"
   BufferLineSeparator:
-    fg: *background
-    bg: *bg_highlight 
+    fg: "%{background}"
+    bg: "%{bg_highlight}"
   BufferLineSeparatorSelected:
-    fg: *background
-    bg: *bg_highlight 
+    fg: "%{background}"
+    bg: "%{bg_highlight}"
   WhichKeyFloat:
-    fg: *foreground
-    bg: *bg_dark 
+    fg: "%{foreground}"
+    bg: "%{bg_dark}"
   NvimTreeNormal:
-    bg: *bg_dark 
+    bg: "%{bg_dark}"
 
 sketchybar:
-  bg: *background
-  label_color: *foreground
-  icon_color: *foreground
+  bg: "%{background}"
+  label_color: "%{foreground}"
+  icon_color: "%{foreground}"
