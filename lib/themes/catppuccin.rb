@@ -16,14 +16,14 @@ class Catppuccin < Theme
   private
 
   def cursorline
-    blend palette['surface0'], palette['base'], 64
+    blend(palette['base'], palette['surface0'], 50)
   end
 
   def search
-    blend palette['sky'], palette['base'], 30
+    blend(palette['sky'], palette['base'], 50)
   end
 
   def inc_search
-    blend palette['sky'], palette['base'], 90
+    blend(palette['sky'], palette['base'], 50)
   end
 end

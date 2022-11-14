@@ -145,8 +145,28 @@ neovim:
   Constant:
     fg: "%{peach}"
   Cursor:
-    fg: "none"
-    bg: "none"
+    fg: "%{base}"
+    bg: "%{mauve}"
+  Cmdline:
+    fg: "%{text}"
+  CmdlineIcon:
+    fg: "%{sky}"
+  CmdlineIconSearch:
+    fg: "%{yellow}"
+  CmdlinePopup:
+    fg: "%{text}"
+  CmdlinePopupBorder:
+    fg: "%{lavender}"
+  CmdlinePopupBorderSearch:
+    fg: "%{yellow}"
+  Confirm:
+    fg: "%{text}"
+  ConfirmBorder:
+    fg: "%{blue}"
+  Mini:
+    fg: "%{text}"
+  Popup:
+    fg: "%{text}"
   CursorColumn:
     bg: "%{mantle}"
   CursorIm:
@@ -156,6 +176,66 @@ neovim:
     bg: "#323549"
   CursorLineNr:
     fg: "%{lavender}"
+  CmpItemAbbr:
+    fg: "%{overlay2}"
+  CmpItemAbbrDeprecated:
+    fg: "%{overlay0}"
+    style: "strikethrough"
+  CmpItemKind:
+    fg: "%{blue}"
+  CmpItemMenu:
+    fg: "%{text}"
+  CmpItemAbbrMatch:
+    fg: "%{text}"
+    style: "bold"
+  CmpItemKindSnippet:
+    fg: "%{mauve}"
+  CmpItemKindKeyWord:
+    fg: "%{red}"
+  CmpItemKindText:
+    fg: "%{teal}"
+  CmpItemKindMethod:
+    fg: "%{blue}"
+  CmpItemKindFunction:
+    fg: "%{blue}"
+  CmpItemKindFolder:
+    fg: "%{blue}"
+  CmpItemKindModule:
+    fg: "%{blue}"
+  CmpItemKindConstant:
+    fg: "%{peach}"
+  CmpItemKindField:
+    fg: "%{green}"
+  CmpItemKindProperty:
+    fg: "%{green}"
+  CmpItemKindEnum:
+    fg: "%{green}"
+  CmpItemKindUnit:
+    fg: "%{green}"
+  CmpItemKindClass:
+    fg: "%{yellow}"
+  CmpItemKindVariable:
+    fg: "%{flamingo}"
+  CmpItemKindFile:
+    fg: "%{blue}"
+  CmpItemKindInterface:
+    fg: "%{yellow}"
+  CmpItemKindColor:
+    fg: "%{red}"
+  CmpItemKindReference:
+    fg: "%{red}"
+  CmpItemKindEnumMember:
+    fg: "%{red}"
+  CmpItemKindStruct:
+    fg: "%{blue}"
+  CmpItemKindValue:
+    fg: "%{peach}"
+  CmpItemKindEvent:
+    fg: "%{blue}"
+  CmpItemKindOperator:
+    fg: "%{blue}"
+  CmpItemKindTypeParameter:
+    fg: "%{blue}"
   DebugBreakpoint:
     fg: "%{base}"
     bg: "%{red}"
@@ -186,12 +266,32 @@ neovim:
     bg: "%{surface1}"
   Function:
     fg: "%{blue}"
+  GitSignsAdd:
+    fg: "%{green}"
+  GitSignsChange:
+    fg: "%{yellow}"
+  GitSignsDelete:
+    fg: "%{red}"
   htmlH1:
     fg: "%{pink}"
   htmlH2:
     fg: "%{blue}"
   htmlH3:
     fg: "%{peach}"
+  healthError:
+    fg: "%{red}"
+  healthSuccess:
+    fg: "%{teal}"
+  healthWarning:
+    fg: "%{yellow}"
+  Define:
+    fg: "%{pink}"
+  Marcro:
+    fg: "%{pink}"
+  Delimiter:
+    fg: "%{pink}"
+  Debug:
+    fg: "%{pink}"
   Identifier:
     fg: "%{flamingo}"
   IncSearch:
@@ -221,12 +321,80 @@ neovim:
   ModeMsg:
     fg: "%{text}"
     style: "bold"
+  NonText:
+    fg: "%{overlay0}"
+  MoreMsg:
+    fg: "%{blue}"
+  markdownHeadingDelimiter:
+    fg: "%{peach}"
+    style: "bold"
+  markdownCode:
+    fg: "%{flamingo}"
+  markdownCodeBlock:
+    fg: "%{flamingo}"
+  markdownLinkText:
+    fg: "%{blue}"
+    style: "underline"
+  markdownH1:
+    fg: "%{lavender}"
+  markdownH2:
+    fg: "%{mauve}"
+  markdownH3:
+    fg: "%{green}"
+  markdownH4:
+    fg: "%{yellow}"
+  markdownH5:
+    fg: "%{pink}"
+  markdownH6:
+    fg: "%{teal}"
   Normal:
+    fg: "%{text}"
     bg: "%{base}"
+  NormalFloat:
+    fg: "%{text}"
+    bg: "none"
   Number:
     fg: "%{peach}"
   "@number":
     fg: "%{peach}"
+  NvimTreeFolderName:
+    fg: "%{blue}"
+  NvimTreeFolderIcon:
+    fg: "%{blue}"
+  NvimTreeNormal:
+    fg: "%{text}"
+  NvimTreeOpenedFolderName:
+    fg: "%{blue}"
+  NvimTreeEmptyFolderName:
+    fg: "%{blue}"
+  NvimTreeIndentMarker:
+    fg: "%{overlay0}"
+  NvimTreeRootFolder:
+    fg: "%{lavender}"
+    style: "bold"
+  NvimTreeSymlink:
+    fg: "%{pink}"
+  NvimTreeStatuslineNc:
+    fg: "%{mantle}"
+    bg: "%{mantle}"
+  NvimTreeGitDirty:
+    fg: "%{yellow}"
+  NvimTreeGitNew:
+    fg: "%{blue}"
+  NvimTreeGitDeleted:
+    fg: "%{red}"
+  NvimTreeSpecialFile:
+    fg: "%{flamingo}"
+  NvimTreeOpenedFile:
+    fg: "%{pink}"
+  LspTroubleText:
+    fg: "%{green}"
+  LspTroubleCount:
+    fg: "%{pink}"
+    bg: "%{surface1}"
+  LspTroubleNormal:
+    fg: "%{text}"
+    bg: "%{crust}"
   Operator:
     fg: "%{sky}"
   Pmenu:
@@ -275,6 +443,17 @@ neovim:
   StatusLine:
     fg: "%{text}"
     bg: "%{mantle}"
+  IndentBlanklineChar:
+    fg: "%{surface0}"
+  IndentBlanklineSpaceChar:
+    fg: "%{surface1}"
+  IndentBlanklineSpaceCharBlankline:
+    fg: "%{surface1}"
+  IndentBlanklineContextChar:
+    fg: "%{text}"
+  IndentBlanklineContextStart:
+    sp: "%{mauve}"
+    underline: true
   StatusLineNc:
     fg: "%{surface1}"
     bg: "%{mantle}"
@@ -403,18 +582,31 @@ neovim:
     fg: "%{surface1}"
     bg: "%{mantle}"
   TabLineFill:
-    bg: "%{mantle}"
+    bg: "%{black}"
   TabLineSel:
     fg: "%{green}"
     bg: "%{surface1}"
   Tag:
     fg: "%{yellow}"
+  TelescopeBorder:
+    fg: "%{blue}"
+  TelescopeSelectionCaret:
+    fg: "%{flamingo}"
+  TelescopeSelection:
+    fg: "%{text}"
+    bg: "%{surface0}"
+    style: "bold"
+  TelescopeMatching:
+    fg: "%{blue}"
   Terminal:
     fg: "%{text}"
     bg: "%{base}"
   Todo:
     fg: "%{yellow}"
     style: "italic"
+  Title:
+    fg: "%{sky}"
+    bold: true
   Type:
     fg: "%{blue}"
   Typedef:
@@ -443,6 +635,8 @@ neovim:
     fg: "%{mantle}"
   WildMenu:
     bg: "%{overlay0}"
+  WinBar:
+    fg: "%{rosewater}"
   NvimTreeNormal:
     bg: "%{mantle}"
 
