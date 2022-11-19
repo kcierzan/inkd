@@ -6,6 +6,16 @@ class App
   end
 
   def name
-    self.class.to_s.downcase.to_sym
+    underscore(self.class.to_s).to_sym
+  end
+
+  private
+
+  def underscore(string)
+    string.gsub(/::/, '/')
+          .gsub(/([A-Z]+)([A-Z][a-z])/, '\1_\2')
+          .gsub(/([a-z\d])([A-Z])/, '\1_\2')
+          .tr('-', '_')
+          .downcase
   end
 end

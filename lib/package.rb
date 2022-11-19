@@ -15,6 +15,14 @@ module Package
     end
   end
 
+  def app_classes
+    supported_app_names.map { |name| snake_to_capital_case(name) }
+  end
+
+  def snake_to_capital_case(snake)
+    snake.split('_').collect(&:capitalize).join
+  end
+
   def theme_names
     Dir.glob(theme_directory_glob)
        .select { |e| File.file?(e) && File.basename(e, '.rb') != 'theme' }
@@ -30,7 +38,7 @@ module Package
     "#{File.dirname(__FILE__)}/themes/*"
   end
 
-  private_class_method :supported_app_files, :app_directory_glob, :theme_directory_glob
+  private_class_method :supported_app_files, :app_directory_glob, :theme_directory_glob, :snake_to_capital_case
 end
 
 module AppAutoloader

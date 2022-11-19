@@ -64,8 +64,8 @@ class InkdCLI < Thor
   end
 
   def apps
-    Package.supported_app_names.map do |app|
-      eval "#{app.capitalize}.new", binding, __FILE__, __LINE__
+    Package.app_classes.map do |class_name|
+      eval "#{class_name}.new", binding, __FILE__, __LINE__
     end
   end
 end

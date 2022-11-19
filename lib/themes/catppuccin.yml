@@ -582,7 +582,7 @@ neovim:
     fg: "%{surface1}"
     bg: "%{mantle}"
   TabLineFill:
-    bg: "%{black}"
+    bg: "%{crust}"
   TabLineSel:
     fg: "%{green}"
     bg: "%{surface1}"
@@ -664,6 +664,24 @@ kitty:
   color13: "%{pink}"
   color14: "%{sky}"
   color15: "%{text}"
+
+neovim_terminal:
+  terminal_color_0: "%{crust}"
+  terminal_color_1: "%{red}"
+  terminal_color_2: "%{green}"
+  terminal_color_3: "%{yellow}"
+  terminal_color_4: "%{blue}"
+  terminal_color_5: "%{pink}"
+  terminal_color_6: "%{sky}"
+  terminal_color_7: "%{text}"
+  terminal_color_8: "%{surface1}"
+  terminal_color_9: "%{red}"
+  terminal_color_10: "%{green}"
+  terminal_color_11: "%{yellow}"
+  terminal_color_12: "%{blue}"
+  terminal_color_13: "%{pink}"
+  terminal_color_14: "%{sky}"
+  terminal_color_15: "%{text}"
 
 lualine:
   bg: "%{mantle}"
