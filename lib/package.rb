@@ -1,12 +1,19 @@
 # frozen_string_literal: true
 
 module Package
+  SUPPORTED_APPS = ['kitty', 'neovim', 'neovim_terminal', 'lualine'].freeze
+
   module_function
 
   def supported_app_files
-    Dir.glob(app_directory_glob).select do |e|
-      File.file?(e) && File.basename(e, '.rb') != 'app'
-    end
+    Dir.glob(app_directory_glob).select { |file| supported_file? file }
+  end
+
+  def supported_file?(file)
+    filename = File.basename(file, '.rb')
+
+    File.file?(file) &&
+      SUPPORTED_APPS.include?(filename)
   end
 
   def supported_app_names

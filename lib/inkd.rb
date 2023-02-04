@@ -13,7 +13,7 @@ class InkdCLI < Thor
   def theme(theme = nil, palette = 'dark')
     return print_themes if options[:list] || invalid_theme?(theme)
 
-    create_output_directory
+    Utils::Filesystem.create_output_directory
     apply_theme!(theme: theme, palette: palette)
   end
 
@@ -39,10 +39,6 @@ class InkdCLI < Thor
 
   def invalid_theme?(theme)
     !Package.theme_names.include?(theme)
-  end
-
-  def create_output_directory
-    Utils::Filesystem.create_output_directory
   end
 
   def print_themes
