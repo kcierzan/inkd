@@ -6,7 +6,7 @@ require 'package'
 
 class Theme
   def initialize(palette)
-    raise InvalidPaletteError unless palettes.include? palette
+    raise InvalidPaletteError unless valid_palette? palette
 
     @palette = theme_data['palettes'][palette]
   end
@@ -20,6 +20,10 @@ class Theme
 
   def palettes
     theme_data['palettes'].keys
+  end
+
+  def valid_palette?(palette)
+    palettes.include?(palette)
   end
 
   def colors_for_app(app)

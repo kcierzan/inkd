@@ -5,7 +5,7 @@ require 'inkd'
 require 'pathname'
 
 parent = Pathname(File.dirname(__FILE__)).parent
-rgb = parent + 'vendor/rgb-0.1.0/lib'
+rgb = "#{parent}/vendor/rgb-0.1.0/lib"
 $LOAD_PATH << rgb.to_s
 
 InkdCLI.start ARGV

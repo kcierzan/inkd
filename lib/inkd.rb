@@ -11,7 +11,8 @@ class InkdCLI < Thor
   desc 'theme THEME', 'Generate theme files and reload apps'
   option :list, type: :boolean
   def theme(theme = nil, palette = 'dark')
-    return print_themes if options[:list] || invalid_theme?(theme)
+    return print_themes if options[:list]
+    return print_themes unless Package.valid_theme? theme
 
     Utils::Filesystem.create_output_directory
     apply_theme!(theme: theme, palette: palette)
@@ -20,7 +21,8 @@ class InkdCLI < Thor
   desc 'font FONT', 'Generate font files and reload apps'
   option :list, type: :boolean
   def font(font = nil)
-    return print_fonts if options[:list] || invalid_font?(font)
+    return print_fonts if options[:list]
+    return print_fonts unless Package.valid_font? font
 
     kitty.apply_font! font
     sketchybar.apply_font! font
@@ -31,14 +33,6 @@ class InkdCLI < Thor
   def apply_theme!(theme:, palette:)
     theme = ThemeBuilder.load(theme: theme, palette: palette)
     apps.each { |app| app.apply_theme! theme.colors_for_app(app.name) }
-  end
-
-  def invalid_font?(font)
-    !Constants::FONTS.keys.include?(font.to_sym)
-  end
-
-  def invalid_theme?(theme)
-    !Package.theme_names.include?(theme)
   end
 
   def print_themes

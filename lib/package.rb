@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'constants'
+
 module Package
   SUPPORTED_APPS = ['kitty', 'neovim', 'neovim_terminal', 'lualine'].freeze
 
@@ -31,10 +33,9 @@ module Package
   end
 
   def theme_names
-    Dir.glob(theme_directory_glob)
-       .select { |e| File.file?(e) && File.basename(e, '.rb') != 'theme' }
-       .select { |e| File.extname(e) == '.rb' }
-       .map { |f| File.basename(f, '.rb') }
+    @theme_names ||= Dir.glob(theme_directory_glob)
+                        .select { |e| ruby_theme_file? e }
+                        .map { |f| File.basename(f, '.rb') }
   end
 
   def app_directory_glob
@@ -45,7 +46,21 @@ module Package
     "#{File.dirname(__FILE__)}/themes/*"
   end
 
-  private_class_method :supported_app_files, :app_directory_glob, :theme_directory_glob, :snake_to_capital_case
+  def valid_theme?(theme_name)
+    theme_names.include?(theme_name)
+  end
+
+  def valid_font?(font)
+    Constants::FONTS.keys.include?(font.to_sym)
+  end
+
+  def ruby_theme_file?(filename)
+    File.file?(filename) &&
+      File.basename(filename, '.rb') != 'theme' &&
+      File.extname(filename) == '.rb'
+  end
+
+  private_class_method :supported_app_files, :app_directory_glob, :theme_directory_glob, :snake_to_capital_case, :ruby_theme_file?
 end
 
 module AppAutoloader
